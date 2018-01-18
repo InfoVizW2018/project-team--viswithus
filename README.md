@@ -8,8 +8,10 @@
 - Project final reports due: April 12th, by 5pm.
 
 ## Group Members
-- Student 1
-- Student 2
+- Sollazzo, Anna
+- Belford, Jack
+- Samarajeewa, Ryan
+- Melaku, Thaddaeus
 
 ## Project Description
 Write a few lines about your proposed topic here.

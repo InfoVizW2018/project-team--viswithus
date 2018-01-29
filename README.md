@@ -15,3 +15,6 @@
 
 ## Project Description
 Write a few lines about your proposed topic here.
+
+## Documents/Submissions
+* [Project Proposal](proposal.md) 

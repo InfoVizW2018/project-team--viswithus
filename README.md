@@ -17,4 +17,5 @@
 Write a few lines about your proposed topic here.
 
 ## Documents/Submissions
-* [Project Proposal](proposal.md) 
+* [Pitch slides](pitch_slides.pdf)
+* [Project proposal](proposal.md) 

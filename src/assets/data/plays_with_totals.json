@@ -1,0 +1,5127 @@
+[
+  {
+    "id": 18,
+    "title": "Démocrite amoureux",
+    "total": 172916
+  },
+  {
+    "id": 856,
+    "title": "",
+    "total": 28637
+  },
+  {
+    "id": 1218,
+    "title": "Les Journalistes anglais",
+    "total": 7967
+  },
+  {
+    "id": 1345,
+    "title": "Trois frères rivaux (Les)",
+    "total": 313490
+  },
+  {
+    "id": 1346,
+    "title": "Triple mariage (Le)",
+    "total": 276893
+  },
+  {
+    "id": 1350,
+    "title": "Esprit de contradiction (L')",
+    "total": 561227
+  },
+  {
+    "id": 4832,
+    "title": "Abdir",
+    "total": 8523
+  },
+  {
+    "id": 4833,
+    "title": "Abdolonime ou le Roi berger",
+    "total": 5705
+  },
+  {
+    "id": 4834,
+    "title": "Absalon",
+    "total": 43564
+  },
+  {
+    "id": 4835,
+    "title": "Adélaïde de Hongrie",
+    "total": 29975
+  },
+  {
+    "id": 4836,
+    "title": "Adélaïde du Guesclin",
+    "total": 189369
+  },
+  {
+    "id": 4837,
+    "title": "Adélaïde ou l'Antipathie pour l'amour",
+    "total": 39603
+  },
+  {
+    "id": 4839,
+    "title": "Adèle de Ponthieu ou Adèle, comtesse de Ponthieu",
+    "total": 29154
+  },
+  {
+    "id": 4840,
+    "title": "Agathocle",
+    "total": 6915
+  },
+  {
+    "id": 4841,
+    "title": "Agis",
+    "total": 25074
+  },
+  {
+    "id": 4842,
+    "title": "Agrippa, roi d'Albe  /  le Faux Tiberinus (titre alt.)  / Tiberinus (titre alt.)",
+    "total": 41773
+  },
+  {
+    "id": 4843,
+    "title": "Ajax",
+    "total": 2641
+  },
+  {
+    "id": 4844,
+    "title": "Albert et Émilie",
+    "total": 4447
+  },
+  {
+    "id": 4845,
+    "title": "Albert premier ou Adeline",
+    "total": 26406
+  },
+  {
+    "id": 4846,
+    "title": "Alcidonis ou la Journée lacédémonienne",
+    "total": 8012
+  },
+  {
+    "id": 4847,
+    "title": "Alphée et Zarine",
+    "total": 3148
+  },
+  {
+    "id": 4848,
+    "title": "Alzaïde",
+    "total": 12259
+  },
+  {
+    "id": 4849,
+    "title": "Alzire ou les Américains",
+    "total": 414873
+  },
+  {
+    "id": 4850,
+    "title": "Amalazonte",
+    "total": 10992
+  },
+  {
+    "id": 4851,
+    "title": "Amasis",
+    "total": 62854
+  },
+  {
+    "id": 4852,
+    "title": "Amélie ou le Duc de Foix ou Le Duc de Foix",
+    "total": 46614
+  },
+  {
+    "id": 4853,
+    "title": "Amélise",
+    "total": 3038
+  },
+  {
+    "id": 4854,
+    "title": "Aménophis",
+    "total": 2523
+  },
+  {
+    "id": 4855,
+    "title": "Amestris",
+    "total": 13106
+  },
+  {
+    "id": 4856,
+    "title": "Amour pour amour",
+    "total": 40264
+  },
+  {
+    "id": 4857,
+    "title": "Amphitryon",
+    "total": 584122
+  },
+  {
+    "id": 4858,
+    "title": "Andromaque",
+    "total": 407074
+  },
+  {
+    "id": 4859,
+    "title": "Andronic",
+    "total": 178648
+  },
+  {
+    "id": 4860,
+    "title": "Annibal /  La Mort d'Annibal (titre alt.)",
+    "total": 8609
+  },
+  {
+    "id": 4861,
+    "title": "Antigone ou la Piété fraternelle",
+    "total": 3923
+  },
+  {
+    "id": 4862,
+    "title": "Antipater",
+    "total": 3313
+  },
+  {
+    "id": 4863,
+    "title": "Apelle et Campaspe",
+    "total": 2927
+  },
+  {
+    "id": 4864,
+    "title": "Aphos",
+    "total": 14417
+  },
+  {
+    "id": 4865,
+    "title": "Ariane",
+    "total": 289735
+  },
+  {
+    "id": 4866,
+    "title": "Aristomène",
+    "total": 40243
+  },
+  {
+    "id": 4867,
+    "title": "Artaxerce",
+    "total": 23065
+  },
+  {
+    "id": 4868,
+    "title": "Astarbé",
+    "total": 24066
+  },
+  {
+    "id": 4869,
+    "title": "Astrate, roi de Tyr",
+    "total": 47763
+  },
+  {
+    "id": 4870,
+    "title": "Astyanax",
+    "total": 3991
+  },
+  {
+    "id": 4871,
+    "title": "Astyanax",
+    "total": 3958
+  },
+  {
+    "id": 4872,
+    "title": "Athalie",
+    "total": 398936
+  },
+  {
+    "id": 4873,
+    "title": "Antoine et Cléopâtre",
+    "total": 6703
+  },
+  {
+    "id": 4874,
+    "title": "Atrée et Thyeste",
+    "total": 40025
+  },
+  {
+    "id": 4875,
+    "title": "Attendez-moi sous l’orme",
+    "total": 238523
+  },
+  {
+    "id": 4876,
+    "title": "Augusta",
+    "total": 12145
+  },
+  {
+    "id": 4877,
+    "title": "Auguste et Théodore ou les Deux pages",
+    "total": 142597
+  },
+  {
+    "id": 4878,
+    "title": "Azémire",
+    "total": 4893
+  },
+  {
+    "id": 4879,
+    "title": "Bajazet",
+    "total": 218009
+  },
+  {
+    "id": 4880,
+    "title": "Barnevelt",
+    "total": 8688
+  },
+  {
+    "id": 4881,
+    "title": "Bérénice",
+    "total": 107118
+  },
+  {
+    "id": 4882,
+    "title": "Beverlei",
+    "total": 126111
+  },
+  {
+    "id": 4883,
+    "title": "Blanche et Guiscard",
+    "total": 35477
+  },
+  {
+    "id": 4884,
+    "title": "Briséis ou la colère d'Achille",
+    "total": 27473
+  },
+  {
+    "id": 4885,
+    "title": "Britannicus",
+    "total": 370378
+  },
+  {
+    "id": 4886,
+    "title": "Brutus",
+    "total": 168467
+  },
+  {
+    "id": 4887,
+    "title": "Caïus Marcius Coriolan ou le Danger d'offenser un grand homme",
+    "total": 9264
+  },
+  {
+    "id": 4888,
+    "title": "Caliste ou la Belle pénitente",
+    "total": 12868
+  },
+  {
+    "id": 4889,
+    "title": "Caliste",
+    "total": 26767
+  },
+  {
+    "id": 4890,
+    "title": "Catilina",
+    "total": 57268
+  },
+  {
+    "id": 4891,
+    "title": "Cénie",
+    "total": 107389
+  },
+  {
+    "id": 4892,
+    "title": "Céramis",
+    "total": 12496
+  },
+  {
+    "id": 4893,
+    "title": "Charles IX ou l'École des rois",
+    "total": 138473
+  },
+  {
+    "id": 4894,
+    "title": "Cinna ou la Clémence d'Auguste",
+    "total": 271351
+  },
+  {
+    "id": 4895,
+    "title": "Clémentine et Desormes",
+    "total": 27308
+  },
+  {
+    "id": 4896,
+    "title": "Cléopâtre",
+    "total": 23965
+  },
+  {
+    "id": 4897,
+    "title": "Colin-Maillard",
+    "total": 240182
+  },
+  {
+    "id": 4898,
+    "title": "Coriolan",
+    "total": 33864
+  },
+  {
+    "id": 4899,
+    "title": "Coriolan",
+    "total": 7620
+  },
+  {
+    "id": 4900,
+    "title": "Corneille aux Champs-Élysées",
+    "total": 6075
+  },
+  {
+    "id": 4901,
+    "title": "Cosroès",
+    "total": 13970
+  },
+  {
+    "id": 4902,
+    "title": "Cosroès",
+    "total": 3704
+  },
+  {
+    "id": 4903,
+    "title": "Crispin bel esprit",
+    "total": 54593
+  },
+  {
+    "id": 4904,
+    "title": "Crispin médecin",
+    "total": 575782
+  },
+  {
+    "id": 4906,
+    "title": "Crispin précepteur",
+    "total": 11883
+  },
+  {
+    "id": 4907,
+    "title": "Crispin rival de son maître",
+    "total": 440010
+  },
+  {
+    "id": 4908,
+    "title": "Cromwel",
+    "total": 8159
+  },
+  {
+    "id": 4910,
+    "title": "Denis le tyran",
+    "total": 53419
+  },
+  {
+    "id": 4911,
+    "title": "Deucalion et Pirrha",
+    "total": 30392
+  },
+  {
+    "id": 4912,
+    "title": "Didon",
+    "total": 182034
+  },
+  {
+    "id": 4914,
+    "title": "Don Japhet d'Arménie",
+    "total": 201734
+  },
+  {
+    "id": 4915,
+    "title": "Dom Pasquin d'Avalos",
+    "total": 8156
+  },
+  {
+    "id": 4916,
+    "title": "Don Sanche d'Aragon",
+    "total": 44189
+  },
+  {
+    "id": 4917,
+    "title": "Dorval ou le Fou par amour",
+    "total": 8028
+  },
+  {
+    "id": 4918,
+    "title": "Dupuis et Desronais - Dupuis et des Renais - Dupuis et des Ronais",
+    "total": 202360
+  },
+  {
+    "id": 4919,
+    "title": "Edgar ou le Page supposé",
+    "total": 3618
+  },
+  {
+    "id": 4920,
+    "title": "Égérie",
+    "total": 1275
+  },
+  {
+    "id": 4921,
+    "title": "Égyptus",
+    "total": 3571
+  },
+  {
+    "id": 4922,
+    "title": "Électre",
+    "total": 198403
+  },
+  {
+    "id": 4923,
+    "title": "Épicaris ou la Mort de Néron",
+    "total": 3976
+  },
+  {
+    "id": 4924,
+    "title": "Éponine",
+    "total": 6090
+  },
+  {
+    "id": 4925,
+    "title": "Éricie ou la Vestale",
+    "total": 1793
+  },
+  {
+    "id": 4926,
+    "title": "Ésope à la cour",
+    "total": 136724
+  },
+  {
+    "id": 4927,
+    "title": "Eugénie",
+    "total": 137375
+  },
+  {
+    "id": 4928,
+    "title": "Fernand-Cortès",
+    "total": 13337
+  },
+  {
+    "id": 4929,
+    "title": "Florinde",
+    "total": 3185
+  },
+  {
+    "id": 4930,
+    "title": "Gabrielle de Vergy",
+    "total": 121900
+  },
+  {
+    "id": 4931,
+    "title": "Gaston et Bayard",
+    "total": 178809
+  },
+  {
+    "id": 4932,
+    "title": "George Dandin ou le Mari confondu",
+    "total": 412620
+  },
+  {
+    "id": 4933,
+    "title": "Guillaume Tell",
+    "total": 64993
+  },
+  {
+    "id": 4934,
+    "title": "Gustave Wasa",
+    "total": 185057
+  },
+  {
+    "id": 4935,
+    "title": "Hamlet",
+    "total": 49121
+  },
+  {
+    "id": 4936,
+    "title": "Henriette",
+    "total": 13916
+  },
+  {
+    "id": 4937,
+    "title": "Héraclius, empereur d'Orient",
+    "total": 234172
+  },
+  {
+    "id": 4938,
+    "title": "Hercule",
+    "total": 3740
+  },
+  {
+    "id": 4939,
+    "title": "Hercule au mont Œta",
+    "total": 16906
+  },
+  {
+    "id": 4940,
+    "title": "Hérode et Mariamne ;  Mariamne (titre initial)",
+    "total": 93500
+  },
+  {
+    "id": 4941,
+    "title": "Heureusement",
+    "total": 196737
+  },
+  {
+    "id": 4942,
+    "title": "Hirza ou les Illinois",
+    "total": 44979
+  },
+  {
+    "id": 4943,
+    "title": "Horace / Les Horaces (titre alt.)",
+    "total": 265257
+  },
+  {
+    "id": 4944,
+    "title": "Hylas et Sylvie",
+    "total": 40150
+  },
+  {
+    "id": 4945,
+    "title": "Hypermnestre",
+    "total": 242443
+  },
+  {
+    "id": 4946,
+    "title": "Hypermnestre",
+    "total": 29824
+  },
+  {
+    "id": 4947,
+    "title": "Idoménée",
+    "total": 12652
+  },
+  {
+    "id": 4948,
+    "title": "Inès de Castro",
+    "total": 288550
+  },
+  {
+    "id": 4949,
+    "title": "Ino et Mélicerte",
+    "total": 71921
+  },
+  {
+    "id": 4950,
+    "title": "Iphigénie ou Iphigénie en Aulide",
+    "total": 497230
+  },
+  {
+    "id": 4951,
+    "title": "Iphigénie en Tauride",
+    "total": 231778
+  },
+  {
+    "id": 4952,
+    "title": "Irène",
+    "total": 21003
+  },
+  {
+    "id": 4953,
+    "title": "Irène ou l'Innocence reconnue",
+    "total": 11907
+  },
+  {
+    "id": 4954,
+    "title": "Jean Calas",
+    "total": 10744
+  },
+  {
+    "id": 4955,
+    "title": "Jean-Jacques Rousseau dans l'île de Saint-Pierre",
+    "total": 2976
+  },
+  {
+    "id": 4956,
+    "title": "Jeanne d'Angleterre",
+    "total": 3348
+  },
+  {
+    "id": 4957,
+    "title": "Jeanne de Naples",
+    "total": 29322
+  },
+  {
+    "id": 4958,
+    "title": "Jodelet, ou le Maître valet",
+    "total": 145266
+  },
+  {
+    "id": 4959,
+    "title": "Julie ou le Bon père",
+    "total": 12610
+  },
+  {
+    "id": 4960,
+    "title": "Julie ou le Triomphe de l'amitié",
+    "total": 2119
+  },
+  {
+    "id": 4961,
+    "title": "Julie ou l'Heureuse épreuve",
+    "total": 14997
+  },
+  {
+    "id": 4962,
+    "title": "Belle-mère ou les Dangers d'un second mariage (La)",
+    "total": 7855
+  },
+  {
+    "id": 4963,
+    "title": "Bergère des Alpes (La)",
+    "total": 13993
+  },
+  {
+    "id": 4964,
+    "title": "Bienfaisance de Voltaire (La)",
+    "total": 7531
+  },
+  {
+    "id": 4965,
+    "title": "Cavalcade (La)",
+    "total": 39963
+  },
+  {
+    "id": 4966,
+    "title": "Colonie (La)",
+    "total": 9236
+  },
+  {
+    "id": 4967,
+    "title": "Comtesse de Chazelle (La)",
+    "total": 4535
+  },
+  {
+    "id": 4968,
+    "title": "Comtesse d'Escarbagnas (La)",
+    "total": 348188
+  },
+  {
+    "id": 4969,
+    "title": "Comtesse d'Orgueil (La) / Le Marquis de Lorgnac (titre alt.)",
+    "total": 27514
+  },
+  {
+    "id": 4970,
+    "title": "Coquette corrigée (La)",
+    "total": 173700
+  },
+  {
+    "id": 4971,
+    "title": "Coquette de village ou le Lot supposé (La)",
+    "total": 112551
+  },
+  {
+    "id": 4972,
+    "title": "Coquette et la fausse prude (La)",
+    "total": 126785
+  },
+  {
+    "id": 4973,
+    "title": "Coupe enchantée (La)",
+    "total": 327884
+  },
+  {
+    "id": 4974,
+    "title": "Créole (La)",
+    "total": 2457
+  },
+  {
+    "id": 4975,
+    "title": "Discipline militaire du Nord (La)",
+    "total": 6397
+  },
+  {
+    "id": 4976,
+    "title": "Dispute (La)",
+    "total": 1081
+  },
+  {
+    "id": 4977,
+    "title": "Double extravagance (La)",
+    "total": 31552
+  },
+  {
+    "id": 4978,
+    "title": "Famille extravagante (La)",
+    "total": 223105
+  },
+  {
+    "id": 4979,
+    "title": "Fausse Agnès ou le Poète campagnard (La)",
+    "total": 234178
+  },
+  {
+    "id": 4980,
+    "title": "Fausse antipathie (La)",
+    "total": 27034
+  },
+  {
+    "id": 4981,
+    "title": "Fausse apparence ou le Jaloux malgré lui (La)",
+    "total": 12900
+  },
+  {
+    "id": 4982,
+    "title": "Fausse coquette (La)",
+    "total": 28562
+  },
+  {
+    "id": 4983,
+    "title": "Fausse inconstance ou le Triomphe de l'honnêteté (La)",
+    "total": 4139
+  },
+  {
+    "id": 4984,
+    "title": "Feinte par amour (La)",
+    "total": 173525
+  },
+  {
+    "id": 4985,
+    "title": "Femme juge et partie (La) / Femme juge (La) (titre alt.)",
+    "total": 121787
+  },
+  {
+    "id": 4986,
+    "title": "Fête de village (La)",
+    "total": 46700
+  },
+  {
+    "id": 4987,
+    "title": "Fête de village ou les Bourgeoises de qualité (La)",
+    "total": 256992
+  },
+  {
+    "id": 4988,
+    "title": "Rival de lui-même ou la Fête interrompue (Le)",
+    "total": 9776
+  },
+  {
+    "id": 4989,
+    "title": "Fille capitaine (La)",
+    "total": 105245
+  },
+  {
+    "id": 4990,
+    "title": "Fille d'Aristide (La)",
+    "total": 9496
+  },
+  {
+    "id": 4991,
+    "title": "Foire de Saint-Laurent (La)",
+    "total": 143452
+  },
+  {
+    "id": 4992,
+    "title": "Folie du jour (La)",
+    "total": 7325
+  },
+  {
+    "id": 4993,
+    "title": "Folie et l'Amour (La)",
+    "total": 1216
+  },
+  {
+    "id": 4994,
+    "title": "Force du naturel (La)",
+    "total": 35010
+  },
+  {
+    "id": 4995,
+    "title": "Gageure de Village (La)",
+    "total": 9960
+  },
+  {
+    "id": 4996,
+    "title": "Gageure imprévue (La)",
+    "total": 173580
+  },
+  {
+    "id": 4997,
+    "title": "Gouvernante (La)",
+    "total": 154992
+  },
+  {
+    "id": 4998,
+    "title": "Jeune épouse (La)",
+    "total": 5530
+  },
+  {
+    "id": 4999,
+    "title": "Jeune indienne (La)",
+    "total": 169518
+  },
+  {
+    "id": 5000,
+    "title": "Liberté conquise ou le Despotisme renversé (La)",
+    "total": 80662
+  },
+  {
+    "id": 5001,
+    "title": "Magie de l'Amour (La)",
+    "total": 39450
+  },
+  {
+    "id": 5002,
+    "title": "Maison de campagne (La)",
+    "total": 61038
+  },
+  {
+    "id": 5003,
+    "title": "Maison de Molière (La)",
+    "total": 62910
+  },
+  {
+    "id": 5004,
+    "title": "Manie des arts ou la Matinée à la mode (La)",
+    "total": 94949
+  },
+  {
+    "id": 5005,
+    "title": "Matinée d'une jolie femme (La)",
+    "total": 24016
+  },
+  {
+    "id": 5006,
+    "title": "Mère coquette ou les Amants brouillés (La)",
+    "total": 116175
+  },
+  {
+    "id": 5007,
+    "title": "Mère jalouse (La)",
+    "total": 12140
+  },
+  {
+    "id": 5008,
+    "title": "Métamorphose amoureuse (La)",
+    "total": 120793
+  },
+  {
+    "id": 5009,
+    "title": "Métempsychose (La) ou La Métempsicose",
+    "total": 16645
+  },
+  {
+    "id": 5010,
+    "title": "Métromanie ou le Poète (La)",
+    "total": 214166
+  },
+  {
+    "id": 5011,
+    "title": "Mort d'Abel (La)",
+    "total": 90266
+  },
+  {
+    "id": 5012,
+    "title": "Mort de César (La)",
+    "total": 94524
+  },
+  {
+    "id": 5013,
+    "title": "Mort de Molière (La)",
+    "total": 1431
+  },
+  {
+    "id": 5014,
+    "title": "Mort de Pompée (La)",
+    "total": 116775
+  },
+  {
+    "id": 5015,
+    "title": "Mort de Socrate (La)",
+    "total": 14525
+  },
+  {
+    "id": 5016,
+    "title": "Nouveauté (La)",
+    "total": 275967
+  },
+  {
+    "id": 5017,
+    "title": "Parisienne (La)",
+    "total": 95299
+  },
+  {
+    "id": 5018,
+    "title": "Partie de chasse de Henri IV (La)",
+    "total": 405943
+  },
+  {
+    "id": 5019,
+    "title": "Péruvienne (La)",
+    "total": 2312
+  },
+  {
+    "id": 5020,
+    "title": "Physicienne (La)",
+    "total": 6013
+  },
+  {
+    "id": 5021,
+    "title": "Princesse d'Élide (La)",
+    "total": 68510
+  },
+  {
+    "id": 5022,
+    "title": "Pupille (La)",
+    "total": 393509
+  },
+  {
+    "id": 5023,
+    "title": "Réconciliation normande (La)",
+    "total": 82113
+  },
+  {
+    "id": 5024,
+    "title": "Réduction de Paris (La)",
+    "total": 8956
+  },
+  {
+    "id": 5025,
+    "title": "Ressemblance (La)",
+    "total": 21485
+  },
+  {
+    "id": 5026,
+    "title": "Rivale suivante (La)",
+    "total": 5992
+  },
+  {
+    "id": 5027,
+    "title": "Rupture ou le Malentendu (La)",
+    "total": 2089
+  },
+  {
+    "id": 5028,
+    "title": "Ruse inutile (La)",
+    "total": 9058
+  },
+  {
+    "id": 5029,
+    "title": "Seconde surprise de l'amour (La) / La Surprise de l'amour (titre alt.)",
+    "total": 237732
+  },
+  {
+    "id": 5030,
+    "title": "Sérénade (La)",
+    "total": 422208
+  },
+  {
+    "id": 5031,
+    "title": "Soirée d'une vieille femme (La)",
+    "total": 5713
+  },
+  {
+    "id": 5033,
+    "title": "Tarentule (La)",
+    "total": 2028
+  },
+  {
+    "id": 5034,
+    "title": "Valet maître (Le)",
+    "total": 12113
+  },
+  {
+    "id": 5035,
+    "title": "Veuve (La)",
+    "total": 1749
+  },
+  {
+    "id": 5036,
+    "title": "Veuve du Malabar ou l'Empire des coutumes (La)",
+    "total": 180177
+  },
+  {
+    "id": 5038,
+    "title": "Algérien ou les Muses comédiennes (L')",
+    "total": 8672
+  },
+  {
+    "id": 5039,
+    "title": "Amant Bourru (L')",
+    "total": 147665
+  },
+  {
+    "id": 5040,
+    "title": "Amant déguisé (L')",
+    "total": 1422
+  },
+  {
+    "id": 5041,
+    "title": "Amateur (L')",
+    "total": 20047
+  },
+  {
+    "id": 5042,
+    "title": "Ambitieux et l'indiscrète (L')",
+    "total": 28073
+  },
+  {
+    "id": 5043,
+    "title": "Ami des lois (L')",
+    "total": 24827
+  },
+  {
+    "id": 5044,
+    "title": "Amour à Tempé (L')",
+    "total": 2466
+  },
+  {
+    "id": 5045,
+    "title": "Amour diable (L')",
+    "total": 110808
+  },
+  {
+    "id": 5046,
+    "title": "Amour et les Fées (L')",
+    "total": 2645
+  },
+  {
+    "id": 5047,
+    "title": "Amour exilé des cieux (L')",
+    "total": 4401
+  },
+  {
+    "id": 5048,
+    "title": "Amour français (L')",
+    "total": 25389
+  },
+  {
+    "id": 5049,
+    "title": "Amour médecin (L') / Les Médecins / Les 4 Médecins (titre alt.)",
+    "total": 86475
+  },
+  {
+    "id": 5050,
+    "title": "Amour usé (L')",
+    "total": 4417
+  },
+  {
+    "id": 5051,
+    "title": "Andrienne (L')",
+    "total": 137094
+  },
+  {
+    "id": 5052,
+    "title": "Anglais à Bordeaux (L')",
+    "total": 115650
+  },
+  {
+    "id": 5053,
+    "title": "Orpheline léguée (L') ou L'Angloman(i)e",
+    "total": 36550
+  },
+  {
+    "id": 5054,
+    "title": "Lanval et Viviane ou les Fées et les chevaliers",
+    "total": 17435
+  },
+  {
+    "id": 5055,
+    "title": "Apothéose de Beaurepaire (L')",
+    "total": 13237
+  },
+  {
+    "id": 5056,
+    "title": "L'Assemblée",
+    "total": 10976
+  },
+  {
+    "id": 5057,
+    "title": "Laurette",
+    "total": 6396
+  },
+  {
+    "id": 5058,
+    "title": "Laurette",
+    "total": 2221
+  },
+  {
+    "id": 5059,
+    "title": "Avare (L')",
+    "total": 306371
+  },
+  {
+    "id": 5060,
+    "title": "Avare amoureux (L')",
+    "total": 20463
+  },
+  {
+    "id": 5061,
+    "title": "Avare cru bienfaisant (L')",
+    "total": 6049
+  },
+  {
+    "id": 5062,
+    "title": "Aveugle clairvoyant (L')",
+    "total": 253265
+  },
+  {
+    "id": 5063,
+    "title": "Aveugle par crédulité (L')",
+    "total": 7753
+  },
+  {
+    "id": 5064,
+    "title": "Avocat Patelin (L')",
+    "total": 525041
+  },
+  {
+    "id": 5065,
+    "title": "Babillard (Le)",
+    "total": 206400
+  },
+  {
+    "id": 5066,
+    "title": "Barbier de Séville ou la Précaution inutile (Le)",
+    "total": 239442
+  },
+  {
+    "id": 5067,
+    "title": "Baron d'Albikrac (Le)",
+    "total": 106848
+  },
+  {
+    "id": 5068,
+    "title": "Baron de la Crasse (Le)",
+    "total": 177924
+  },
+  {
+    "id": 5069,
+    "title": "Bienfait anonyme (Le)",
+    "total": 101908
+  },
+  {
+    "id": 5070,
+    "title": "Bienfait rendu ou le Négociant (Le)",
+    "total": 24787
+  },
+  {
+    "id": 5071,
+    "title": "Bon ami (Le)",
+    "total": 5908
+  },
+  {
+    "id": 5072,
+    "title": "Bon soldat (Le)",
+    "total": 116395
+  },
+  {
+    "id": 5073,
+    "title": "Bourgeois gentilhomme (Le)",
+    "total": 379487
+  },
+  {
+    "id": 5074,
+    "title": "Bourru bienfaisant (Le)",
+    "total": 146925
+  },
+  {
+    "id": 5075,
+    "title": "Café ou l'Écossaise (Le) ou L'Écossaire ou le Café",
+    "total": 203093
+  },
+  {
+    "id": 5076,
+    "title": "Caprice ou l'Épreuve dangereuse (Le)",
+    "total": 11380
+  },
+  {
+    "id": 5077,
+    "title": "Célibataire (Le)",
+    "total": 54587
+  },
+  {
+    "id": 5078,
+    "title": "Centenaire de Molière (Le)",
+    "total": 30669
+  },
+  {
+    "id": 5079,
+    "title": "Cercle ou la Soirée à la mode (Le)",
+    "total": 202177
+  },
+  {
+    "id": 5080,
+    "title": "Charivari (Le)",
+    "total": 80821
+  },
+  {
+    "id": 5082,
+    "title": "Chevalier français à Londres (Le)",
+    "total": 25938
+  },
+  {
+    "id": 5083,
+    "title": "Chevalier français à Turin (Le)",
+    "total": 21872
+  },
+  {
+    "id": 5084,
+    "title": "Chevalier sans peur et sans reproche ou les Amours de Bayard (Le)",
+    "total": 100582
+  },
+  {
+    "id": 5085,
+    "title": "Chirurgien de village (Le)",
+    "total": 845
+  },
+  {
+    "id": 5086,
+    "title": "Cid (Le)",
+    "total": 462294
+  },
+  {
+    "id": 5088,
+    "title": "Complaisant (Le)",
+    "total": 50029
+  },
+  {
+    "id": 5089,
+    "title": "Amants malheureux ou le Comte de Comminges (Les)",
+    "total": 47298
+  },
+  {
+    "id": 5090,
+    "title": "Comte de Warwick (Le)",
+    "total": 104283
+  },
+  {
+    "id": 5091,
+    "title": "Comte de Warwick (Le)",
+    "total": 3988
+  },
+  {
+    "id": 5092,
+    "title": "Comte d'Essex (Le)",
+    "total": 266357
+  },
+  {
+    "id": 5093,
+    "title": "Concert (Le)",
+    "total": 1426
+  },
+  {
+    "id": 5094,
+    "title": "Concert ridicule (Le) / Le Concert (titre alt.)",
+    "total": 155241
+  },
+  {
+    "id": 5095,
+    "title": "Conciliateur ou l'Homme aimable (Le)",
+    "total": 43842
+  },
+  {
+    "id": 5096,
+    "title": "Consentement forcé (Le)",
+    "total": 293561
+  },
+  {
+    "id": 5097,
+    "title": "Conteur ou les Deux postes (Le)",
+    "total": 27920
+  },
+  {
+    "id": 5098,
+    "title": "Couvent ou les Fruits du caractère et de l'éducation (Le)",
+    "total": 55832
+  },
+  {
+    "id": 5099,
+    "title": "Curieux impertinent (Le)",
+    "total": 45544
+  },
+  {
+    "id": 5100,
+    "title": "Dédit (Le)",
+    "total": 230024
+  },
+  {
+    "id": 5101,
+    "title": "Déjeuner interrompu (Le)",
+    "total": 2304
+  },
+  {
+    "id": 5102,
+    "title": "Dénouement imprévu (Le)",
+    "total": 10376
+  },
+  {
+    "id": 5103,
+    "title": "Dépit amoureux (Le)",
+    "total": 102649
+  },
+  {
+    "id": 5104,
+    "title": "Deuil (Le)",
+    "total": 278094
+  },
+  {
+    "id": 5105,
+    "title": "Dissipateur ou l'Honnête friponne (Le)",
+    "total": 91581
+  },
+  {
+    "id": 5106,
+    "title": "Distrait (Le)",
+    "total": 83582
+  },
+  {
+    "id": 5107,
+    "title": "Double veuvage (Le)",
+    "total": 207674
+  },
+  {
+    "id": 5109,
+    "title": "Duc de Surrey (Le) ou Le Comte de Neuilly",
+    "total": 6918
+  },
+  {
+    "id": 5110,
+    "title": "Fabricant de Londres (Le)",
+    "total": 3433
+  },
+  {
+    "id": 5111,
+    "title": "Fat (Le) ou Le Suffisant ou Le Petit maître dupé",
+    "total": 3304
+  },
+  {
+    "id": 5112,
+    "title": "Fat puni (Le)",
+    "total": 164953
+  },
+  {
+    "id": 5113,
+    "title": "Orpheline ou le Faux généreux (L')",
+    "total": 10449
+  },
+  {
+    "id": 5114,
+    "title": "Faux insouciant (Le)",
+    "total": 5080
+  },
+  {
+    "id": 5115,
+    "title": "Faux noble (Le)",
+    "total": 3692
+  },
+  {
+    "id": 5116,
+    "title": "Le Faux savant ou l'Amant précepteur ",
+    "total": 64619
+  },
+  {
+    "id": 5117,
+    "title": "Festin de Pierre (Le)",
+    "total": 229800
+  },
+  {
+    "id": 5118,
+    "title": "Fils naturel ou les Épreuves de la vertu (Le)",
+    "total": 2785
+  },
+  {
+    "id": 5119,
+    "title": "Financier (Le)",
+    "total": 5683
+  },
+  {
+    "id": 5120,
+    "title": "Flatteur (Le)",
+    "total": 15350
+  },
+  {
+    "id": 5121,
+    "title": "Florentin (Le)",
+    "total": 438020
+  },
+  {
+    "id": 5122,
+    "title": "Français à Londres (Le)",
+    "total": 291959
+  },
+  {
+    "id": 5123,
+    "title": "Galant coureur ou l'Ouvrage d'un moment (Le)",
+    "total": 172634
+  },
+  {
+    "id": 5124,
+    "title": "Galant jardinier (Le)",
+    "total": 448450
+  },
+  {
+    "id": 5125,
+    "title": "Gâteau des rois (Le)",
+    "total": 2538
+  },
+  {
+    "id": 5126,
+    "title": "Glorieux (Le)",
+    "total": 245041
+  },
+  {
+    "id": 5127,
+    "title": "Grondeur (Le)",
+    "total": 485912
+  },
+  {
+    "id": 5128,
+    "title": "Héros français ou le Siège de Saint-Jean-de-Lone (Les)",
+    "total": 7231
+  },
+  {
+    "id": 5129,
+    "title": "Jaloux (Le)",
+    "total": 8016
+  },
+  {
+    "id": 5130,
+    "title": "Jaloux (Le)",
+    "total": 64116
+  },
+  {
+    "id": 5131,
+    "title": "Jaloux désabusé (Le)",
+    "total": 82355
+  },
+  {
+    "id": 5132,
+    "title": "Jaloux sans amour (Le)",
+    "total": 65100
+  },
+  {
+    "id": 5133,
+    "title": "Jeune homme (Le)",
+    "total": 2715
+  },
+  {
+    "id": 5134,
+    "title": "Joueur (Le)",
+    "total": 425160
+  },
+  {
+    "id": 5135,
+    "title": "Journaliste des ombres ou Momus aux Champs-Élysées (Le)",
+    "total": 5658
+  },
+  {
+    "id": 5136,
+    "title": "Légataire universel (Le)",
+    "total": 265634
+  },
+  {
+    "id": 5137,
+    "title": "Legs (Le)",
+    "total": 342604
+  },
+  {
+    "id": 5138,
+    "title": "Magnifique (Le)",
+    "total": 192606
+  },
+  {
+    "id": 5139,
+    "title": "Maire ou le Pouvoir de la loi (Le)",
+    "total": 959
+  },
+  {
+    "id": 5140,
+    "title": "Malade imaginaire (Le)",
+    "total": 334161
+  },
+  {
+    "id": 5141,
+    "title": "Malheureux imaginaire (Le)",
+    "total": 26791
+  },
+  {
+    "id": 5142,
+    "title": "Marchand de Smyrne (Le)",
+    "total": 136168
+  },
+  {
+    "id": 5143,
+    "title": "Mari directeur ou le Déménagement du couvent (Le)",
+    "total": 10108
+  },
+  {
+    "id": 5144,
+    "title": "Mari retrouvé (Le)",
+    "total": 344783
+  },
+  {
+    "id": 5145,
+    "title": "Mari sans femme (Le)",
+    "total": 54292
+  },
+  {
+    "id": 5146,
+    "title": "Mariage clandestin (Le)",
+    "total": 2471
+  },
+  {
+    "id": 5147,
+    "title": "Mariage de Figaro ou la Folle journée (Le)",
+    "total": 462427
+  },
+  {
+    "id": 5148,
+    "title": "Mariage fait et rompu (Le)",
+    "total": 165367
+  },
+  {
+    "id": 5149,
+    "title": "Mariage forcé (Le)",
+    "total": 294683
+  },
+  {
+    "id": 5150,
+    "title": "Mariage interrompu (Le) ou La Fille supposée",
+    "total": 33135
+  },
+  {
+    "id": 5151,
+    "title": "Mariage par dépit (Le)",
+    "total": 1905
+  },
+  {
+    "id": 5152,
+    "title": "Mariage secret (Le)",
+    "total": 142903
+  },
+  {
+    "id": 5153,
+    "title": "Méchant (Le)",
+    "total": 142208
+  },
+  {
+    "id": 5155,
+    "title": "Médecin malgré lui (Le) / Le Médecin forcé (titre alt.)",
+    "total": 630780
+  },
+  {
+    "id": 5156,
+    "title": "Médecin par occasion (Le)",
+    "total": 20817
+  },
+  {
+    "id": 5157,
+    "title": "Médisant (Le)",
+    "total": 46266
+  },
+  {
+    "id": 5158,
+    "title": "Menteur (Le)",
+    "total": 203133
+  },
+  {
+    "id": 5159,
+    "title": "Mercure galant (Le) ou la Comédie sans titre / La Pièce sans titre (titre alt.)",
+    "total": 416681
+  },
+  {
+    "id": 5160,
+    "title": "Misanthrope (Le)",
+    "total": 384201
+  },
+  {
+    "id": 5161,
+    "title": "Moulin de Javelle (Le)",
+    "total": 189742
+  },
+  {
+    "id": 5162,
+    "title": "Muet (Le)",
+    "total": 102428
+  },
+  {
+    "id": 5163,
+    "title": "Muet par amour (Le)",
+    "total": 2359
+  },
+  {
+    "id": 5164,
+    "title": "Naufrage ou la Pompe funèbre de Crispin (Le) / Crispin brûlé (titre alt.)",
+    "total": 54599
+  },
+  {
+    "id": 5165,
+    "title": "Nouveau monde (Le)",
+    "total": 42010
+  },
+  {
+    "id": 5166,
+    "title": "Il y a une bonne justice ou le Paysan magistrat",
+    "total": 6542
+  },
+  {
+    "id": 5167,
+    "title": "Père de famille (Le)",
+    "total": 177861
+  },
+  {
+    "id": 5168,
+    "title": "Père désabusé (Le)",
+    "total": 5015
+  },
+  {
+    "id": 5169,
+    "title": "Persifleur (Le)",
+    "total": 22207
+  },
+  {
+    "id": 5170,
+    "title": "Philanthrope ou l'Ami de tout le monde (Le)",
+    "total": 86816
+  },
+  {
+    "id": 5171,
+    "title": "Philinte de Molière ou la Suite du Misanthrope (Le)",
+    "total": 18035
+  },
+  {
+    "id": 5172,
+    "title": "Philosophe marié ou le Mari honteux de l'être (Le)",
+    "total": 234060
+  },
+  {
+    "id": 5173,
+    "title": "Philosophe sans le savoir (Le)",
+    "total": 178367
+  },
+  {
+    "id": 5174,
+    "title": "Plaisir (Le)",
+    "total": 5992
+  },
+  {
+    "id": 5175,
+    "title": "Port de mer (Le)",
+    "total": 211742
+  },
+  {
+    "id": 5176,
+    "title": "Portrait ou le Danger de tout dire (Le)",
+    "total": 3851
+  },
+  {
+    "id": 5177,
+    "title": "Préjugé à la mode (Le)",
+    "total": 152844
+  },
+  {
+    "id": 5178,
+    "title": "Préjugé vaincu (Le)",
+    "total": 134456
+  },
+  {
+    "id": 5179,
+    "title": "Présomptueux ou l'Heureux imaginaire (Le)",
+    "total": 11051
+  },
+  {
+    "id": 5180,
+    "title": "Prix académique (Le)",
+    "total": 13971
+  },
+  {
+    "id": 5181,
+    "title": "Procureur arbitre (Le)",
+    "total": 250657
+  },
+  {
+    "id": 5182,
+    "title": "Quiproquo (Le)",
+    "total": 5506
+  },
+  {
+    "id": 5183,
+    "title": "Rendez-vous du mari ou le Mari à la mode (Le)",
+    "total": 6704
+  },
+  {
+    "id": 5184,
+    "title": "Rendez-vous ou l'Amour supposé (Le)",
+    "total": 242102
+  },
+  {
+    "id": 5185,
+    "title": "Retour des officiers (Le)",
+    "total": 30475
+  },
+  {
+    "id": 5186,
+    "title": "Retour du mari (Le)",
+    "total": 21215
+  },
+  {
+    "id": 5187,
+    "title": "Retour imprévu (Le)",
+    "total": 216347
+  },
+  {
+    "id": 5188,
+    "title": "Réveil d'Épiménide à Paris (Le)",
+    "total": 65658
+  },
+  {
+    "id": 5189,
+    "title": "Rival supposé (Le)",
+    "total": 20572
+  },
+  {
+    "id": 5190,
+    "title": "Roi de Cocagne (Le)",
+    "total": 135580
+  },
+  {
+    "id": 5191,
+    "title": "Roi Lear (Le)",
+    "total": 89331
+  },
+  {
+    "id": 5192,
+    "title": "Sage étourdi (Le) ou L'Homme indépendant",
+    "total": 86304
+  },
+  {
+    "id": 5193,
+    "title": "Satirique ou l'Homme dangereux (Le)",
+    "total": 25432
+  },
+  {
+    "id": 5194,
+    "title": "Séducteur (Le)",
+    "total": 83009
+  },
+  {
+    "id": 5195,
+    "title": "Sicilien ou l'Amour peintre (Le)",
+    "total": 178782
+  },
+  {
+    "id": 5196,
+    "title": "Siège de Calais (Le)",
+    "total": 157322
+  },
+  {
+    "id": 5197,
+    "title": "Somnambule (Le)",
+    "total": 234899
+  },
+  {
+    "id": 5198,
+    "title": "Souper magique ou les Deux siècles (Le)",
+    "total": 2962
+  },
+  {
+    "id": 5199,
+    "title": "Tambour nocturne ou le Mari devin (Le)",
+    "total": 50650
+  },
+  {
+    "id": 5200,
+    "title": "Le Temps passé ou le Triomphe du temps passé (Le)",
+    "total": 36448
+  },
+  {
+    "id": 5201,
+    "title": "Tombeau de Desilles (Le)",
+    "total": 5801
+  },
+  {
+    "id": 5202,
+    "title": "Tribunal de l'amour (Le)",
+    "total": 2045
+  },
+  {
+    "id": 5203,
+    "title": "Triomphe du temps (Le)",
+    "total": 36119
+  },
+  {
+    "id": 5205,
+    "title": "Triumvirat ou la Mort de Cicéron (Le)",
+    "total": 21319
+  },
+  {
+    "id": 5206,
+    "title": "Tuteur amoureux (Le) ou Le Tuteur",
+    "total": 275782
+  },
+  {
+    "id": 5208,
+    "title": "Tuteur dupé (Le) ou La Maison à deux portes",
+    "total": 28777
+  },
+  {
+    "id": 5209,
+    "title": "Veuvage trompeur (Le)",
+    "total": 9584
+  },
+  {
+    "id": 5210,
+    "title": "Vieux célibataire (Le)",
+    "total": 54813
+  },
+  {
+    "id": 5211,
+    "title": "Vieux garçon (Le)",
+    "total": 9828
+  },
+  {
+    "id": 5212,
+    "title": "Vindicatif (Le)",
+    "total": 15235
+  },
+  {
+    "id": 5213,
+    "title": "École amoureuse (L')",
+    "total": 59199
+  },
+  {
+    "id": 5214,
+    "title": "École de la jeunesse ou le Retour sur soi-même (L')",
+    "total": 10846
+  },
+  {
+    "id": 5215,
+    "title": "École des amis (L')",
+    "total": 35338
+  },
+  {
+    "id": 5216,
+    "title": "École des bourgeois (L')",
+    "total": 88674
+  },
+  {
+    "id": 5217,
+    "title": "École des femmes (L')",
+    "total": 240157
+  },
+  {
+    "id": 5218,
+    "title": "École des maris (L')",
+    "total": 515877
+  },
+  {
+    "id": 5219,
+    "title": "École des mères (L')",
+    "total": 134571
+  },
+  {
+    "id": 5220,
+    "title": "École des moeurs ou les Suites du libertinage (L')",
+    "total": 3235
+  },
+  {
+    "id": 5221,
+    "title": "École des pères ou les Fils ingrats (L')",
+    "total": 30462
+  },
+  {
+    "id": 5222,
+    "title": "École des pères (L')",
+    "total": 122260
+  },
+  {
+    "id": 5223,
+    "title": "Courtisanes ou l'Écueil des mœurs (Les)",
+    "total": 23727
+  },
+  {
+    "id": 5224,
+    "title": "Écueil du sage (L') / Le Droit du seigneur (titre alt.)",
+    "total": 27929
+  },
+  {
+    "id": 5225,
+    "title": "Égoïsme (L')",
+    "total": 16231
+  },
+  {
+    "id": 5226,
+    "title": "Enfant prodigue ou L'École de la jeunesse (L')",
+    "total": 183897
+  },
+  {
+    "id": 5227,
+    "title": "Entrevue (L')",
+    "total": 36797
+  },
+  {
+    "id": 5228,
+    "title": "Épouse à la mode (L')",
+    "total": 2388
+  },
+  {
+    "id": 5229,
+    "title": "Époux par supercherie (L')",
+    "total": 152484
+  },
+  {
+    "id": 5230,
+    "title": "Épreuve (L')",
+    "total": 7832
+  },
+  {
+    "id": 5231,
+    "title": "Épreuve délicate (L')",
+    "total": 3341
+  },
+  {
+    "id": 5232,
+    "title": "Épreuve imprudente (L')",
+    "total": 9338
+  },
+  {
+    "id": 5233,
+    "title": "Épreuve indiscrète (L')",
+    "total": 7237
+  },
+  {
+    "id": 5234,
+    "title": "Épreuve réciproque (L')",
+    "total": 309980
+  },
+  {
+    "id": 5235,
+    "title": "Adieux du goût (Les)",
+    "total": 26180
+  },
+  {
+    "id": 5236,
+    "title": "Amants espagnols (Les)",
+    "total": 4179
+  },
+  {
+    "id": 5237,
+    "title": "Amants généreux (Les)",
+    "total": 76041
+  },
+  {
+    "id": 5238,
+    "title": "Amants sans le savoir (Les)",
+    "total": 3787
+  },
+  {
+    "id": 5239,
+    "title": "Amazones (Les)",
+    "total": 18491
+  },
+  {
+    "id": 5240,
+    "title": "Amazones modernes (Les) ou Le Triomphe des dames",
+    "total": 45558
+  },
+  {
+    "id": 5241,
+    "title": "Amis à l'épreuve (Les)",
+    "total": 14242
+  },
+  {
+    "id": 5242,
+    "title": "Arsacides (Les)",
+    "total": 4616
+  },
+  {
+    "id": 5243,
+    "title": "Aveux difficiles (Les)",
+    "total": 43418
+  },
+  {
+    "id": 5244,
+    "title": "Barmécides (Les)",
+    "total": 14027
+  },
+  {
+    "id": 5245,
+    "title": "Bourgeoises à la mode (Les)",
+    "total": 111276
+  },
+  {
+    "id": 5246,
+    "title": "Brames (Les)",
+    "total": 4785
+  },
+  {
+    "id": 5248,
+    "title": "Châteaux en Espagne (Les)",
+    "total": 40459
+  },
+  {
+    "id": 5249,
+    "title": "Chérusques (Les)",
+    "total": 12302
+  },
+  {
+    "id": 5250,
+    "title": "Confidences réciproques (Les)",
+    "total": 2208
+  },
+  {
+    "id": 5251,
+    "title": "Coquettes rivales (Les)",
+    "total": 3841
+  },
+  {
+    "id": 5252,
+    "title": "Coups de l'amour et de la fortune (Les)",
+    "total": 16258
+  },
+  {
+    "id": 5253,
+    "title": "Curieux de Compiègne (Les) ou Les Camps de Compiègne",
+    "total": 132865
+  },
+  {
+    "id": 5254,
+    "title": "Dangers de l'opinion (Les)",
+    "total": 17873
+  },
+  {
+    "id": 5255,
+    "title": "Dehors trompeurs ou l'Homme du jour (Les)",
+    "total": 104956
+  },
+  {
+    "id": 5256,
+    "title": "Deux amis (Les)",
+    "total": 1571
+  },
+  {
+    "id": 5257,
+    "title": "Deux amis ou le Négociant de Lyon (Les)",
+    "total": 24331
+  },
+  {
+    "id": 5258,
+    "title": "Deux frères (Les)",
+    "total": 3346
+  },
+  {
+    "id": 5259,
+    "title": "Deux frères ou la Prévention vaincue (Les)",
+    "total": 2984
+  },
+  {
+    "id": 5260,
+    "title": "Deux nièces (Les)",
+    "total": 16906
+  },
+  {
+    "id": 5261,
+    "title": "Deux sœurs (Les)",
+    "total": 2463
+  },
+  {
+    "id": 5262,
+    "title": "Druides (Les)",
+    "total": 41532
+  },
+  {
+    "id": 5263,
+    "title": "Effets du caractère (Les)",
+    "total": 7816
+  },
+  {
+    "id": 5264,
+    "title": "Engagements indiscrets (Les)",
+    "total": 10149
+  },
+  {
+    "id": 5265,
+    "title": "Épreuves (Les)",
+    "total": 52665
+  },
+  {
+    "id": 5266,
+    "title": "Étrennes de l’amour (Les)",
+    "total": 27905
+  },
+  {
+    "id": 5267,
+    "title": "Étrennes de l'amitié, de l'amour et de la nature (Les)",
+    "total": 8144
+  },
+  {
+    "id": 5268,
+    "title": "Ésope (titre alt.) / Fables d'Ésope ou Ésope à la ville (Les)",
+    "total": 96302
+  },
+  {
+    "id": 5270,
+    "title": "Fausses apparences (Les)",
+    "total": 2814
+  },
+  {
+    "id": 5272,
+    "title": "Fausses infidélités (Les)",
+    "total": 149226
+  },
+  {
+    "id": 5273,
+    "title": "Fausses présomptions (Les)",
+    "total": 1107
+  },
+  {
+    "id": 5274,
+    "title": "Fées (Les)",
+    "total": 22497
+  },
+  {
+    "id": 5276,
+    "title": "Femmes savantes (Les)",
+    "total": 197314
+  },
+  {
+    "id": 5277,
+    "title": "Folies amoureuses (Les)",
+    "total": 496602
+  },
+  {
+    "id": 5278,
+    "title": "Fourberies de Scapin (Les)",
+    "total": 329177
+  },
+  {
+    "id": 5279,
+    "title": "Grâces (Les)",
+    "total": 75090
+  },
+  {
+    "id": 5280,
+    "title": "Héraclides (Les)",
+    "total": 15894
+  },
+  {
+    "id": 5281,
+    "title": "Hommes (Les)",
+    "total": 41184
+  },
+  {
+    "id": 5282,
+    "title": "Machabées (Les)",
+    "total": 22553
+  },
+  {
+    "id": 5283,
+    "title": "Marins ou le Médiateur maladroit (Les)",
+    "total": 4244
+  },
+  {
+    "id": 5284,
+    "title": "Ménechmes ou les Jumeaux (Les)",
+    "total": 178056
+  },
+  {
+    "id": 5285,
+    "title": "Méprises (Les)",
+    "total": 19361
+  },
+  {
+    "id": 5286,
+    "title": "Méprises ou le Rival par ressemblance (Les)",
+    "total": 6371
+  },
+  {
+    "id": 5287,
+    "title": "Mœurs du temps (Les)",
+    "total": 121029
+  },
+  {
+    "id": 5288,
+    "title": "Muses rivales ou l'Apothéose de Voltaire (Les)",
+    "total": 42074
+  },
+  {
+    "id": 5289,
+    "title": "Noces hussardes (Les) ou Les Noces houzardes",
+    "total": 4378
+  },
+  {
+    "id": 5290,
+    "title": "Noms changés, ou l'Indifférent corrigé (Les)",
+    "total": 16551
+  },
+  {
+    "id": 5291,
+    "title": "Originaux (Les) - Troisième partie des Caractères de Thalie",
+    "total": 50204
+  },
+  {
+    "id": 5292,
+    "title": "Paniers ou la Vieille précieuse (Les) / Les Poupées (titre alt.)",
+    "total": 31375
+  },
+  {
+    "id": 5293,
+    "title": "Philosophes (Les )",
+    "total": 52295
+  },
+  {
+    "id": 5294,
+    "title": "Plaideurs (Les)",
+    "total": 385230
+  },
+  {
+    "id": 5295,
+    "title": "Précieuses ridicules (Les)",
+    "total": 317286
+  },
+  {
+    "id": 5297,
+    "title": "Réputations (Les)",
+    "total": 10759
+  },
+  {
+    "id": 5298,
+    "title": "Rivaux (Les)",
+    "total": 2689
+  },
+  {
+    "id": 5299,
+    "title": "Rivaux amis (Les)",
+    "total": 45197
+  },
+  {
+    "id": 5300,
+    "title": "Ruses d'Amour (Les)",
+    "total": 18035
+  },
+  {
+    "id": 5301,
+    "title": "Scythes (Les)",
+    "total": 18757
+  },
+  {
+    "id": 5302,
+    "title": "Souhaits pour le roi (Les)",
+    "total": 1046
+  },
+  {
+    "id": 5303,
+    "title": "Trois cousines (Les)",
+    "total": 363359
+  },
+  {
+    "id": 5305,
+    "title": "Trois Gascons (Les)",
+    "total": 12787
+  },
+  {
+    "id": 5306,
+    "title": "Trois noces (Les)",
+    "total": 2446
+  },
+  {
+    "id": 5307,
+    "title": "Troyennes (Les)",
+    "total": 69487
+  },
+  {
+    "id": 5308,
+    "title": "Tuteurs (Les) ou Les Trois tuteurs",
+    "total": 31278
+  },
+  {
+    "id": 5309,
+    "title": "Vacances (Les) / Les Vacances des procureurs (titre alt.)",
+    "total": 332155
+  },
+  {
+    "id": 5310,
+    "title": "Valets maîtres de la maison ou le Tour de carnaval (Les)",
+    "total": 24283
+  },
+  {
+    "id": 5311,
+    "title": "Vendanges de Suresnes (Les)",
+    "total": 498468
+  },
+  {
+    "id": 5312,
+    "title": "Victimes cloîtrées (Les)",
+    "total": 83964
+  },
+  {
+    "id": 5313,
+    "title": "Visites du jour de l'an (Les)",
+    "total": 1798
+  },
+  {
+    "id": 5314,
+    "title": "Esclavage de nègres ou l'Heureux naufrage (L')",
+    "total": 3693
+  },
+  {
+    "id": 5316,
+    "title": "Esprit follet ou la Dame invisible (L')",
+    "total": 161152
+  },
+  {
+    "id": 5318,
+    "title": "Étourderie (L')",
+    "total": 223671
+  },
+  {
+    "id": 5319,
+    "title": "Étourdi ou les Contretemps (L')",
+    "total": 131337
+  },
+  {
+    "id": 5320,
+    "title": "Heureuse rencontre (L')",
+    "total": 7884
+  },
+  {
+    "id": 5321,
+    "title": "Heureux retour (L')",
+    "total": 19585
+  },
+  {
+    "id": 5322,
+    "title": "Homme à bonnes fortunes (L') / L'Homme à bonne fortune (titre alt).",
+    "total": 296338
+  },
+  {
+    "id": 5323,
+    "title": "Homme personnel (L')",
+    "total": 13994
+  },
+  {
+    "id": 5324,
+    "title": "Homme singulier (L')",
+    "total": 13974
+  },
+  {
+    "id": 5325,
+    "title": "Honnête criminel ou l'Amour filial (L')",
+    "total": 28492
+  },
+  {
+    "id": 5326,
+    "title": "Hôtellerie ou le Faux ami (L')",
+    "total": 2974
+  },
+  {
+    "id": 5327,
+    "title": "Île déserte (L')",
+    "total": 56743
+  },
+  {
+    "id": 5328,
+    "title": "Île sauvage (L')",
+    "total": 12346
+  },
+  {
+    "id": 5329,
+    "title": "Impatient (L')",
+    "total": 83134
+  },
+  {
+    "id": 5330,
+    "title": "Impatient (L')",
+    "total": 2042
+  },
+  {
+    "id": 5331,
+    "title": "Impertinent (L') ou Le Billet perdu",
+    "total": 74855
+  },
+  {
+    "id": 5332,
+    "title": "Important de cour (L') ou Important (L')",
+    "total": 30412
+  },
+  {
+    "id": 5333,
+    "title": "Impromptu de campagne (L')",
+    "total": 282256
+  },
+  {
+    "id": 5334,
+    "title": "Inauguration du Théâtre français (L')",
+    "total": 9061
+  },
+  {
+    "id": 5336,
+    "title": "Inconséquent (L')",
+    "total": 4098
+  },
+  {
+    "id": 5337,
+    "title": "Inconséquent ou les Soubrettes (L')",
+    "total": 2554
+  },
+  {
+    "id": 5338,
+    "title": "Inconstant (L')",
+    "total": 56982
+  },
+  {
+    "id": 5339,
+    "title": "Indécis (L')",
+    "total": 2260
+  },
+  {
+    "id": 5340,
+    "title": "Indiscret (L')",
+    "total": 34140
+  },
+  {
+    "id": 5341,
+    "title": "Ingrat (L')",
+    "total": 21987
+  },
+  {
+    "id": 5342,
+    "title": "Inquiet (L')",
+    "total": 2928
+  },
+  {
+    "id": 5343,
+    "title": "Irrésolu (L')",
+    "total": 22572
+  },
+  {
+    "id": 5344,
+    "title": "Obstacle imprévu ou l'Obstacle sans obstacle (L')",
+    "total": 21512
+  },
+  {
+    "id": 5345,
+    "title": "Oncle et les Tantes, ou Chacun sa folie (L')",
+    "total": 15472
+  },
+  {
+    "id": 5346,
+    "title": "Optimiste ou l'Homme content de tout (L')",
+    "total": 118053
+  },
+  {
+    "id": 5347,
+    "title": "Oracle (L')",
+    "total": 326673
+  },
+  {
+    "id": 5348,
+    "title": "Loredan",
+    "total": 3025
+  },
+  {
+    "id": 5349,
+    "title": "Orphelin anglais (L')",
+    "total": 52503
+  },
+  {
+    "id": 5350,
+    "title": "Orphelin de la Chine (L')",
+    "total": 287154
+  },
+  {
+    "id": 5351,
+    "title": "Louis XII, Père du peuple",
+    "total": 4870
+  },
+  {
+    "id": 5352,
+    "title": "Lovelace",
+    "total": 8563
+  },
+  {
+    "id": 5353,
+    "title": "Lucrèce",
+    "total": 13249
+  },
+  {
+    "id": 5354,
+    "title": "Usurier gentilhomme (L')",
+    "total": 385184
+  },
+  {
+    "id": 5355,
+    "title": "Macbeth",
+    "total": 25157
+  },
+  {
+    "id": 5356,
+    "title": "Fanatisme ou Mahomet le prophète (Le)",
+    "total": 302837
+  },
+  {
+    "id": 5357,
+    "title": "Mahomet second",
+    "total": 39681
+  },
+  {
+    "id": 5358,
+    "title": "Manco Capac, premier Inca du Pérou",
+    "total": 23175
+  },
+  {
+    "id": 5359,
+    "title": "Manlius Capitolinus",
+    "total": 99392
+  },
+  {
+    "id": 5360,
+    "title": "Marie de Brabant, reine de France",
+    "total": 12026
+  },
+  {
+    "id": 5361,
+    "title": "Marius",
+    "total": 32988
+  },
+  {
+    "id": 5362,
+    "title": "Marius à Minturnes",
+    "total": 31421
+  },
+  {
+    "id": 5363,
+    "title": "Médée ou Médée et Jason",
+    "total": 255133
+  },
+  {
+    "id": 5365,
+    "title": "Médée",
+    "total": 2732
+  },
+  {
+    "id": 5366,
+    "title": "Mégare",
+    "total": 2927
+  },
+  {
+    "id": 5367,
+    "title": "Mélanide",
+    "total": 137343
+  },
+  {
+    "id": 5368,
+    "title": "Melcour et Verseuil",
+    "total": 19886
+  },
+  {
+    "id": 5369,
+    "title": "Méléagre",
+    "total": 4674
+  },
+  {
+    "id": 5370,
+    "title": "Mérope",
+    "total": 422505
+  },
+  {
+    "id": 5371,
+    "title": "Minuit ou le Moment propice",
+    "total": 28245
+  },
+  {
+    "id": 5372,
+    "title": "Mithridate",
+    "total": 315105
+  },
+  {
+    "id": 5373,
+    "title": "Molière à la nouvelle salle ou les Audiences de Thalie",
+    "total": 48662
+  },
+  {
+    "id": 5374,
+    "title": "Momus fabuliste ou les Noces de Vulcain ou Momus fabuliste ou le Mariage de Vénus et de Vulcain",
+    "total": 100913
+  },
+  {
+    "id": 5375,
+    "title": "Monsieur de Crac dans son petit castel ou les Gascons",
+    "total": 45105
+  },
+  {
+    "id": 5376,
+    "title": "Monsieur de Pourceaugnac",
+    "total": 436621
+  },
+  {
+    "id": 5377,
+    "title": "Mustapha et Zéangir",
+    "total": 32665
+  },
+  {
+    "id": 5378,
+    "title": "Nadir ou Thamas-Kouli-Kan",
+    "total": 24951
+  },
+  {
+    "id": 5379,
+    "title": "Namir",
+    "total": 2862
+  },
+  {
+    "id": 5380,
+    "title": "Nanine ou le Préjugé vaincu",
+    "total": 317007
+  },
+  {
+    "id": 5381,
+    "title": "Narcisse ou l'Amant de lui-même",
+    "total": 4334
+  },
+  {
+    "id": 5382,
+    "title": "Nicomède",
+    "total": 144869
+  },
+  {
+    "id": 5383,
+    "title": "Octave et le jeune Pompée ou le Triumvirat ou Les Triumvirs",
+    "total": 2511
+  },
+  {
+    "id": 5384,
+    "title": "Odmard et Zulna",
+    "total": 34619
+  },
+  {
+    "id": 5385,
+    "title": "Œdipe",
+    "total": 250454
+  },
+  {
+    "id": 5386,
+    "title": "Œdipe chez Admète",
+    "total": 54753
+  },
+  {
+    "id": 5387,
+    "title": "Olympie",
+    "total": 39550
+  },
+  {
+    "id": 5388,
+    "title": "Oreste",
+    "total": 87704
+  },
+  {
+    "id": 5389,
+    "title": "Orphanis",
+    "total": 35746
+  },
+  {
+    "id": 5391,
+    "title": "Paros",
+    "total": 13208
+  },
+  {
+    "id": 5392,
+    "title": "Paulin et Clairette ou les Deux espiègles",
+    "total": 11210
+  },
+  {
+    "id": 5393,
+    "title": "Pauline",
+    "total": 3866
+  },
+  {
+    "id": 5395,
+    "title": "Pharamond",
+    "total": 4394
+  },
+  {
+    "id": 5396,
+    "title": "Phèdre et Hippolyte ou Phèdre",
+    "total": 541766
+  },
+  {
+    "id": 5397,
+    "title": "Philoctète",
+    "total": 35782
+  },
+  {
+    "id": 5398,
+    "title": "Philoctète",
+    "total": 97746
+  },
+  {
+    "id": 5399,
+    "title": "Pierre le cruel",
+    "total": 48694
+  },
+  {
+    "id": 5400,
+    "title": "Pierre le Grand",
+    "total": 9397
+  },
+  {
+    "id": 5401,
+    "title": "Polyeucte, martyr ",
+    "total": 380972
+  },
+  {
+    "id": 5402,
+    "title": "Pygmalion",
+    "total": 143959
+  },
+  {
+    "id": 5403,
+    "title": "Pygmalion",
+    "total": 2318
+  },
+  {
+    "id": 5404,
+    "title": "Pyrame et Thisbé",
+    "total": 13065
+  },
+  {
+    "id": 5405,
+    "title": "Pyrrhus",
+    "total": 46531
+  },
+  {
+    "id": 5406,
+    "title": "Quartier d'hiver (Le)",
+    "total": 10347
+  },
+  {
+    "id": 5407,
+    "title": "Raymond V, comte de Toulouse ou le Troubadour",
+    "total": 2852
+  },
+  {
+    "id": 5408,
+    "title": "Régulus",
+    "total": 30018
+  },
+  {
+    "id": 5409,
+    "title": "Rhadamiste et Zénobie",
+    "total": 252586
+  },
+  {
+    "id": 5410,
+    "title": "Richard III",
+    "total": 6574
+  },
+  {
+    "id": 5411,
+    "title": "Rienzi",
+    "total": 2869
+  },
+  {
+    "id": 5412,
+    "title": "Rodogune ou Rodogune, princesse des Parthes",
+    "total": 299767
+  },
+  {
+    "id": 5413,
+    "title": "Rome sauvée ou Catilina",
+    "total": 49719
+  },
+  {
+    "id": 5414,
+    "title": "Roméo et Juliette",
+    "total": 84501
+  },
+  {
+    "id": 5415,
+    "title": "Rosaline et Floricourt",
+    "total": 25866
+  },
+  {
+    "id": 5416,
+    "title": "Roséïde ou l'Intrigant",
+    "total": 9017
+  },
+  {
+    "id": 5417,
+    "title": "Roxelane et Mustapha",
+    "total": 118349
+  },
+  {
+    "id": 5418,
+    "title": "Scanderberg",
+    "total": 3637
+  },
+  {
+    "id": 5420,
+    "title": "Sémiramis",
+    "total": 334112
+  },
+  {
+    "id": 5421,
+    "title": "Sertorius",
+    "total": 64892
+  },
+  {
+    "id": 5422,
+    "title": "Sganarelle ou le Cocu imaginaire",
+    "total": 215863
+  },
+  {
+    "id": 5423,
+    "title": "Sidney",
+    "total": 22499
+  },
+  {
+    "id": 5424,
+    "title": "Sophonisbe",
+    "total": 7848
+  },
+  {
+    "id": 5425,
+    "title": "Spartacus",
+    "total": 61114
+  },
+  {
+    "id": 5426,
+    "title": "Tancrède",
+    "total": 385932
+  },
+  {
+    "id": 5427,
+    "title": "Tartuffe ou l'Imposteur",
+    "total": 486424
+  },
+  {
+    "id": 5428,
+    "title": "Térée",
+    "total": 15596
+  },
+  {
+    "id": 5429,
+    "title": "Térée et Philomèle",
+    "total": 2645
+  },
+  {
+    "id": 5430,
+    "title": "Théagène ou Théagène et Cariclée",
+    "total": 3632
+  },
+  {
+    "id": 5431,
+    "title": "Tibère et Sérénus",
+    "total": 13492
+  },
+  {
+    "id": 5432,
+    "title": "Timoléon",
+    "total": 8725
+  },
+  {
+    "id": 5433,
+    "title": "Turcaret",
+    "total": 218714
+  },
+  {
+    "id": 5434,
+    "title": "Vanda, reine de Pologne",
+    "total": 5428
+  },
+  {
+    "id": 5435,
+    "title": "Varon",
+    "total": 44120
+  },
+  {
+    "id": 5436,
+    "title": "Venceslas",
+    "total": 164244
+  },
+  {
+    "id": 5437,
+    "title": "Venise sauvée",
+    "total": 44909
+  },
+  {
+    "id": 5438,
+    "title": "Virginie",
+    "total": 19223
+  },
+  {
+    "id": 5439,
+    "title": "Virginie ou la Destruction des Décemvirs",
+    "total": 4425
+  },
+  {
+    "id": 5440,
+    "title": "Washington ou la Liberté du Nouveau monde",
+    "total": 3817
+  },
+  {
+    "id": 5441,
+    "title": "Zaïre",
+    "total": 504301
+  },
+  {
+    "id": 5442,
+    "title": "Zarès",
+    "total": 5009
+  },
+  {
+    "id": 5443,
+    "title": "Zarucma",
+    "total": 12349
+  },
+  {
+    "id": 5444,
+    "title": "Zélide ou l'Art d'aimer et l'art de plaire",
+    "total": 12287
+  },
+  {
+    "id": 5445,
+    "title": "Zelmire",
+    "total": 142113
+  },
+  {
+    "id": 5446,
+    "title": "Zénéïde",
+    "total": 242362
+  },
+  {
+    "id": 5447,
+    "title": "Zoraï ou les Insulaires de Nouvelle-Zélande",
+    "total": 4067
+  },
+  {
+    "id": 5448,
+    "title": "Zulica",
+    "total": 15491
+  },
+  {
+    "id": 5449,
+    "title": "Zulime",
+    "total": 25928
+  },
+  {
+    "id": 5450,
+    "title": "Zuma",
+    "total": 49128
+  },
+  {
+    "id": 5451,
+    "title": "Inconnu (L')",
+    "total": 131143
+  },
+  {
+    "id": 5452,
+    "title": "Aben-Saïd, empereur des Mogols",
+    "total": 17105
+  },
+  {
+    "id": 5453,
+    "title": "Achille dans l'île de Scyros",
+    "total": 6358
+  },
+  {
+    "id": 5454,
+    "title": "Adherbal, roi de Numidie",
+    "total": 2051
+  },
+  {
+    "id": 5455,
+    "title": "Adrien",
+    "total": 4173
+  },
+  {
+    "id": 5456,
+    "title": "Aégiste",
+    "total": 3303
+  },
+  {
+    "id": 5457,
+    "title": "Aétius",
+    "total": 9070
+  },
+  {
+    "id": 5458,
+    "title": "Agamemnon ou  La Mort d'Agamemnon",
+    "total": 21654
+  },
+  {
+    "id": 5459,
+    "title": "Agathocle",
+    "total": 1119
+  },
+  {
+    "id": 5460,
+    "title": "Agrippa ou la mort d'Auguste",
+    "total": 1415
+  },
+  {
+    "id": 5461,
+    "title": "Ajax",
+    "total": 11432
+  },
+  {
+    "id": 5462,
+    "title": "Alceste",
+    "total": 4171
+  },
+  {
+    "id": 5463,
+    "title": "Admète et Alceste / La Mort d'Alceste (titre alt.)",
+    "total": 9651
+  },
+  {
+    "id": 5464,
+    "title": "Alcibiade",
+    "total": 20780
+  },
+  {
+    "id": 5465,
+    "title": "Alcibiade",
+    "total": 101686
+  },
+  {
+    "id": 5466,
+    "title": "Alexandre le Grand",
+    "total": 10666
+  },
+  {
+    "id": 5467,
+    "title": "Amalasonte",
+    "total": 3099
+  },
+  {
+    "id": 5468,
+    "title": "Amour secret (L')",
+    "total": 3625
+  },
+  {
+    "id": 5469,
+    "title": "Andromède",
+    "total": 46061
+  },
+  {
+    "id": 5470,
+    "title": "Angélique et Médor",
+    "total": 16001
+  },
+  {
+    "id": 5471,
+    "title": "Annibal",
+    "total": 3420
+  },
+  {
+    "id": 5472,
+    "title": "Antigone",
+    "total": 4801
+  },
+  {
+    "id": 5473,
+    "title": "Antiochus et Cléopâtre",
+    "total": 4094
+  },
+  {
+    "id": 5474,
+    "title": "Antiochus ou Les Macchabées",
+    "total": 6558
+  },
+  {
+    "id": 5475,
+    "title": "Agésilas",
+    "total": 880
+  },
+  {
+    "id": 5476,
+    "title": "Ariarathe",
+    "total": 2660
+  },
+  {
+    "id": 5477,
+    "title": "Aristobule",
+    "total": 1545
+  },
+  {
+    "id": 5478,
+    "title": "Arminius",
+    "total": 15409
+  },
+  {
+    "id": 5479,
+    "title": "Arrie et Pétus",
+    "total": 17010
+  },
+  {
+    "id": 5480,
+    "title": "Artaxare",
+    "total": 2616
+  },
+  {
+    "id": 5481,
+    "title": "Artaxerce",
+    "total": 3481
+  },
+  {
+    "id": 5482,
+    "title": "Artaxerce",
+    "total": 2277
+  },
+  {
+    "id": 5483,
+    "title": "Artémire",
+    "total": 30257
+  },
+  {
+    "id": 5484,
+    "title": "Aspar",
+    "total": 2032
+  },
+  {
+    "id": 5485,
+    "title": "Athénaïs",
+    "total": 15056
+  },
+  {
+    "id": 5486,
+    "title": "Attila, roi des Huns",
+    "total": 5289
+  },
+  {
+    "id": 5488,
+    "title": "Basile et Quitterie",
+    "total": 18453
+  },
+  {
+    "id": 5489,
+    "title": "Bellérophon",
+    "total": 3550
+  },
+  {
+    "id": 5490,
+    "title": "Bradamante",
+    "total": 11007
+  },
+  {
+    "id": 5491,
+    "title": "Brutus",
+    "total": 23238
+  },
+  {
+    "id": 5492,
+    "title": "Callisthène",
+    "total": 12878
+  },
+  {
+    "id": 5493,
+    "title": "Camma, reine de Galatie",
+    "total": 1754
+  },
+  {
+    "id": 5494,
+    "title": "Cartouche ou les Voleurs",
+    "total": 16724
+  },
+  {
+    "id": 5495,
+    "title": "Cassius et Victorinus martyrs",
+    "total": 11414
+  },
+  {
+    "id": 5496,
+    "title": "Caton d'Utique",
+    "total": 19263
+  },
+  {
+    "id": 5497,
+    "title": "Céphale et Procris",
+    "total": 5229
+  },
+  {
+    "id": 5498,
+    "title": "Childéric",
+    "total": 9478
+  },
+  {
+    "id": 5499,
+    "title": "Cléarque, tyran d'Héraclée",
+    "total": 3236
+  },
+  {
+    "id": 5500,
+    "title": "Cléopâtre",
+    "total": 66527
+  },
+  {
+    "id": 5501,
+    "title": "Corésus et Callirhoé",
+    "total": 2761
+  },
+  {
+    "id": 5502,
+    "title": "Coriolan",
+    "total": 1949
+  },
+  {
+    "id": 5503,
+    "title": "Coriolan",
+    "total": 1318
+  },
+  {
+    "id": 5504,
+    "title": "Cornélie mère des Gracques",
+    "total": 7890
+  },
+  {
+    "id": 5505,
+    "title": "Cornélie vestale",
+    "total": 6648
+  },
+  {
+    "id": 5506,
+    "title": "Cosroès",
+    "total": 6698
+  },
+  {
+    "id": 5507,
+    "title": "Crispin musicien",
+    "total": 65739
+  },
+  {
+    "id": 5508,
+    "title": "Cyrus",
+    "total": 21068
+  },
+  {
+    "id": 5509,
+    "title": "Danaé ou Jupiter Crispin",
+    "total": 4663
+  },
+  {
+    "id": 5510,
+    "title": "Démétrius",
+    "total": 4764
+  },
+  {
+    "id": 5511,
+    "title": "Don Bertrand de Cigarral",
+    "total": 33474
+  },
+  {
+    "id": 5512,
+    "title": "Don César Ursin",
+    "total": 6729
+  },
+  {
+    "id": 5513,
+    "title": "Don Ramire et Zaïde",
+    "total": 2219
+  },
+  {
+    "id": 5515,
+    "title": "Électre",
+    "total": 15924
+  },
+  {
+    "id": 5516,
+    "title": "Amours de Diane et d'Endymion (Les) ou Endymion",
+    "total": 8747
+  },
+  {
+    "id": 5517,
+    "title": "Érigone",
+    "total": 10029
+  },
+  {
+    "id": 5518,
+    "title": "Ériphile",
+    "total": 20260
+  },
+  {
+    "id": 5520,
+    "title": "Frontin gouverneur du château de Vertigililinguen",
+    "total": 1678
+  },
+  {
+    "id": 5521,
+    "title": "Gabinie",
+    "total": 27113
+  },
+  {
+    "id": 5522,
+    "title": "Germanicus",
+    "total": 3907
+  },
+  {
+    "id": 5523,
+    "title": "Géta",
+    "total": 84813
+  },
+  {
+    "id": 5524,
+    "title": "Habis",
+    "total": 44385
+  },
+  {
+    "id": 5525,
+    "title": "Hercule",
+    "total": 16222
+  },
+  {
+    "id": 5526,
+    "title": "Hercule et Omphale",
+    "total": 1335
+  },
+  {
+    "id": 5527,
+    "title": "Hérode",
+    "total": 10065
+  },
+  {
+    "id": 5528,
+    "title": "Héroïne (L')",
+    "total": 959
+  },
+  {
+    "id": 5529,
+    "title": "Idoménée",
+    "total": 15380
+  },
+  {
+    "id": 5530,
+    "title": "Je vous prends sans verd /  Le Contrat (titre alt.)",
+    "total": 45370
+  },
+  {
+    "id": 5531,
+    "title": "Joconde",
+    "total": 8605
+  },
+  {
+    "id": 5532,
+    "title": "Jonathas",
+    "total": 6034
+  },
+  {
+    "id": 5533,
+    "title": "Joseph",
+    "total": 10676
+  },
+  {
+    "id": 5534,
+    "title": "Judith",
+    "total": 17509
+  },
+  {
+    "id": 5535,
+    "title": "Jugurtha, roi de Numidie",
+    "total": 7975
+  },
+  {
+    "id": 5536,
+    "title": "Accommodement imprévu (L')",
+    "total": 2124
+  },
+  {
+    "id": 5537,
+    "title": "Amant de sa femme ou la Rivale d'elle-même (L')",
+    "total": 3581
+  },
+  {
+    "id": 5538,
+    "title": "Amant indiscret ou le Maître étourdi (L')",
+    "total": 628
+  },
+  {
+    "id": 5539,
+    "title": "Amant masqué (L')",
+    "total": 926
+  },
+  {
+    "id": 5540,
+    "title": "Amante amant (L')",
+    "total": 10490
+  },
+  {
+    "id": 5541,
+    "title": "Amante en tutelle (L')",
+    "total": 2507
+  },
+  {
+    "id": 5542,
+    "title": "Amitié rivale (L')",
+    "total": 10279
+  },
+  {
+    "id": 5543,
+    "title": "Amour vengé (L')",
+    "total": 23644
+  },
+  {
+    "id": 5544,
+    "title": "Après-souper des auberges (L') / Les Auberges (titre alt.)",
+    "total": 38390
+  },
+  {
+    "id": 5545,
+    "title": "Assemblée des comédiens (L')",
+    "total": 10218
+  },
+  {
+    "id": 5546,
+    "title": "Aventurière (L')",
+    "total": 920
+  },
+  {
+    "id": 5547,
+    "title": "Avocat sans étude (L')",
+    "total": 6822
+  },
+  {
+    "id": 5548,
+    "title": "Éclipse (L')",
+    "total": 3114
+  },
+  {
+    "id": 5549,
+    "title": "École de l'hymen (L')",
+    "total": 2711
+  },
+  {
+    "id": 5550,
+    "title": "École des amants (L')",
+    "total": 42003
+  },
+  {
+    "id": 5551,
+    "title": "École des jaloux ou le Cocu volontaire (L') / La Fausse Turquie (titre alt.) / La Turquie (titre alt.) / Le Grand Turc (titre alt.)",
+    "total": 19221
+  },
+  {
+    "id": 5553,
+    "title": "Écolier de Salamanque ou les Généreux ennemis (L')",
+    "total": 2345
+  },
+  {
+    "id": 5554,
+    "title": "Effet de la prévention (L')",
+    "total": 2618
+  },
+  {
+    "id": 5555,
+    "title": " Belle orgueilleuse ou l'Enfant gâté (La)",
+    "total": 4107
+  },
+  {
+    "id": 5556,
+    "title": "Entêté (L')",
+    "total": 527
+  },
+  {
+    "id": 5557,
+    "title": "Entêtement ridicule (L')",
+    "total": 4811
+  },
+  {
+    "id": 5558,
+    "title": "Envieux ou la Critique du Philosophe marié (L')",
+    "total": 1977
+  },
+  {
+    "id": 5559,
+    "title": "Épreuve dangereuse (L')",
+    "total": 1032
+  },
+  {
+    "id": 5560,
+    "title": "Été des coquettes (L')",
+    "total": 313652
+  },
+  {
+    "id": 5561,
+    "title": "Héritier ridicule ou la Dame intéressée (L')",
+    "total": 4934
+  },
+  {
+    "id": 5562,
+    "title": "Heure du berger (L')",
+    "total": 8478
+  },
+  {
+    "id": 5563,
+    "title": "Heureux échange (L')",
+    "total": 2090
+  },
+  {
+    "id": 5565,
+    "title": "Île de la raison ou les Petits hommes (L')",
+    "total": 2831
+  },
+  {
+    "id": 5566,
+    "title": "Impatient (L')",
+    "total": 16908
+  },
+  {
+    "id": 5567,
+    "title": "Impertinent malgré lui (L')",
+    "total": 4150
+  },
+  {
+    "id": 5568,
+    "title": "Impromptu de la folie (L')",
+    "total": 38397
+  },
+  {
+    "id": 5569,
+    "title": "Impromptu de Suresnes (L')",
+    "total": 26354
+  },
+  {
+    "id": 5570,
+    "title": "Impromptu de garnison (L')",
+    "total": 4165
+  },
+  {
+    "id": 5572,
+    "title": "Italie galante ou les contes (L')",
+    "total": 17848
+  },
+  {
+    "id": 5574,
+    "title": "Ombre de Molière (L')",
+    "total": 7356
+  },
+  {
+    "id": 5575,
+    "title": "Opéra de village (L')",
+    "total": 24169
+  },
+  {
+    "id": 5576,
+    "title": "Opérateur (L')",
+    "total": 3429
+  },
+  {
+    "id": 5577,
+    "title": "Opérateur Barry (L')",
+    "total": 10728
+  },
+  {
+    "id": 5578,
+    "title": "Opiniâtre (L')",
+    "total": 4841
+  },
+  {
+    "id": 5579,
+    "title": "Oracle de Delphes (L')",
+    "total": 5561
+  },
+  {
+    "id": 5580,
+    "title": "Usurier (L')",
+    "total": 6500
+  },
+  {
+    "id": 5581,
+    "title": "Baguette (La)",
+    "total": 2779
+  },
+  {
+    "id": 5582,
+    "title": "Belle-mère (La)",
+    "total": 2383
+  },
+  {
+    "id": 5583,
+    "title": "Boîte de Pandore (La)",
+    "total": 3134
+  },
+  {
+    "id": 5584,
+    "title": "Cassette (La)",
+    "total": 920
+  },
+  {
+    "id": 5585,
+    "title": "Chasse du cerf (La)",
+    "total": 9056
+  },
+  {
+    "id": 5586,
+    "title": "Chasse ridicule (La)",
+    "total": 1644
+  },
+  {
+    "id": 5587,
+    "title": "Comédie des comédiens ou l'Amour charlatan (La)",
+    "total": 15803
+  },
+  {
+    "id": 5588,
+    "title": "Comète (La)",
+    "total": 5092
+  },
+  {
+    "id": 5590,
+    "title": "Comtesse de Follenville (La)",
+    "total": 5175
+  },
+  {
+    "id": 5591,
+    "title": "Critique de l'École des femmes (La)",
+    "total": 7258
+  },
+  {
+    "id": 5592,
+    "title": "Critique de la Fausse antipathie (La)",
+    "total": 7462
+  },
+  {
+    "id": 5593,
+    "title": "Critique du Légataire universel (La)",
+    "total": 3129
+  },
+  {
+    "id": 5594,
+    "title": "Dame à la mode ou la Suite de la coquette (La)",
+    "total": 10334
+  },
+  {
+    "id": 5595,
+    "title": "Désolation des joueuses (La) ou Joueuses (Les)",
+    "total": 14626
+  },
+  {
+    "id": 5596,
+    "title": "Devineresse ou les Faux enchantements  (La)",
+    "total": 91869
+  },
+  {
+    "id": 5597,
+    "title": "Dragonne ou Merlin dragon (La) ou les Dragons (titre alt) ",
+    "total": 58381
+  },
+  {
+    "id": 5598,
+    "title": "Dupe amoureuse (La)",
+    "total": 1085
+  },
+  {
+    "id": 5599,
+    "title": "Enfants de Paris (Les) ou Famille à la mode (La) ou Finette",
+    "total": 26102
+  },
+  {
+    "id": 5600,
+    "title": "Fausse comtesse (La)",
+    "total": 2779
+  },
+  {
+    "id": 5601,
+    "title": "Fausse inconstance (La)",
+    "total": 2297
+  },
+  {
+    "id": 5602,
+    "title": "Fausse veuve ou le Jaloux sans jalousie (La)",
+    "total": 3738
+  },
+  {
+    "id": 5603,
+    "title": "Femme d'intrigues (La)",
+    "total": 13680
+  },
+  {
+    "id": 5604,
+    "title": "Femme fille et veuve (La)",
+    "total": 7643
+  },
+  {
+    "id": 5605,
+    "title": "Femme têtue (La) ou le médecin hollandais",
+    "total": 8399
+  },
+  {
+    "id": 5606,
+    "title": "Fille médecin (La)",
+    "total": 2120
+  },
+  {
+    "id": 5607,
+    "title": "Fille supposée ou l'Héroïne de roman (La)",
+    "total": 2567
+  },
+  {
+    "id": 5608,
+    "title": "Fille valet (La)",
+    "total": 5036
+  },
+  {
+    "id": 5609,
+    "title": "Foire de Bezons (La)",
+    "total": 60784
+  },
+  {
+    "id": 5610,
+    "title": "Foire Saint-Germain (La)",
+    "total": 17144
+  },
+  {
+    "id": 5611,
+    "title": "Folle enchère (La)",
+    "total": 8232
+  },
+  {
+    "id": 5612,
+    "title": "Fourbe (Le)",
+    "total": 1707
+  },
+  {
+    "id": 5613,
+    "title": "Française italienne (La)",
+    "total": 2990
+  },
+  {
+    "id": 5614,
+    "title": "Gazette de Hollande (La) ou Gazette (La)",
+    "total": 17550
+  },
+  {
+    "id": 5615,
+    "title": "Grondeuse (La)",
+    "total": 3051
+  },
+  {
+    "id": 5616,
+    "title": "Guinguette de la finance (La)",
+    "total": 1955
+  },
+  {
+    "id": 5617,
+    "title": "Jalouse d'elle-même (La)",
+    "total": 4014
+  },
+  {
+    "id": 5618,
+    "title": "Joueuse (La)",
+    "total": 3430
+  },
+  {
+    "id": 5619,
+    "title": "Loterie (La)",
+    "total": 23653
+  },
+  {
+    "id": 5620,
+    "title": "Malade sans maladie (La)",
+    "total": 1252
+  },
+  {
+    "id": 5621,
+    "title": "Marianne (Le)",
+    "total": 19493
+  },
+  {
+    "id": 5622,
+    "title": "Marquise imaginaire (La)",
+    "total": 7517
+  },
+  {
+    "id": 5623,
+    "title": "Matrone d'Éphèse (La)",
+    "total": 4731
+  },
+  {
+    "id": 5625,
+    "title": "Mère ridicule (La)",
+    "total": 3012
+  },
+  {
+    "id": 5626,
+    "title": "Dieux comédiens ou la Métempsycose des amours (Les)",
+    "total": 13342
+  },
+  {
+    "id": 5627,
+    "title": "Mort d'Alexandre (La)",
+    "total": 1145
+  },
+  {
+    "id": 5628,
+    "title": "Mort d'Othon (La)",
+    "total": 2456
+  },
+  {
+    "id": 5629,
+    "title": "Mort d'Ulysse (La)",
+    "total": 11001
+  },
+  {
+    "id": 5630,
+    "title": "Mort de César (La) ou Jules César",
+    "total": 6195
+  },
+  {
+    "id": 5631,
+    "title": "Mort de Néron (La)",
+    "total": 7410
+  },
+  {
+    "id": 5632,
+    "title": "Mort d'Alcide (La)",
+    "total": 1895
+  },
+  {
+    "id": 5633,
+    "title": "Noce de village (La)",
+    "total": 9557
+  },
+  {
+    "id": 5634,
+    "title": "Noce interrompue (La)",
+    "total": 6615
+  },
+  {
+    "id": 5635,
+    "title": "Pierre Philosophale (La)",
+    "total": 2192
+  },
+  {
+    "id": 5636,
+    "title": "Provençale (La)",
+    "total": 1108
+  },
+  {
+    "id": 5637,
+    "title": "Prude du temps (La) ou Saturnales (Les)",
+    "total": 1424
+  },
+  {
+    "id": 5638,
+    "title": "Psyché de village (La)",
+    "total": 1437
+  },
+  {
+    "id": 5639,
+    "title": "Rapinière ou l'intéressé (La)",
+    "total": 17782
+  },
+  {
+    "id": 5640,
+    "title": "Rencontre imprévue (La)  ou la Surprise des amants (La)",
+    "total": 1285
+  },
+  {
+    "id": 5641,
+    "title": "Répétition (La)",
+    "total": 5490
+  },
+  {
+    "id": 5642,
+    "title": "Caprice et la Ressource (Le) /  le Prologue (titre alt.)",
+    "total": 5353
+  },
+  {
+    "id": 5643,
+    "title": "Réunion des amours (La)",
+    "total": 10278
+  },
+  {
+    "id": 5644,
+    "title": "Rue Saint-Denis (La)",
+    "total": 4416
+  },
+  {
+    "id": 5646,
+    "title": "Thébaïde ou les Frères ennemis (La)",
+    "total": 8747
+  },
+  {
+    "id": 5647,
+    "title": "Toison d'or (La)",
+    "total": 33119
+  },
+  {
+    "id": 5648,
+    "title": "Tragédie en prose ou la Tragédie extravagante (La)",
+    "total": 6138
+  },
+  {
+    "id": 5649,
+    "title": "Trahison punie (La)",
+    "total": 12882
+  },
+  {
+    "id": 5650,
+    "title": "Vengeance de l'amour (La)",
+    "total": 1057
+  },
+  {
+    "id": 5651,
+    "title": "Veuve (La)",
+    "total": 4560
+  },
+  {
+    "id": 5652,
+    "title": "Vraie Didon ou la Didon chaste (La)",
+    "total": 355
+  },
+  {
+    "id": 5653,
+    "title": "Laodamie, reine d'Epire",
+    "total": 17757
+  },
+  {
+    "id": 5654,
+    "title": "Badaud (Le)",
+    "total": 2023
+  },
+  {
+    "id": 5655,
+    "title": "Badinage (Le)",
+    "total": 8090
+  },
+  {
+    "id": 5656,
+    "title": "Bailli marquis (Le)",
+    "total": 4852
+  },
+  {
+    "id": 5657,
+    "title": "Bal d'Auteuil (Le)",
+    "total": 8111
+  },
+  {
+    "id": 5658,
+    "title": "Ballet extravagant (Le)",
+    "total": 83982
+  },
+  {
+    "id": 5659,
+    "title": "Baron des Fondrières (Le)",
+    "total": 986
+  },
+  {
+    "id": 5660,
+    "title": "Bourgeois de Falaise (Le)",
+    "total": 4632
+  },
+  {
+    "id": 5661,
+    "title": "Bourget (Le)",
+    "total": 4014
+  },
+  {
+    "id": 5662,
+    "title": "Brutal de sang froid / sens froid  (Le)",
+    "total": 5011
+  },
+  {
+    "id": 5663,
+    "title": "Cadet de Gascogne (Le)",
+    "total": 983
+  },
+  {
+    "id": 5664,
+    "title": "Cadet de Gascogne (Le)",
+    "total": 1068
+  },
+  {
+    "id": 5665,
+    "title": "Café (Le)",
+    "total": 4815
+  },
+  {
+    "id": 5666,
+    "title": "Camp de Porché-Fontaine (Le)",
+    "total": 10448
+  },
+  {
+    "id": 5667,
+    "title": "Campagnard (Le)",
+    "total": 1710
+  },
+  {
+    "id": 5668,
+    "title": "Capricieux ou les Apparences trompeuses (Le)",
+    "total": 9130
+  },
+  {
+    "id": 5669,
+    "title": "Carnaval de Venise (Le)",
+    "total": 3776
+  },
+  {
+    "id": 5670,
+    "title": "Chevalier à la mode (Le)",
+    "total": 153600
+  },
+  {
+    "id": 5671,
+    "title": "Chevalier Bayard (Le)",
+    "total": 7874
+  },
+  {
+    "id": 5672,
+    "title": "Chevalier joueur (Le)",
+    "total": 1785
+  },
+  {
+    "id": 5673,
+    "title": "Cocher supposé (Le)",
+    "total": 443531
+  },
+  {
+    "id": 5674,
+    "title": "Comédien poète (Le) / Soeur ridicule (titre alt.). ",
+    "total": 25018
+  },
+  {
+    "id": 5675,
+    "title": "Débauché (Le)",
+    "total": 9113
+  },
+  {
+    "id": 5676,
+    "title": "Dédit (Le)",
+    "total": 1248
+  },
+  {
+    "id": 5677,
+    "title": "Le Désespoir extravagant",
+    "total": 654
+  },
+  {
+    "id": 5678,
+    "title": "Diable boiteux (Le) ou Premier chapitre du Diable boiteux (Le)",
+    "total": 27852
+  },
+  {
+    "id": 5679,
+    "title": "Divorce (Le)",
+    "total": 3181
+  },
+  {
+    "id": 5680,
+    "title": "Divorce de l'amour et de la raison ou le Vieux monde (Le)",
+    "total": 3164
+  },
+  {
+    "id": 5681,
+    "title": "Divorce ou les Époux mécontents (Le)",
+    "total": 2776
+  },
+  {
+    "id": 5682,
+    "title": "Docteur extravagant (Le)",
+    "total": 2187
+  },
+  {
+    "id": 5683,
+    "title": "Faucon (Le)",
+    "total": 7192
+  },
+  {
+    "id": 5684,
+    "title": "Faux Gascon (Le)",
+    "total": 5547
+  },
+  {
+    "id": 5685,
+    "title": "Faux honnête homme (Le)",
+    "total": 5498
+  },
+  {
+    "id": 5686,
+    "title": "Faux instinct (Le)",
+    "total": 11149
+  },
+  {
+    "id": 5687,
+    "title": "Faux sincère (Le)",
+    "total": 9748
+  },
+  {
+    "id": 5688,
+    "title": "Feint polonais, ou la Veuve impertinente (Le)",
+    "total": 747
+  },
+  {
+    "id": 5689,
+    "title": "Flatteur (Le)",
+    "total": 25008
+  },
+  {
+    "id": 5690,
+    "title": "Fou de qualité (Le) ou Le Fou raisonnable",
+    "total": 24089
+  },
+  {
+    "id": 5691,
+    "title": "Gênois (Le)",
+    "total": 451
+  },
+  {
+    "id": 5692,
+    "title": "Gentilhomme meunier (Le)",
+    "total": 2615
+  },
+  {
+    "id": 5693,
+    "title": "Geôlier de soi-même ou Jodelet prince (Le)",
+    "total": 87602
+  },
+  {
+    "id": 5694,
+    "title": "Gros lot de Marseille (Le)",
+    "total": 15153
+  },
+  {
+    "id": 5695,
+    "title": "Jaloux (Le)",
+    "total": 12747
+  },
+  {
+    "id": 5696,
+    "title": "Jaloux honteux de l'être (Le)",
+    "total": 4135
+  },
+  {
+    "id": 5697,
+    "title": "Jaloux invisible (Le) ou Bonnet enchanté (Le)",
+    "total": 1977
+  },
+  {
+    "id": 5698,
+    "title": "Jaloux masqué (Le)",
+    "total": 3222
+  },
+  {
+    "id": 5699,
+    "title": "Jeune homme (Le)",
+    "total": 1069
+  },
+  {
+    "id": 5700,
+    "title": "Le Laquais fille",
+    "total": 1137
+  },
+  {
+    "id": 5701,
+    "title": "Maréchal médecin (Le) ou les Houssards ou le Médecin de Mantes",
+    "total": 3407
+  },
+  {
+    "id": 5702,
+    "title": "Mari curieux (Le)",
+    "total": 7583
+  },
+  {
+    "id": 5704,
+    "title": "Mariage de Bacchus et d'Ariane (Le)",
+    "total": 3756
+  },
+  {
+    "id": 5705,
+    "title": "Mariage de rien (Le)",
+    "total": 10929
+  },
+  {
+    "id": 5706,
+    "title": "Mariage fait par lettre de change (Le)",
+    "total": 9334
+  },
+  {
+    "id": 5708,
+    "title": "Marquis de l'industrie (Le)",
+    "total": 1740
+  },
+  {
+    "id": 5710,
+    "title": "Médecin de village (Le)",
+    "total": 2810
+  },
+  {
+    "id": 5711,
+    "title": "Médecin volant (Le)",
+    "total": 5557
+  },
+  {
+    "id": 5712,
+    "title": "Négligent (Le)",
+    "total": 17052
+  },
+  {
+    "id": 5713,
+    "title": "Niais de Sologne (Le)",
+    "total": 8533
+  },
+  {
+    "id": 5714,
+    "title": "Notaire obligeant (Le)",
+    "total": 18543
+  },
+  {
+    "id": 5715,
+    "title": "Parasite (Le)",
+    "total": 2211
+  },
+  {
+    "id": 5716,
+    "title": "Paresseux (Le)",
+    "total": 4144
+  },
+  {
+    "id": 5717,
+    "title": "Parisien (Le)",
+    "total": 28108
+  },
+  {
+    "id": 5718,
+    "title": "Pastor-fido (Le)",
+    "total": 6427
+  },
+  {
+    "id": 5719,
+    "title": "Père intéressé ou les Vrais amis (Le)",
+    "total": 1052
+  },
+  {
+    "id": 5720,
+    "title": "Père supposé (Le)",
+    "total": 691
+  },
+  {
+    "id": 5721,
+    "title": "Petit homme de la foire (Le)",
+    "total": 15885
+  },
+  {
+    "id": 5722,
+    "title": "Petit maître de campagne ou le Vicomte de Génicourt (Le)",
+    "total": 1123
+  },
+  {
+    "id": 5723,
+    "title": "Petit-maître corrigé (Le)",
+    "total": 1719
+  },
+  {
+    "id": 5724,
+    "title": "Point d'honneur (Le)",
+    "total": 2145
+  },
+  {
+    "id": 5725,
+    "title": "Pouvoir de la sympathie (Le)",
+    "total": 2420
+  },
+  {
+    "id": 5726,
+    "title": "Prince de Noisy (Le)",
+    "total": 8400
+  },
+  {
+    "id": 5727,
+    "title": "Prix de l'arquebuse (Le)",
+    "total": 8667
+  },
+  {
+    "id": 5728,
+    "title": "Procès des Sens (Le)",
+    "total": 23252
+  },
+  {
+    "id": 5729,
+    "title": "Rajeunissement inutile (Le)",
+    "total": 4408
+  },
+  {
+    "id": 5730,
+    "title": "Rendez-vous (Le)",
+    "total": 4764
+  },
+  {
+    "id": 5731,
+    "title": "Rendez-vous des Tuileries ou le Coquet trompé (Le)",
+    "total": 11814
+  },
+  {
+    "id": 5733,
+    "title": "Réveil d'Épiménide (Le)",
+    "total": 5345
+  },
+  {
+    "id": 5734,
+    "title": "Rival de son maître (Le)",
+    "total": 5684
+  },
+  {
+    "id": 5735,
+    "title": "Rival secrétaire (Le)",
+    "total": 7624
+  },
+  {
+    "id": 5736,
+    "title": "Second chapitre du \"Diable boiteux\" (Le)",
+    "total": 9631
+  },
+  {
+    "id": 5737,
+    "title": "Secret révélé (Le)",
+    "total": 9016
+  },
+  {
+    "id": 5738,
+    "title": "Semblable à soi-même (Le)",
+    "total": 20723
+  },
+  {
+    "id": 5739,
+    "title": "Sot toujours sot ou le Marquis paysan (Le)",
+    "total": 3337
+  },
+  {
+    "id": 5740,
+    "title": "Souper mal apprêté (Le)",
+    "total": 73607
+  },
+  {
+    "id": 5741,
+    "title": "Talisman (Le)",
+    "total": 4585
+  },
+  {
+    "id": 5742,
+    "title": "Temps présent ou le Triomphe du temps présent (Le)",
+    "total": 1286
+  },
+  {
+    "id": 5743,
+    "title": "Triomphe de l'hiver (Le)",
+    "total": 1973
+  },
+  {
+    "id": 5744,
+    "title": "Veau perdu (Le) ou Amours de campagne (Les)",
+    "total": 20428
+  },
+  {
+    "id": 5745,
+    "title": "Vert galant (Le)",
+    "total": 14848
+  },
+  {
+    "id": 5746,
+    "title": "Vieillard couru ou les Différents caractères des femmes (Le) ou mary couru (Le) ",
+    "total": 2260
+  },
+  {
+    "id": 5747,
+    "title": "Voleur ou Titapapouf (Le)",
+    "total": 900
+  },
+  {
+    "id": 5748,
+    "title": "Acteurs déplacés ou l'Amant comédien (Les)",
+    "total": 4314
+  },
+  {
+    "id": 5749,
+    "title": "Adelphes ou L'École des pères (Les)",
+    "total": 5758
+  },
+  {
+    "id": 5750,
+    "title": "Agioteurs (Les)",
+    "total": 15390
+  },
+  {
+    "id": 5751,
+    "title": "Amants déguisés (Les)",
+    "total": 11120
+  },
+  {
+    "id": 5752,
+    "title": "Amants magnifiques (Les)",
+    "total": 23412
+  },
+  {
+    "id": 5753,
+    "title": "Amants ridicules (Les) ou Les Triomphes du temps passé",
+    "total": 3827
+  },
+  {
+    "id": 5754,
+    "title": "Amours de Vénus et d'Adonis (Les)",
+    "total": 4096
+  },
+  {
+    "id": 5755,
+    "title": "Amusements de l'automne ou les Temples d'Éphèse et de Gnide (Les)",
+    "total": 7382
+  },
+  {
+    "id": 5756,
+    "title": "Bourgeoises de qualité (Les)",
+    "total": 7845
+  },
+  {
+    "id": 5757,
+    "title": "Bouts-rimés (Les)",
+    "total": 3000
+  },
+  {
+    "id": 5758,
+    "title": "Captifs (Les)",
+    "total": 27611
+  },
+  {
+    "id": 5759,
+    "title": "Caractères de Thalie (Les)",
+    "total": 17029
+  },
+  {
+    "id": 5760,
+    "title": "Carrosses d'Orléans (Les)",
+    "total": 100546
+  },
+  {
+    "id": 5761,
+    "title": "Charmes de Félicie, tirés de la Diane de Montemayor (Les)",
+    "total": 326
+  },
+  {
+    "id": 5762,
+    "title": "Courses de Tempé (Les)",
+    "total": 5471
+  },
+  {
+    "id": 5763,
+    "title": "Dames vengées ou la Dupe de soi-même (Les)",
+    "total": 10781
+  },
+  {
+    "id": 5764,
+    "title": "Eaux de Bourbon (Les)",
+    "total": 14319
+  },
+  {
+    "id": 5765,
+    "title": "Empiriques (Les)",
+    "total": 6028
+  },
+  {
+    "id": 5766,
+    "title": "Enlèvements (Les)",
+    "total": 7216
+  },
+  {
+    "id": 5767,
+    "title": "Époux réunis ou la Veuve fille et femme (Les)",
+    "total": 6000
+  },
+  {
+    "id": 5768,
+    "title": "Fâcheux (Les)",
+    "total": 96769
+  },
+  {
+    "id": 5769,
+    "title": "Fêtes du cours (Les)",
+    "total": 45515
+  },
+  {
+    "id": 5770,
+    "title": "Fontanges maltraitées ou les Vapeurs (Les)",
+    "total": 8212
+  },
+  {
+    "id": 5771,
+    "title": "Fous divertissants (Les)",
+    "total": 11414
+  },
+  {
+    "id": 5772,
+    "title": "Fragments de Molière (Les)",
+    "total": 30446
+  },
+  {
+    "id": 5773,
+    "title": "Grisettes ou Crispin chevalier (Les)",
+    "total": 11288
+  },
+  {
+    "id": 5774,
+    "title": "Héraclides (Les)",
+    "total": 3274
+  },
+  {
+    "id": 5775,
+    "title": "Héraclides (Les)",
+    "total": 15722
+  },
+  {
+    "id": 5776,
+    "title": "Joueurs (Les)",
+    "total": 9191
+  },
+  {
+    "id": 5777,
+    "title": "Mécontents (Les)",
+    "total": 7583
+  },
+  {
+    "id": 5778,
+    "title": "Mœurs du temps ou les Façons du temps (Les)",
+    "total": 9361
+  },
+  {
+    "id": 5779,
+    "title": "Mots à la mode (Les) /  Bons mots (Les) (titre alt.)",
+    "total": 15754
+  },
+  {
+    "id": 5780,
+    "title": "Nicandres ou les Menteurs qui ne mentent point (Les)",
+    "total": 6375
+  },
+  {
+    "id": 5781,
+    "title": "Nouvellistes (Les)",
+    "total": 3973
+  },
+  {
+    "id": 5782,
+    "title": "Petits Maîtres d'été (Les)",
+    "total": 3194
+  },
+  {
+    "id": 5783,
+    "title": "Philosophes amoureux (Les)",
+    "total": 3418
+  },
+  {
+    "id": 5784,
+    "title": "Pipeurs ou les Femmes coquettes (Les) / Les Coquettes (titre alt.) / Fructus Belli (titre alt.)",
+    "total": 4585
+  },
+  {
+    "id": 5785,
+    "title": "Réjouissances publiques ou le Gratis (Les)",
+    "total": 712
+  },
+  {
+    "id": 5786,
+    "title": "Rivaux d'eux-mêmes (Les)",
+    "total": 1836
+  },
+  {
+    "id": 5787,
+    "title": "Serments indiscrets (Les)",
+    "total": 8010
+  },
+  {
+    "id": 5788,
+    "title": "Sœurs rivales (Les)",
+    "total": 1914
+  },
+  {
+    "id": 5789,
+    "title": "Trois spectacles (Les) ou Polixène, tragédie, L'Avare amoureux, comédie et Pan et Doris, pastorale héroïque",
+    "total": 21829
+  },
+  {
+    "id": 5790,
+    "title": "Tyndarides (Les)",
+    "total": 14403
+  },
+  {
+    "id": 5791,
+    "title": "Usuriers (Les)",
+    "total": 1998
+  },
+  {
+    "id": 5792,
+    "title": "Visionnaires (Les)",
+    "total": 13812
+  },
+  {
+    "id": 5793,
+    "title": "Lucas et Perrette",
+    "total": 1960
+  },
+  {
+    "id": 5794,
+    "title": "Lysimachus",
+    "total": 2899
+  },
+  {
+    "id": 5795,
+    "title": "Madame Artus",
+    "total": 3019
+  },
+  {
+    "id": 5796,
+    "title": "Mahomet second",
+    "total": 17484
+  },
+  {
+    "id": 5797,
+    "title": "Mariamne",
+    "total": 5419
+  },
+  {
+    "id": 5798,
+    "title": "Marie Stuart",
+    "total": 5938
+  },
+  {
+    "id": 5799,
+    "title": "Marie Stuart, reine d'Écosse ",
+    "total": 3961
+  },
+  {
+    "id": 5800,
+    "title": "Maximien",
+    "total": 39813
+  },
+  {
+    "id": 5801,
+    "title": "Médus",
+    "total": 11255
+  },
+  {
+    "id": 5802,
+    "title": "Méléagre",
+    "total": 9518
+  },
+  {
+    "id": 5803,
+    "title": "Merlin déserteur",
+    "total": 9543
+  },
+  {
+    "id": 5804,
+    "title": "Merlin la Chaconne",
+    "total": 4148
+  },
+  {
+    "id": 5805,
+    "title": "Merlin peintre",
+    "total": 5039
+  },
+  {
+    "id": 5806,
+    "title": "Montézume dernier roi du Mexique",
+    "total": 5678
+  },
+  {
+    "id": 5807,
+    "title": "Mustapha et Zéangir",
+    "total": 22538
+  },
+  {
+    "id": 5808,
+    "title": "Myrtil et Mélicerte",
+    "total": 7642
+  },
+  {
+    "id": 5809,
+    "title": "Nitétis",
+    "total": 37167
+  },
+  {
+    "id": 5810,
+    "title": "Nitocris",
+    "total": 3065
+  },
+  {
+    "id": 5811,
+    "title": "Œdipe",
+    "total": 12106
+  },
+  {
+    "id": 5812,
+    "title": "Œdipe",
+    "total": 53050
+  },
+  {
+    "id": 5813,
+    "title": "Oreste",
+    "total": 1446
+  },
+  {
+    "id": 5814,
+    "title": "Oreste et Pylade",
+    "total": 38653
+  },
+  {
+    "id": 5815,
+    "title": "Othon",
+    "total": 10930
+  },
+  {
+    "id": 5816,
+    "title": "Pandore",
+    "total": 3624
+  },
+  {
+    "id": 5817,
+    "title": "Panurge ou Les Aventures et le mariage de Panurge",
+    "total": 870
+  },
+  {
+    "id": 5818,
+    "title": "Pélopée",
+    "total": 15422
+  },
+  {
+    "id": 5819,
+    "title": "Pénélope",
+    "total": 133399
+  },
+  {
+    "id": 5820,
+    "title": "Phaéton",
+    "total": 6170
+  },
+  {
+    "id": 5821,
+    "title": "Pharamond",
+    "total": 7915
+  },
+  {
+    "id": 5822,
+    "title": "Phocion",
+    "total": 6901
+  },
+  {
+    "id": 5823,
+    "title": "Plutus",
+    "total": 45768
+  },
+  {
+    "id": 5824,
+    "title": "Polydore",
+    "total": 13786
+  },
+  {
+    "id": 5825,
+    "title": "Polymneste ou Polymnestre",
+    "total": 3345
+  },
+  {
+    "id": 5826,
+    "title": "Polixène",
+    "total": 29816
+  },
+  {
+    "id": 5827,
+    "title": "Psyché",
+    "total": 123702
+  },
+  {
+    "id": 5828,
+    "title": "Pyrame et Thisbé",
+    "total": 21286
+  },
+  {
+    "id": 5829,
+    "title": "Ragotin ou le Roman comique",
+    "total": 4654
+  },
+  {
+    "id": 5830,
+    "title": "Régulus",
+    "total": 64251
+  },
+  {
+    "id": 5831,
+    "title": "Renaud et Armide",
+    "total": 10292
+  },
+  {
+    "id": 5832,
+    "title": "Romulus",
+    "total": 29076
+  },
+  {
+    "id": 5833,
+    "title": "Sabinus et Éponine",
+    "total": 7541
+  },
+  {
+    "id": 5834,
+    "title": "Sancho Pança",
+    "total": 3640
+  },
+  {
+    "id": 5835,
+    "title": "Sancho Pança gouverneur",
+    "total": 6367
+  },
+  {
+    "id": 5836,
+    "title": "Saül",
+    "total": 19230
+  },
+  {
+    "id": 5837,
+    "title": "Scévole",
+    "total": 22320
+  },
+  {
+    "id": 5838,
+    "title": "Scipion l'Africain",
+    "total": 11698
+  },
+  {
+    "id": 5839,
+    "title": "Sémiramis",
+    "total": 2139
+  },
+  {
+    "id": 5840,
+    "title": "Sémiramis",
+    "total": 10009
+  },
+  {
+    "id": 5841,
+    "title": "Sésostris",
+    "total": 933
+  },
+  {
+    "id": 5842,
+    "title": "Soliman",
+    "total": 12394
+  },
+  {
+    "id": 5843,
+    "title": "Sophonisbe",
+    "total": 2531
+  },
+  {
+    "id": 5844,
+    "title": "Stilicon",
+    "total": 12588
+  },
+  {
+    "id": 5845,
+    "title": "Suréna, général des Parthes",
+    "total": 1875
+  },
+  {
+    "id": 5846,
+    "title": "Tarquin",
+    "total": 3335
+  },
+  {
+    "id": 5847,
+    "title": "Téglis",
+    "total": 8336
+  },
+  {
+    "id": 5848,
+    "title": "Téléphonte",
+    "total": 9532
+  },
+  {
+    "id": 5850,
+    "title": "Thésée",
+    "total": 38536
+  },
+  {
+    "id": 5851,
+    "title": "Tomyris",
+    "total": 5360
+  },
+  {
+    "id": 5852,
+    "title": "Tibère",
+    "total": 2784
+  },
+  {
+    "id": 5853,
+    "title": "Timon",
+    "total": 10019
+  },
+  {
+    "id": 5854,
+    "title": "Tontine (La)",
+    "total": 3350
+  },
+  {
+    "id": 5855,
+    "title": "Tiridate",
+    "total": 63732
+  },
+  {
+    "id": 5856,
+    "title": "Valérien",
+    "total": 6405
+  },
+  {
+    "id": 5857,
+    "title": "Varron",
+    "total": 4036
+  },
+  {
+    "id": 5858,
+    "title": "Virginie",
+    "total": 9509
+  },
+  {
+    "id": 5859,
+    "title": "Vononez, roi des Parthes",
+    "total": 3235
+  },
+  {
+    "id": 5860,
+    "title": "Xerxès ou Xercès",
+    "total": 1863
+  },
+  {
+    "id": 5861,
+    "title": "Zaïde",
+    "total": 12994
+  },
+  {
+    "id": 5862,
+    "title": "Zélonide, princesse de Sparte",
+    "total": 30288
+  },
+  {
+    "id": 5863,
+    "title": "Zénobie",
+    "total": 2554
+  },
+  {
+    "id": 5865,
+    "title": "Sophonisbe",
+    "total": 1313
+  },
+  {
+    "id": 5866,
+    "title": "Paméla",
+    "total": 3798
+  },
+  {
+    "id": 5867,
+    "title": "Phraate",
+    "total": 3308
+  },
+  {
+    "id": 5868,
+    "title": "Vendanges (Les)",
+    "total": 7397
+  },
+  {
+    "id": 5869,
+    "title": "Vieillards rajeunis (Les)",
+    "total": 2597
+  },
+  {
+    "id": 5871,
+    "title": "Souper (Le)",
+    "total": 2623
+  },
+  {
+    "id": 5872,
+    "title": "Sylvie",
+    "total": 2400
+  },
+  {
+    "id": 5873,
+    "title": "Embarras du choix (L')",
+    "total": 6311
+  },
+  {
+    "id": 5874,
+    "title": "Bal de Passy (Le)",
+    "total": 1603
+  },
+  {
+    "id": 5875,
+    "title": "Trois rivaux (Les)",
+    "total": 7542
+  },
+  {
+    "id": 5876,
+    "title": "Fête d'Auteuil (La) ou la Fausse méprise",
+    "total": 13486
+  },
+  {
+    "id": 5877,
+    "title": "Etranger (L')",
+    "total": 1461
+  },
+  {
+    "id": 5878,
+    "title": "Suivante généreuse (La)",
+    "total": 4620
+  },
+  {
+    "id": 5879,
+    "title": "Présomption à la mode (La)",
+    "total": 2197
+  },
+  {
+    "id": 5880,
+    "title": "Homme de guerre (L')",
+    "total": 4666
+  },
+  {
+    "id": 5881,
+    "title": "Esther",
+    "total": 6765
+  },
+  {
+    "id": 5882,
+    "title": "Don César d'Avalos",
+    "total": 11232
+  },
+  {
+    "id": 5908,
+    "title": "Bassette (La)",
+    "total": 4505
+  },
+  {
+    "id": 5909,
+    "title": "Titus",
+    "total": 4357
+  },
+  {
+    "id": 5910,
+    "title": "Merlin Gascon",
+    "total": 10561
+  },
+  {
+    "id": 5911,
+    "title": "Tamerlan ou la Mort de Bajazet",
+    "total": 1069
+  },
+  {
+    "id": 5912,
+    "title": "Enfant gâté (L')",
+    "total": 838
+  },
+  {
+    "id": 5913,
+    "title": "Lourdaud (Le)",
+    "total": 943
+  },
+  {
+    "id": 5914,
+    "title": "Amant mystérieux (L')",
+    "total": 2190
+  },
+  {
+    "id": 5915,
+    "title": "Circé",
+    "total": 7819
+  },
+  {
+    "id": 5916,
+    "title": "Quiproquo (Le)",
+    "total": 475
+  },
+  {
+    "id": 5917,
+    "title": "Danse de Gigogne",
+    "total": 852
+  }
+]

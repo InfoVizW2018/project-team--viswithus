@@ -2,24 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { D3Service } from './services/d3/d3.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavComponent } from './components/nav/nav.component';
+import { Routes, RouterModule } from '@angular/router';
+import { GraphComponent } from './components/graph/graph.component';
+import { ModalComponent } from './components/modal/modal.component';
+
+const routes: Routes = [
+  { path: 'home', component: GraphComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    GraphComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    RouterModule.forRoot(routes, {
+      enableTracing: true
+    })
   ],
-  providers: [
-    D3Service
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

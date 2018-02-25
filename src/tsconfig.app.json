@@ -7,8 +7,7 @@
     "types": []
   },
   "include": [
-    "**/*.ts",
-    "../node_modules/angular-bootstrap-md/index.ts"
+    "**/*.ts"
   ],
   "exclude": [
     "test.ts",

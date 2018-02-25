@@ -1,17 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
-import * as d3 from 'd3';
-import { Person } from '../../types';
+// import * as d3 from 'd3';
 
 @Injectable()
 export class D3Service {
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
-
-  getPeople() {
-    return this.http.get<Person[]>('assets/data/people.json');
-  }
-  
 }

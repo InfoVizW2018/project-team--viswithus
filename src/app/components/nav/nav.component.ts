@@ -9,7 +9,7 @@ export class NavComponent {
 
   routes = [{
     path: '/home',
-    name: 'Graph'
+    name: 'Home'
   }];
 
   constructor() { }

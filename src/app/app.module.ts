@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavComponent } from './components/nav/nav.component';
 import { Routes, RouterModule } from '@angular/router';
+import { SuiModule } from 'ng2-semantic-ui';
+
+import { AppComponent } from './app.component';
+import { NavComponent } from './components/nav/nav.component';
 import { GraphComponent } from './components/graph/graph.component';
-import { ModalComponent } from './components/modal/modal.component';
 
 const routes: Routes = [
   { path: 'home', component: GraphComponent},
@@ -17,15 +18,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     NavComponent,
-    GraphComponent,
-    ModalComponent
+    GraphComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {
       enableTracing: true
-    })
+    }),
+    SuiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

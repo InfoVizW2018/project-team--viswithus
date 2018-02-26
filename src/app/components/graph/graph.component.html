@@ -1,0 +1,28 @@
+<div id="graph" class="ui padded segment">
+  Network shown here
+</div>
+
+<button class="ui primary button" (click)="showModal()">
+  Show Modal
+</button>
+
+<ng-template let-context let-modal="modal" #modalTemplate>
+  <div class="ui icon header">
+    <i class="sitemap"></i>
+    Example Modal
+  </div>
+  <div class="content">
+    <p>{{ context.message }}</p>
+  </div>
+  <div class="actions">
+    <div class="ui basic cancel inverted button">
+      <i class="remove icon"></i>
+      Close
+    </div>
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>
+      Okay
+    </div>
+  </div>
+</ng-template>
+

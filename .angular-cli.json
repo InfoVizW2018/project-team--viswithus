@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/semantic-ui-icon/icon.min.css",
         "styles.scss"
       ],
       "scripts": [],

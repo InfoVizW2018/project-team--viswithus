@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>InfoVis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="semantic/semantic.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="ui secondary pointing menu">
+    <div id="label" class="item">
+      <i class="book icon"></i>
+      VisWithUs
+    </div>
+    <a class="item active">Home</a>
+  </div>
+  <!-- Graph -->
+  <div id="graph" class="ui padded segment">
+    Network shown here
+  </div>
+  
+  <!-- Modal -->
+  <button class="ui primary button" onclick="showModal()" style="margin-left: 1em">
+    Show Modal
+  </button>
+
+  <div class="ui basic large modal">
+    <div class="ui icon header">
+      <i class="archive icon"></i>
+      Comédie-Française Dataset
+    </div>
+    <div class="content">
+      <div class="ui active text centered inline loader">Loading</div>
+      <div class="ui inverted five statistics"></div>
+    </div>
+    <div class="actions">
+      <div class="ui basic cancel inverted button">
+        <i class="remove icon"></i>
+        Close
+      </div>
+      <div class="ui green ok inverted button">
+        <i class="checkmark icon"></i>
+        Okay
+      </div>
+    </div>
+  </div>
+</body>
+</html>

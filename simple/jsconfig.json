@@ -1,0 +1,8 @@
+{
+  "typeAcquisition": {
+    "include": [
+      "d3",
+      "jquery"
+    ]
+  }
+}

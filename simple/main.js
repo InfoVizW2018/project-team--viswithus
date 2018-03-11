@@ -84,7 +84,13 @@ function renderHivePlot() {
       .attr("d", d3.hive.link()
       .angle(function(d) { return angle(d.x); })
       .radius(function(d) { return radius(d.y); }))
-      .style("stroke", function(d) { return color(d.source.x); });
+      .on("mouseover", function(d) {
+        d3.select(this).style("stroke", "red");
+      })                  
+      .on("mouseout", function(d) {
+        d3.select(this).style("stroke", "gray");
+      })
+      .style("stroke", "gray");
   
   svg.selectAll(".node")
       .data(nodes)

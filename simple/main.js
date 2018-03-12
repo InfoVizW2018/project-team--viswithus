@@ -56,9 +56,9 @@ function initNodesAndLinks() {
     return prev;
   }, { plays: [], genres: [], authors: []});
 
-  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: i / list.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre }));
-  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: i / list.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre }));
-  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: i / list.length, modalFunc: getAuthorModalFunction(v.author), author: v.author }));
+  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: i / list.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre}));
+  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: i / list.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre, play: v.title}));
+  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: i / list.length, modalFunc: getAuthorModalFunction(v.author), author: v.author}));
 
   nodes = playNodes.concat(authorNodes).concat(genreNodes);
 
@@ -129,24 +129,25 @@ function renderHivePlot() {
       .attr("r", 5)
       .style("fill", function(d) { return color(d.x); })
       .on("mouseover", nodeMouseover)
-      .on("mouseout", mouseout);
+      .on("mouseout", mouseout)
+      .on("click", function(d){showModal(d);});
 }
 
 function getAuthorModalFunction(author) {
   return function () {
-    // Set up modal
+    
   }
 }
 
 function getPlayModalFunction(play) {
   return function () {
-
+    
   }
 }
 
 function getGenreModalFunction(genre) {
   return function () {
-
+    
   }
 }
 
@@ -154,8 +155,19 @@ function degrees(radians) {
   return radians / Math.PI * 180 - 90;
 }
 
-function showModal() {
-  $('.ui.basic.modal').modal('show');
+function showModal(d) {
+  if (d.x == 0){
+    // Modal for genre
+    $('.modal-title').text("Genre: " + d.genre);  
+  } else if (d.x == 1){
+    // Modal for play
+    $('.modal-title').text("Play: " + d.play);  
+  } else {
+    // Modal for author
+    $('.modal-title').text("Author: " + d.author);  
+  }
+  
+  $('.infomodal').modal('show');
 }
 
 // Highlight the link and connected nodes on mouseover.

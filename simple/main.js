@@ -112,7 +112,7 @@ function showModal() {
 // Highlight the link and connected nodes on mouseover.
 function linkMouseover(d) {
   svg.selectAll(".link").classed("active", function(p) { return p === d; });
-  svg.selectAll(".node circle").classed("active", function(p) { return p === d.source || p === d.target; });
+  svg.selectAll(".node").classed("active", function(p) { return p === d.source || p === d.target; });
 }
 
 // Highlight the node and connected links on mouseover.

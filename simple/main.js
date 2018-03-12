@@ -1,4 +1,3 @@
-
 let people, performanceTotals, playSales, playTotals, plays
 
 d3.queue()
@@ -15,7 +14,10 @@ function loadHandler(err, ppl, pttls, psls, plttls, pl) {
 
   people = ppl;
   performanceTotals = pttls;
-  playSales = psls;
+  playSales = psls.map( x => {
+      x.date = new Date(x);
+      return x
+    }).sort( (a, b) => a.date.getTime() < b.date.getTime()).slice(0, 10000);
   playTotals = plttls;
   plays = pl;
 
@@ -34,6 +36,14 @@ function initStatistics() {
   $('.statistics').append(newStats)
 }
 
+
+
+/**
+ * TODO:
+ *  - Seperate data into authors, plays, and genre nodes
+ *  - Add hover effect to links and nodes
+ *  - Add on click function for modal
+ */
 function renderHivePlot() {
   var width = 960;
   var height = 500;
@@ -44,24 +54,46 @@ function renderHivePlot() {
   var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
   var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(20));
 
-  var nodes = [
-    {x: 0, y: .1},
-    {x: 0, y: .9},
-    {x: 1, y: .2},
-    {x: 1, y: .3},
-    {x: 2, y: .1},
-    {x: 2, y: .8}
-  ];
+  var plays = playSales.filter( (v, i, a) => a.findIndex( x => x.title === v.title) === i);
+  var playNodes = plays.map( (v, i) => ({ x: 0, y: i / plays.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre }));
+
+  var genres = playSales.filter( (v, i, a) => a.findIndex(x => x.genre === v.genre) === i);
+  var genreNodes = genres.map( (v, i) => ({ x: 1, y: i / genres.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre }));
+
+  var authors = playSales.filter( (v, i, a) => a.findIndex(x => x.author === v.author) === i);
+  var authorNodes = authors.map( (v, i) => ({ x: 2, y: i / authors.length, modalFunc: getAuthorModalFunction(v.author), author: v.author }));
+
+  var nodes = playNodes.concat(authorNodes).concat(genreNodes);
+
+  var links = [];
   
-  var links = [
-    {source: nodes[0], target: nodes[2]},
-    {source: nodes[1], target: nodes[3]},
-    {source: nodes[2], target: nodes[4]},
-    {source: nodes[2], target: nodes[5]},
-    {source: nodes[3], target: nodes[5]},
-    {source: nodes[4], target: nodes[0]},
-    {source: nodes[5], target: nodes[1]}
-  ];
+  // Link author to play
+  // Link author to genre
+  // Link genre to play
+  playNodes.forEach( (play, idx) => {
+    var authorNode = authorNodes.find( x => x.author === play.author);
+    var authorPlayLink = { source: authorNode, target: play };
+
+    var genreNode = genreNodes.find(x => x.genre === play.genre);
+    var genrePlayLink = { source: play, target: genreNode };
+
+    links.push(authorPlayLink, genrePlayLink);
+  });
+
+  genreNodes.forEach( (genreNode, idx) => {
+    // Get set of authors who wrote genre
+    // Get nodes of each author
+    // Add link between each node and genreNode
+    var authorsWhoWrote = plays
+      .filter( x => x.genre === genreNode.genre)
+      .filter( (p, i, a) => a.findIndex( x => x.author === p.author) === i)
+      .forEach( play => {
+        var authorNode = authorNodes.find( x => x.author === play.author);
+        var link = { source: genreNode, target: authorNode };
+        links.push(link);
+      });
+    
+  });
   
   var svg = d3.select("#graph").append("svg")
       .attr("width", width)
@@ -94,6 +126,24 @@ function renderHivePlot() {
       .attr("cx", function(d) { return radius(d.y); })
       .attr("r", 5)
       .style("fill", function(d) { return color(d.x); });
+}
+
+function getAuthorModalFunction(author) {
+  return function () {
+    // Set up modal
+  }
+}
+
+function getPlayModalFunction(play) {
+  return function () {
+
+  }
+}
+
+function getGenreModalFunction(genre) {
+  return function () {
+
+  }
 }
 
 function degrees(radians) {

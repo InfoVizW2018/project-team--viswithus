@@ -6,11 +6,29 @@
   margin: 1em;
 }
 
-.link {
-  fill: none;
-  stroke-width: 1.5px;
-}
-.axis, .node {
+.axis {
   stroke: #000;
   stroke-width: 1.5px;
+}
+
+.node {
+  stroke: #000;
+}
+
+.link {
+  fill: none;
+  stroke: #999 !important;
+  stroke-width: 1.5px;
+  stroke-opacity: .3;
+}
+
+.link.active {
+  stroke: red !important;
+  stroke-width: 2px;
+  stroke-opacity: 1;
+}
+
+.node.active {
+  stroke: red !important;
+  stroke-width: 3px;
 }

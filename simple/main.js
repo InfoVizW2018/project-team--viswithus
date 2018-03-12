@@ -1,6 +1,8 @@
 
 let people, performanceTotals, playSales, playTotals, plays
 
+var svg;
+
 d3.queue()
   .defer(d3.json, 'data/people.json')
   .defer(d3.json, 'data/performance_with_totals.json')
@@ -63,7 +65,7 @@ function renderHivePlot() {
     {source: nodes[5], target: nodes[1]}
   ];
   
-  var svg = d3.select("#graph").append("svg")
+  svg = d3.select("#graph").append("svg")
       .attr("width", width)
       .attr("height", height)
     .append("g")
@@ -84,13 +86,8 @@ function renderHivePlot() {
       .attr("d", d3.hive.link()
       .angle(function(d) { return angle(d.x); })
       .radius(function(d) { return radius(d.y); }))
-      .on("mouseover", function(d) {
-        d3.select(this).style("stroke", "red");
-      })                  
-      .on("mouseout", function(d) {
-        d3.select(this).style("stroke", "gray");
-      })
-      .style("stroke", "gray");
+      .on("mouseover", linkMouseover)
+      .on("mouseout", mouseout);
   
   svg.selectAll(".node")
       .data(nodes)
@@ -99,7 +96,9 @@ function renderHivePlot() {
       .attr("transform", function(d) { return "rotate(" + degrees(angle(d.x)) + ")"; })
       .attr("cx", function(d) { return radius(d.y); })
       .attr("r", 5)
-      .style("fill", function(d) { return color(d.x); });
+      .style("fill", function(d) { return color(d.x); })
+      .on("mouseover", nodeMouseover)
+      .on("mouseout", mouseout);
 }
 
 function degrees(radians) {
@@ -110,3 +109,19 @@ function showModal() {
   $('.ui.basic.modal').modal('show');
 }
 
+// Highlight the link and connected nodes on mouseover.
+function linkMouseover(d) {
+  svg.selectAll(".link").classed("active", function(p) { return p === d; });
+  svg.selectAll(".node circle").classed("active", function(p) { return p === d.source || p === d.target; });
+}
+
+// Highlight the node and connected links on mouseover.
+function nodeMouseover(d) {
+  svg.selectAll(".link").classed("active", function(p) { return p.source === d || p.target === d; });
+  d3.select(this).classed("active", true);
+}
+
+// Clear any highlighted nodes or links.
+function mouseout() {
+  svg.selectAll(".active").classed("active", false);
+}

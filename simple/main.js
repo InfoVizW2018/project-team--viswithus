@@ -1,5 +1,8 @@
 let people, performanceTotals, playSales, playTotals, plays
 
+var nodes = [];
+var links = [];
+
 var svg;
 
 d3.queue()
@@ -20,14 +23,15 @@ function loadHandler(err, ppl, pttls, psls, plttls, pl) {
       x.date = new Date(x.date);
       return x
     })
-    .sort( (a, b) => a.date.getTime() < b.date.getTime())
-    .slice(0, 10000);
+    .sort( (a, b) => a.date.getTime() < b.date.getTime());
 
   playTotals = plttls;
   plays = pl;
 
   initStatistics();
+  initNodesAndLinks();
   renderHivePlot();
+
   $('.loader').toggleClass(['active', 'disabled']);
 }
 
@@ -41,51 +45,56 @@ function initStatistics() {
   $('.statistics').append(newStats)
 }
 
+function initNodesAndLinks() {
+  var unique = playSales.reduce((prev, curr) => {
+    if (!prev.plays.some(x => x.title === curr.title))
+      prev.plays.push(curr);
+    if (!prev.genres.some(x => x.genre === curr.genre))
+      prev.genres.push(curr);
+    if (!prev.authors.some(x => x.author === curr.author))
+      prev.authors.push(curr);
+    return prev;
+  }, { plays: [], genres: [], authors: []});
+
+  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: i / list.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre }));
+  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: i / list.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre }));
+  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: i / list.length, modalFunc: getAuthorModalFunction(v.author), author: v.author }));
+
+  nodes = playNodes.concat(authorNodes).concat(genreNodes);
+
+  // Creating links between authors and plays as well as genres and plays
+  playNodes.forEach( (play, idx) => {
+    var authorNode = authorNodes.find( x => x.author === play.author);
+    if (authorNode)
+      links.push({ source: authorNode, target: play });
+
+    var genreNode = genreNodes.find(x => x.genre === play.genre);
+    if (genreNode)
+      links.push({ source: play, target: genreNode });
+  });
+
+  // Creating links between authors and genres
+  genreNodes.forEach( (genreNode, idx) => {
+    links.push(
+      ...unique.plays
+      .filter( x => x.genre === genreNode.genre) // Get plays of this genre
+      .filter( (p, i, a) => a.findIndex( x => x.author === p.author) === i) // The unique authors among these plays
+      .map( play => ({ source: genreNode, target: authorNodes.find(x => x.author === play.author) })) // For each unique author - create link
+    )
+  });
+}
 
 function renderHivePlot() {
-  var width = window.innerWidth;
-  var height = window.innerHeight;
+  d3.select("#graph > svg").remove();
+
   var innerRadius = 40;
-  var outerRadius = (height / 2) - innerRadius * 1.5;
+  var width = window.innerWidth;
+  var height = window.innerHeight - innerRadius * 2;
+  var outerRadius = (height / 2);
 
   var angle = d3.scalePoint().domain(d3.range(4)).range([0, 2 * Math.PI]);
   var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
   var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(20));
-
-  var plays = playSales.filter( (v, i, a) => a.findIndex( x => x.title === v.title) === i);
-  var playNodes = plays.map( (v, i) => ({ x: 0, y: i / plays.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre }));
-
-  var genres = playSales.filter( (v, i, a) => a.findIndex(x => x.genre === v.genre) === i);
-  var genreNodes = genres.map( (v, i) => ({ x: 1, y: i / genres.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre }));
-
-  var authors = playSales.filter( (v, i, a) => a.findIndex(x => x.author === v.author) === i);
-  var authorNodes = authors.map( (v, i) => ({ x: 2, y: i / authors.length, modalFunc: getAuthorModalFunction(v.author), author: v.author }));
-
-  var nodes = playNodes.concat(authorNodes).concat(genreNodes);
-
-  var links = [];
-  
-  playNodes.forEach( (play, idx) => {
-    var authorNode = authorNodes.find( x => x.author === play.author);
-    var authorPlayLink = { source: authorNode, target: play };
-
-    var genreNode = genreNodes.find(x => x.genre === play.genre);
-    var genrePlayLink = { source: play, target: genreNode };
-
-    links.push(authorPlayLink, genrePlayLink);
-  });
-
-  genreNodes.forEach( (genreNode, idx) => {
-    var authorsWhoWrote = plays
-      .filter( x => x.genre === genreNode.genre)
-      .filter( (p, i, a) => a.findIndex( x => x.author === p.author) === i)
-      .forEach( play => {
-        var authorNode = authorNodes.find( x => x.author === play.author);
-        var link = { source: genreNode, target: authorNode };
-        links.push(link);
-      });
-    
-  });
   
   svg = d3.select("#graph").append("svg")
       .attr("width", width)

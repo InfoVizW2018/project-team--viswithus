@@ -16,10 +16,15 @@ function loadHandler(err, ppl, pttls, psls, plttls, pl) {
 
   people = ppl;
   performanceTotals = pttls;
-  playSales = psls.map( x => {
+  
+  playSales = psls
+    .map( x => {
       x.date = new Date(x);
       return x
-    }).sort( (a, b) => a.date.getTime() < b.date.getTime()).slice(0, 10000);
+    })
+    .sort( (a, b) => a.date.getTime() < b.date.getTime())
+    .slice(0, 10000);
+
   playTotals = plttls;
   plays = pl;
 

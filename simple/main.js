@@ -17,7 +17,7 @@ function loadHandler(err, ppl, pttls, psls, plttls, pl) {
   people = ppl;
   performanceTotals = pttls;
   playSales = psls.map( x => {
-      x.date = new Date(x);
+      x.date = new Date(x.date);
       return x
     }).sort( (a, b) => a.date.getTime() < b.date.getTime()).slice(0, 10000);
   playTotals = plttls;
@@ -39,18 +39,11 @@ function initStatistics() {
 }
 
 
-
-/**
- * TODO:
- *  - Seperate data into authors, plays, and genre nodes
- *  - Add hover effect to links and nodes
- *  - Add on click function for modal
- */
 function renderHivePlot() {
-  var width = 960;
-  var height = 500;
+  var width = window.innerWidth;
+  var height = window.innerHeight;
   var innerRadius = 40;
-  var outerRadius = 240;
+  var outerRadius = (height / 2) - innerRadius * 1.5;
 
   var angle = d3.scalePoint().domain(d3.range(4)).range([0, 2 * Math.PI]);
   var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
@@ -69,9 +62,6 @@ function renderHivePlot() {
 
   var links = [];
   
-  // Link author to play
-  // Link author to genre
-  // Link genre to play
   playNodes.forEach( (play, idx) => {
     var authorNode = authorNodes.find( x => x.author === play.author);
     var authorPlayLink = { source: authorNode, target: play };
@@ -83,9 +73,6 @@ function renderHivePlot() {
   });
 
   genreNodes.forEach( (genreNode, idx) => {
-    // Get set of authors who wrote genre
-    // Get nodes of each author
-    // Add link between each node and genreNode
     var authorsWhoWrote = plays
       .filter( x => x.genre === genreNode.genre)
       .filter( (p, i, a) => a.findIndex( x => x.author === p.author) === i)

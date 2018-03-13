@@ -47,41 +47,77 @@ function initStatistics() {
 
 function initNodesAndLinks() {
   var unique = playSales.reduce((prev, curr) => {
-    if (!prev.plays.some(x => x.title === curr.title))
+    if (curr.title.length && !prev.plays.some(x => x.title === curr.title))
       prev.plays.push(curr);
-    if (!prev.genres.some(x => x.genre === curr.genre))
+    if (curr.genre.length > 1 && !prev.genres.some(x => x.genre === curr.genre))
       prev.genres.push(curr);
-    if (!prev.authors.some(x => x.author === curr.author))
+    if (curr.author.length && !prev.authors.some(x => x.author === curr.author))
       prev.authors.push(curr);
     return prev;
   }, { plays: [], genres: [], authors: []});
 
-  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: i / list.length, modalFunc: getGenreModalFunction(v.genre), genre: v.genre}));
-  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: i / list.length, modalFunc: getPlayModalFunction(v.title), author: v.author, genre: v.genre, play: v.title}));
-  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: i / list.length, modalFunc: getAuthorModalFunction(v.author), author: v.author}));
-
-  nodes = playNodes.concat(authorNodes).concat(genreNodes);
+  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: 0, modalFunc: getGenreModalFunction(v.genre), genre: v.genre, linked: 0}));
+  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: 0, modalFunc: getPlayModalFunction(v.title), author: v.author, date: v.date, genre: v.genre, play: v.title, linked: 0}));
+  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(v.author), author: v.author, linked: 0}));
 
   // Creating links between authors and plays as well as genres and plays
   playNodes.forEach( (play, idx) => {
-    var authorNode = authorNodes.find( x => x.author === play.author);
-    if (authorNode)
-      links.push({ source: authorNode, target: play });
-
-    var genreNode = genreNodes.find(x => x.genre === play.genre);
-    if (genreNode)
-      links.push({ source: play, target: genreNode });
+    if (play.author.length) {
+      var i = authorNodes.findIndex( x => x.author === play.author);
+      if (i > -1) {
+        authorNodes[i].linked++;
+        play.linked++;
+        links.push({ source: authorNodes[i], target: play });
+      }
+    }
+    if (play.genre.length > 1) {
+      var i = genreNodes.findIndex(x => x.genre === play.genre);
+      if (i > -1) {
+        genreNodes[i].linked++;
+        play.linked++;
+        links.push({ source: play, target: genreNodes[i] });
+      }
+    }
   });
 
   // Creating links between authors and genres
   genreNodes.forEach( (genreNode, idx) => {
-    links.push(
-      ...unique.plays
+    var authorGenreLinks = unique.plays
       .filter( x => x.genre === genreNode.genre) // Get plays of this genre
-      .filter( (p, i, a) => a.findIndex( x => x.author === p.author) === i) // The unique authors among these plays
-      .map( play => ({ source: genreNode, target: authorNodes.find(x => x.author === play.author) })) // For each unique author - create link
-    )
+      .filter( (p, i, a) => p.author.length && a.findIndex( x => x.author === p.author) === i) // The unique authors among these plays
+      .map( play => {
+        var i = authorNodes.findIndex(x => x.author === play.author)
+        authorNodes[i].linked++;
+        return { source: genreNode, target: authorNodes[i]}
+      }); // For each unique author - create link
+    genreNode.linked += authorGenreLinks.length;
+    links.push(...authorGenreLinks);
   });
+
+  const sortByLinks = (a, b) => a.linked - b.linked;
+  const sortByDate = (a, b) => a.date.getTime() - b.date.getTime();
+
+  const relativeToSize = (val, i, list) => {
+    val.y = i / list.length;
+    return val;
+  }
+
+  const relativeToTime = (list) => {
+    const range = list.reduce((pre, curr) => {
+        const millis = curr.date.getTime();
+        return { min: Math.min(millis, pre.min), max: Math.max(millis, pre.max)};
+      }, { min: Infinity, max: -Infinity});
+
+    return (val, i, list) => {
+      val.y = (val.date.getTime() - range.min) / (range.max - range.min);
+      return val;
+    }
+  }
+  
+  playNodes = playNodes.sort(sortByDate).map(relativeToTime(playNodes));
+  genreNodes = genreNodes.sort(sortByLinks).map(relativeToSize);
+  authorNodes = authorNodes.sort(sortByLinks).map(relativeToSize);
+  nodes = genreNodes.concat(authorNodes).concat(playNodes);
 }
 
 function renderHivePlot() {
@@ -130,44 +166,33 @@ function renderHivePlot() {
       .style("fill", function(d) { return color(d.x); })
       .on("mouseover", nodeMouseover)
       .on("mouseout", mouseout)
-      .on("click", function(d){showModal(d);});
+      .on("click", function(d) { d.modalFunc(); });
 }
 
 function getAuthorModalFunction(author) {
   return function () {
-    
+    $('.modal-title').text("Author: " + author);  
+    $('.infomodal').modal('show');
   }
 }
 
-function getPlayModalFunction(play) {
+function getPlayModalFunction(title) {
   return function () {
-    
+    const play = playSales.find( x => x.title === title);
+    $('.modal-title').text("Play: " + play.title + "  Date: " + play.date.toString());  
+    $('.infomodal').modal('show');
   }
 }
 
 function getGenreModalFunction(genre) {
   return function () {
-    
+    $('.modal-title').text("Genre: " + genre);
+    $('.infomodal').modal('show');
   }
 }
 
 function degrees(radians) {
   return radians / Math.PI * 180 - 90;
-}
-
-function showModal(d) {
-  if (d.x == 0){
-    // Modal for genre
-    $('.modal-title').text("Genre: " + d.genre);  
-  } else if (d.x == 1){
-    // Modal for play
-    $('.modal-title').text("Play: " + d.play);  
-  } else {
-    // Modal for author
-    $('.modal-title').text("Author: " + d.author);  
-  }
-  
-  $('.infomodal').modal('show');
 }
 
 // Highlight the link and connected nodes on mouseover.

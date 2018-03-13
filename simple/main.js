@@ -179,7 +179,8 @@ function getAuthorModalFunction(author) {
 function getPlayModalFunction(title) {
   return function () {
     const play = playSales.find( x => x.title === title);
-    $('.modal-title').text("Play: " + play.title + "  Date: " + play.date.toString());  
+    $('.modal-title').text("Play: " + play.title);  
+    $('.modal-content').text("Date: " + play.date.toString());
     $('.infomodal').modal('show');
   }
 }

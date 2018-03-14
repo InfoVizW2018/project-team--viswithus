@@ -1,4 +1,4 @@
-let people, performanceTotals, playSales, playTotals, plays
+let people, performanceTotals, playSales, playTotals, plays, unique, statistics
 
 var nodes = [];
 var links = [];
@@ -6,27 +6,39 @@ var links = [];
 var svg;
 
 d3.queue()
-  .defer(d3.json, 'data/people.json')
+  // .defer(d3.json, 'data/people.json')
   .defer(d3.json, 'data/performance_with_totals.json')
-  .defer(d3.json, 'data/play_ticket_sales.json')
+  // .defer(d3.json, 'data/play_ticket_sales.json')
   .defer(d3.json, 'data/plays_with_totals.json')
   .defer(d3.json, 'data/plays.json')
+  .defer(d3.json, 'data/unique_data.json')
+  .defer(d3.json, 'data/statistics.json')
   .await(loadHandler);
 
-function loadHandler(err, ppl, pttls, psls, plttls, pl) {
+function loadHandler(err, ...data) {
   if (err) 
     return console.log('Failed to load data!!!');
 
-  people = ppl;
-  performanceTotals = pttls;
-  playSales = psls.map( x => {
-      x.date = new Date(x.date);
-      return x
-    })
-    .sort( (a, b) => a.date.getTime() < b.date.getTime());
+  let i = 0;
 
-  playTotals = plttls;
-  plays = pl;
+  // people = data[i++];
+
+  performanceTotals = data[i++];
+  performanceTotals.forEach( x => x.date = new Date(x.date));
+
+  // playSales = data[i++];
+  // playSales.forEach( x => x.date = new Date(x.date));
+
+  playTotals = data[i++];
+
+  plays = data[i++];
+  plays.forEach( x => x.dates = x.dates
+      .map( d => new Date(d))
+      .sort( (a, b) => a.getTime() - b.getTime()));
+
+  unique = data[i++];
+
+  statistics = data[i++];
 
   initStatistics();
   initNodesAndLinks();
@@ -36,29 +48,24 @@ function loadHandler(err, ppl, pttls, psls, plttls, pl) {
 }
 
 function initStatistics() {
-  const labels = ['People', 'Plays', 'Sales Records', 'Performances with Totals', 'Plays with Totals'];
-  const newStats = [people, plays, playSales, performanceTotals, playTotals].map((x, i) => {
-    const valDiv = $('<div></div>').addClass('value').text(x.length);
-    const labelDiv = $('<div></div>').addClass('label').text(labels[i]);
+  const newStats = Object.keys(statistics).map( key => {
+    const valDiv = $('<div></div>').addClass('value').text(statistics[key].number);
+    const labelDiv = $('<div></div>').addClass('label').text(statistics[key].label);
     return $('<div></div>').addClass('statistic').append(valDiv, labelDiv);
   });
   $('.statistics').append(newStats)
 }
 
 function initNodesAndLinks() {
-  var unique = playSales.reduce((prev, curr) => {
-    if (curr.title.length && !prev.plays.some(x => x.title === curr.title))
-      prev.plays.push(curr);
-    if (curr.genre.length > 1 && !prev.genres.some(x => x.genre === curr.genre))
-      prev.genres.push(curr);
-    if (curr.author.length && !prev.authors.some(x => x.author === curr.author))
-      prev.authors.push(curr);
-    return prev;
-  }, { plays: [], genres: [], authors: []});
-
-  var genreNodes = unique.genres.map( (v, i, list) => ({ x: 0, y: 0, modalFunc: getGenreModalFunction(v.genre), genre: v.genre, linked: 0}));
-  var playNodes = unique.plays.map( (v, i, list) => ({ x: 1, y: 0, modalFunc: getPlayModalFunction(v.title), author: v.author, date: v.date, genre: v.genre, play: v.title, linked: 0}));
-  var authorNodes = unique.authors.map( (v, i, list) => ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(v.author), author: v.author, linked: 0}));
+  var genreNodes = unique.genres.map( (genre, i, list) => ({ x: 0, y: 0, modalFunc: getGenreModalFunction(genre), genre: genre, linked: 0}));
+  var authorNodes = unique.authors.map( (author, i, list) => ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(author), author: author, linked: 0}));
+  var playNodes = plays.filter(x => x.dates.length).map( (play, i, list) => {
+    play.x = 1
+    play.y = 0;
+    play.modalFunc = getPlayModalFunction(play);
+    play.linked = 0;
+    return play;
+  });
 
   // Creating links between authors and plays as well as genres and plays
   playNodes.forEach( (play, idx) => {
@@ -82,7 +89,7 @@ function initNodesAndLinks() {
 
   // Creating links between authors and genres
   genreNodes.forEach( (genreNode, idx) => {
-    var authorGenreLinks = unique.plays
+    var authorGenreLinks = playNodes
       .filter( x => x.genre === genreNode.genre) // Get plays of this genre
       .filter( (p, i, a) => p.author.length && a.findIndex( x => x.author === p.author) === i) // The unique authors among these plays
       .map( play => {
@@ -91,11 +98,11 @@ function initNodesAndLinks() {
         return { source: genreNode, target: authorNodes[i]}
       }); // For each unique author - create link
     genreNode.linked += authorGenreLinks.length;
-    links.push(...authorGenreLinks);
+    links = links.concat(authorGenreLinks);
   });
 
   const sortByLinks = (a, b) => a.linked - b.linked;
-  const sortByDate = (a, b) => a.date.getTime() - b.date.getTime();
+  const sortByDate = (a, b) => a.dates[0].getTime() - b.dates[0].getTime();
 
   const relativeToSize = (val, i, list) => {
     val.y = i / list.length;
@@ -104,12 +111,12 @@ function initNodesAndLinks() {
 
   const relativeToTime = (list) => {
     const range = list.reduce((pre, curr) => {
-        const millis = curr.date.getTime();
+        const millis = curr.dates[0].getTime();
         return { min: Math.min(millis, pre.min), max: Math.max(millis, pre.max)};
       }, { min: Infinity, max: -Infinity});
 
     return (val, i, list) => {
-      val.y = (val.date.getTime() - range.min) / (range.max - range.min);
+      val.y = (val.dates[0].getTime() - range.min) / (range.max - range.min);
       return val;
     }
   }
@@ -172,23 +179,23 @@ function renderHivePlot() {
 function getAuthorModalFunction(author) {
   return function () {
     $('.modal-title').text("Author: " + author);  
-    $('.infomodal').modal('show');
+    $('#infomodal').modal('show');
   }
 }
 
-function getPlayModalFunction(title) {
+function getPlayModalFunction(title, date) {
   return function () {
     const play = playSales.find( x => x.title === title);
     $('.modal-title').text("Play: " + play.title);  
-    $('.modal-content').text("Date: " + play.date.toString());
-    $('.infomodal').modal('show');
+    $('.modal-content').text("Date: " + date.toString());
+    $('#infomodal').modal('show');
   }
 }
 
 function getGenreModalFunction(genre) {
   return function () {
     $('.modal-title').text("Genre: " + genre);
-    $('.infomodal').modal('show');
+    $('#infomodal').modal('show');
   }
 }
 

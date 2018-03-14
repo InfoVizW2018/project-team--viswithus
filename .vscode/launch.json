@@ -8,15 +8,15 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome",
-      "url": "http://localhost:4200",
-      "webRoot": "${workspaceFolder}/project"
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceFolder}/simple"
     },
     {
       "type": "chrome",
       "request": "attach",
       "name": "Attach to Chrome",
-      "port": 4200,
-      "webRoot": "${workspaceFolder}"
+      "port": 8000,
+      "webRoot": "${workspaceFolder}/simple"
     },
     {
       "type": "node",

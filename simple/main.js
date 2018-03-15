@@ -3,6 +3,8 @@ let people, performanceTotals, playSales, playTotals, plays, unique, statistics
 var nodes = [];
 var links = [];
 
+var currentRange = { min: Infinity, max: -Infinity };
+
 var svg;
 
 d3.queue()
@@ -32,19 +34,75 @@ function loadHandler(err, ...data) {
   playTotals = data[i++];
 
   plays = data[i++];
-  plays.forEach( x => x.dates = x.dates
-      .map( d => new Date(d))
-      .sort( (a, b) => a.getTime() - b.getTime()));
+  plays.forEach( x => x.dates = x.dates.map( d => new Date(d)));
 
   unique = data[i++];
 
   statistics = data[i++];
 
+  initDropDown();
   initStatistics();
-  initNodesAndLinks();
   renderHivePlot();
 
   $('.loader').toggleClass(['active', 'disabled']);
+}
+
+function initDropDown() {
+  const dateRange = plays
+    .filter( x => x.dates.length)
+    .reduce( (prev, curr) => {
+      const year0 = curr.dates[0].getFullYear();
+      const year1 = curr.dates[curr.dates.length - 1].getFullYear() + 1;
+      return { min: Math.min(prev.min, year0), max: Math.max(prev.max, year1) };
+    }, { min: Infinity, max: -Infinity });
+  
+  currentRange.min = dateRange.min;
+  currentRange.max = currentRange.min + 1;
+
+  const options1 = [];
+  const options2 = [];
+  for (let i = dateRange.min; i <= dateRange.max; i++) {
+    const htmlstr = `<option value="${i}">${i}</option>`;
+    options1.push($(htmlstr));
+    options2.push($(htmlstr));
+  }
+  options1.pop();
+
+  $('#minDate')
+    .append(options1)
+    .change( function () {
+      $(this).removeClass('error');
+      const year = $(this).val();
+      if (year === currentRange.min) return;
+
+      if (year >= currentRange.max) {
+        $(this).val(currentRange.min)
+        return $(this).addClass('error');
+      } else {
+        $('#maxDate').removeClass('error');
+        currentRange.min = year;
+        renderHivePlot();
+      }
+    });
+
+  $('#maxDate')
+    .append(options2)
+    .val(currentRange.max)
+    .change( function () {
+      $(this).removeClass('error');
+      const year = $(this).val();
+      if (year === currentRange.max) return;
+      
+      if (year <= currentRange.min) {
+        $(this).val(currentRange.max)
+        return $(this).addClass('error');
+      } else {
+        $('#minDate').removeClass('error');
+        currentRange.max = year;
+        renderHivePlot();
+      }
+    });
+
 }
 
 function initStatistics() {
@@ -57,16 +115,30 @@ function initStatistics() {
 }
 
 function initNodesAndLinks() {
-  var genreNodes = unique.genres.map( (genre, i, list) => ({ x: 0, y: 0, modalFunc: getGenreModalFunction(genre), genre: genre, linked: 0}));
-  var authorNodes = unique.authors.map( (author, i, list) => ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(author), author: author, linked: 0}));
-  var playNodes = plays.filter(x => x.dates.length).map( (play, i, list) => {
+  var playNodes = plays
+  .filter(x => {
+    if (!x.dates.length) return false;
+    const year = x.dates[0].getFullYear();
+    return year >= currentRange.min && year < currentRange.max;
+  }).map( (play, i, list) => {
     play.x = 1
     play.y = 0;
     play.modalFunc = getPlayModalFunction(play);
+    play.popupFunc = getPlayPopupFunction(play);
     play.linked = 0;
     return play;
   });
 
+  var genreNodes = unique.genres.map( (genre, i, list) => 
+    ({ x: 0, y: 0, modalFunc: getGenreModalFunction(genre), popupFunc: getGenrePopupFunction(genre), genre: genre, linked: 0}));
+
+  var authorNodes = unique.authors
+    .filter( x => playNodes.some( play => play.author === x))
+    .map( (author, i, list) => 
+    ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(author), popupFunc: getAuthorPopupFunction(author), author: author, linked: 0}));
+
+
+  links = [];
   // Creating links between authors and plays as well as genres and plays
   playNodes.forEach( (play, idx) => {
     if (play.author.length) {
@@ -110,11 +182,7 @@ function initNodesAndLinks() {
   }
 
   const relativeToTime = (list) => {
-    const range = list.reduce((pre, curr) => {
-        const millis = curr.dates[0].getTime();
-        return { min: Math.min(millis, pre.min), max: Math.max(millis, pre.max)};
-      }, { min: Infinity, max: -Infinity});
-
+    const range = { min: new Date(currentRange.min, 1), max: new Date(currentRange.max, 1) };
     return (val, i, list) => {
       val.y = (val.dates[0].getTime() - range.min) / (range.max - range.min);
       return val;
@@ -128,7 +196,9 @@ function initNodesAndLinks() {
 }
 
 function renderHivePlot() {
-  d3.select("#graph > svg").remove();
+  if (svg) $('svg').remove();
+  
+  initNodesAndLinks();
 
   var innerRadius = 40;
   var width = window.innerWidth;
@@ -183,12 +253,26 @@ function getAuthorModalFunction(author) {
   }
 }
 
-function getPlayModalFunction(title, date) {
+function getAuthorPopupFunction(author) {
+  return function() {
+    const title = $(`<div class="ui green label">Author: ${author}</div>`);
+    $('#infoPopup').append(title);
+  }
+}
+
+function getPlayModalFunction(play) {
   return function () {
-    const play = playSales.find( x => x.title === title);
     $('.modal-title').text("Play: " + play.title);  
     $('.modal-content').text("Date: " + date.toString());
     $('#infomodal').modal('show');
+  }
+}
+
+function getPlayPopupFunction(play) {
+  return function () {
+    const title = $(`<div class="ui orange label">Play: ${play.title}</div>`);
+    const date = $(`<div class="ui black label">${play.dates[0].toLocaleDateString()}</div>`);
+    $('#infoPopup').append(title, date);
   }
 }
 
@@ -196,6 +280,13 @@ function getGenreModalFunction(genre) {
   return function () {
     $('.modal-title').text("Genre: " + genre);
     $('#infomodal').modal('show');
+  }
+}
+
+function getGenrePopupFunction(genre) {
+  return function () {
+    const title = $(`<div class="ui blue label">Genre: ${genre}</div>`);
+    $('#infoPopup').append(title);
   }
 }
 
@@ -213,9 +304,11 @@ function linkMouseover(d) {
 function nodeMouseover(d) {
   svg.selectAll(".link").classed("active", function(p) { return p.source === d || p.target === d; });
   d3.select(this).classed("active", true);
+  d.popupFunc();
 }
 
 // Clear any highlighted nodes or links.
 function mouseout() {
   svg.selectAll(".active").classed("active", false);
+  $('#infoPopup').children().remove();
 }

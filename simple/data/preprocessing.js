@@ -43,7 +43,8 @@ const flagMapping = {
     plays.forEach( play => {
       play.dates = performanceTotals
         .filter( x => x.id === play.id )
-        .map( x => x.date );
+        .map( x => x.date )
+        .sort( (a, b) => Date.parse(a) - Date.parse(b));
     });
     
     fs.writeFileSync(PATH.PLAYS, JSON.stringify(plays, null, 2));

@@ -32,3 +32,23 @@
   stroke: red !important;
   stroke-width: 3px;
 }
+
+svg {
+  z-index: -1;
+}
+
+#infoPopup {
+  z-index: 1000;
+  position: absolute;
+  left: 1.5em;
+  top: 1.5em;
+}
+
+#dateSelect {
+  z-index: 1000;
+  position: absolute;
+  right: 1.5em;
+  top: 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+}

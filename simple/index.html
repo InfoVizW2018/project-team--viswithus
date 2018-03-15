@@ -25,10 +25,30 @@
     <a class="item active">Home</a>
   </div>
 
+  <!-- Statistics header -->
   <div class="ui five statistics">
   </div>
+
   <!-- Graph -->
   <div id="graph" class="ui padded segment">
+    <!-- Popup info -->
+    <div id="infoPopup" class="ui huge labels">
+    </div>
+
+    <!-- Date selection -->
+    <div id="dateSelect" class="ui two column grid segment" hidden>
+      <div class="column">
+          <div>From:</div>
+          <select id="minDate" class="ui scrolling dropdown">
+          </select>
+      </div>
+      <div class="column">
+          <div>To:</div>
+          <select id="maxDate" class="ui scrolling dropdown">
+          </select>
+      </div>
+    </div>
+  
     <div class="ui active text centered inline loader">Loading</div>
   </div>
 

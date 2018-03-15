@@ -57,7 +57,7 @@ function initDropDown() {
     }, { min: Infinity, max: -Infinity });
   
   currentRange.min = dateRange.min;
-  currentRange.max = currentRange.min + 1;
+  currentRange.max = dateRange.min + 1;
 
   const options1 = [];
   const options2 = [];
@@ -182,7 +182,7 @@ function initNodesAndLinks() {
   }
 
   const relativeToTime = (list) => {
-    const range = { min: new Date(currentRange.min, 1), max: new Date(currentRange.max, 1) };
+    const range = { min: new Date(currentRange.min, 0, 1), max: new Date(currentRange.max, 0, 1) };
     return (val, i, list) => {
       val.y = (val.dates[0].getTime() - range.min) / (range.max - range.min);
       return val;

@@ -278,8 +278,8 @@ function getPlayPopupFunction(play) {
 
 function getGenreModalFunction(genre) {
   return function () {
-    $('.modal-title').text("Genre: " + genre);
-    $('#infomodal').modal('show');
+    $('#genreName').text(genre)
+    $('#genremodal').modal('show');
   }
 }
 

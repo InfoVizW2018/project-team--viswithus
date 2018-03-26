@@ -248,8 +248,8 @@ function renderHivePlot() {
 
 function getAuthorModalFunction(author) {
   return function () {
-    $('.modal-title').text("Author: " + author);  
-    $('#infomodal').modal('show');
+    $('#authorName').text(author);
+    $('#authormodal').modal('show');
   }
 }
 
@@ -278,7 +278,7 @@ function getPlayPopupFunction(play) {
 
 function getGenreModalFunction(genre) {
   return function () {
-    $('#genreName').text(genre)
+    $('#genreName').text(genre);
     $('#genremodal').modal('show');
   }
 }

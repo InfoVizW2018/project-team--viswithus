@@ -263,7 +263,6 @@ function getAuthorPopupFunction(author) {
 function getPlayModalFunction(play) {
   return function () {
     $('.modal-title').text("Play: " + play.title);  
-    $('.modal-content').text("Date: " + date.toString());
     $('#infomodal').modal('show');
   }
 }

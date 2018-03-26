@@ -18,7 +18,7 @@ d3.queue()
   .await(loadHandler);
 
 function loadHandler(err, ...data) {
-  if (err) 
+  if (err)
     return console.log('Failed to load data!!!');
 
   let i = 0;
@@ -55,7 +55,7 @@ function initDropDown() {
       const year1 = curr.dates[curr.dates.length - 1].getFullYear() + 1;
       return { min: Math.min(prev.min, year0), max: Math.max(prev.max, year1) };
     }, { min: Infinity, max: -Infinity });
-  
+
   currentRange.min = dateRange.min;
   currentRange.max = dateRange.min + 1;
 
@@ -92,7 +92,7 @@ function initDropDown() {
       $(this).removeClass('error');
       const year = $(this).val();
       if (year === currentRange.max) return;
-      
+
       if (year <= currentRange.min) {
         $(this).val(currentRange.max)
         return $(this).addClass('error');
@@ -129,12 +129,12 @@ function initNodesAndLinks() {
     return play;
   });
 
-  var genreNodes = unique.genres.map( (genre, i, list) => 
+  var genreNodes = unique.genres.map( (genre, i, list) =>
     ({ x: 0, y: 0, modalFunc: getGenreModalFunction(genre), popupFunc: getGenrePopupFunction(genre), genre: genre, linked: 0}));
 
   var authorNodes = unique.authors
     .filter( x => playNodes.some( play => play.author === x))
-    .map( (author, i, list) => 
+    .map( (author, i, list) =>
     ({ x: 2, y: 0, modalFunc: getAuthorModalFunction(author), popupFunc: getAuthorPopupFunction(author), author: author, linked: 0}));
 
 
@@ -188,7 +188,7 @@ function initNodesAndLinks() {
       return val;
     }
   }
-  
+
   playNodes = playNodes.sort(sortByDate).map(relativeToTime(playNodes));
   genreNodes = genreNodes.sort(sortByLinks).map(relativeToSize);
   authorNodes = authorNodes.sort(sortByLinks).map(relativeToSize);
@@ -197,7 +197,7 @@ function initNodesAndLinks() {
 
 function renderHivePlot() {
   if (svg) $('svg').remove();
-  
+
   initNodesAndLinks();
 
   var innerRadius = 40;
@@ -208,13 +208,13 @@ function renderHivePlot() {
   var angle = d3.scalePoint().domain(d3.range(4)).range([0, 2 * Math.PI]);
   var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
   var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(20));
-  
+
   svg = d3.select("#graph").append("svg")
       .attr("width", width)
       .attr("height", height)
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-  
+
   svg.selectAll(".axis")
       .data(d3.range(3))
     .enter().append("line")
@@ -222,7 +222,7 @@ function renderHivePlot() {
       .attr("transform", function(d) { return "rotate(" + degrees(angle(d)) + ")"; })
       .attr("x1", radius.range()[0])
       .attr("x2", radius.range()[1]);
-  
+
   svg.selectAll(".link")
       .data(links)
     .enter().append("path")
@@ -232,7 +232,7 @@ function renderHivePlot() {
       .radius(function(d) { return radius(d.y); }))
       .on("mouseover", linkMouseover)
       .on("mouseout", mouseout);
-  
+
   svg.selectAll(".node")
       .data(nodes)
     .enter().append("circle")
@@ -257,12 +257,15 @@ function getAuthorPopupFunction(author) {
   return function() {
     const title = $(`<div class="ui green label">Author: ${author}</div>`);
     $('#infoPopup').append(title);
+
+    
+
   }
 }
 
 function getPlayModalFunction(play) {
   return function () {
-    $('.modal-title').text("Play: " + play.title);  
+    $('.modal-title').text("Play: " + play.title);
     $('#infomodal').modal('show');
   }
 }

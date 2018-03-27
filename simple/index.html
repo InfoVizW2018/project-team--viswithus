@@ -105,23 +105,25 @@
       Genre: <span id="genreName">{genre}</span>
     </div>
     <div class="content">
-      <div class="ui link cards">
-        <div class="card">
-          <div class="content">
-            <div class="header">Popular Plays</div>
-            <div class="meta">Extra info here</div>
-            <!-- Put top 5 in here -->
-            <div id="top5"></div>
+      <div class="ui two doubling cards">
+          <div class="card">
+            <div class="content">
+              <div class="header">Most Popular Plays</div>
+              <div class="meta">Based on total box office success</div>
+              <!-- Put top 5 in here -->
+              <ol id="top5plays" class="ui ordered list"></ol>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <div class="header">Popular Authors</div>
-            <div class="meta">Extra info here</div>
-            <!-- Put top 5 in here -->
-            <div id="top5"></div>
+          <div class="card">
+            <div class="content">
+              <div class="header">Most Popular Authors</div>
+              <div class="meta">Based on their plays of this genre's total box office success</div>
+              <!-- Put top 5 in here -->
+              <ol id="top5authors" class="ui ordered list"></ol>
+            </div>
           </div>
-        </div>
+      </div>
+      <div class="ui two doubling cards">
         <div class="card">
           <div class="content">
             <div class="header">Distribution</div>

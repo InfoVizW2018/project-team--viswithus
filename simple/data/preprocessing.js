@@ -116,8 +116,30 @@ const flagMapping = {
     process.stdout.write(' DONE\n');
   },
 
-}
+  /**
+   * Converts the dates in plays into objects with totals: string[] => { time: string, total: number }[]
+   */
+  '--total-sold': () => {
+    process.stdout.write('Writing total sold to plays.js...');
+    const plays = JSON.parse(fs.readFileSync(PATH.PLAYS, 'utf8'));
+    const playSales = JSON.parse(fs.readFileSync(PATH.TICKET, 'utf8'));
 
+    plays.forEach( play => {
+      const sales = playSales.filter( x => x.title === play.title);
+      play.dates = play.dates.map( date => ({
+          time: date,
+          total: sales
+            .filter( x => x.date === date )
+            .reduce( (prev, curr) => prev + curr.total_sold, 0)
+        }));
+      play.total_sold = play.dates.reduce( (prev, curr) => prev + curr.total, 0);
+    });
+
+    fs.writeFileSync('plays.json', JSON.stringify(plays, null, 2));
+    process.stdout.write(' DONE\n');
+  }
+
+}
 
 
 process.argv

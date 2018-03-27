@@ -34,7 +34,7 @@ function loadHandler(err, ...data) {
   playTotals = data[i++];
 
   plays = data[i++];
-  plays.forEach( x => x.dates = x.dates.map( d => new Date(d)));
+  plays.forEach( x => x.dates.forEach( d => d.time = new Date(d.time)));
 
   unique = data[i++];
 
@@ -51,8 +51,8 @@ function initDropDown() {
   const dateRange = plays
     .filter( x => x.dates.length)
     .reduce( (prev, curr) => {
-      const year0 = curr.dates[0].getFullYear();
-      const year1 = curr.dates[curr.dates.length - 1].getFullYear() + 1;
+      const year0 = curr.dates[0].time.getFullYear();
+      const year1 = curr.dates[curr.dates.length - 1].time.getFullYear() + 1;
       return { min: Math.min(prev.min, year0), max: Math.max(prev.max, year1) };
     }, { min: Infinity, max: -Infinity });
 
@@ -118,7 +118,7 @@ function initNodesAndLinks() {
   var playNodes = plays
   .filter(x => {
     if (!x.dates.length) return false;
-    const year = x.dates[0].getFullYear();
+    const year = x.dates[0].time.getFullYear();
     return year >= currentRange.min && year < currentRange.max;
   }).map( (play, i, list) => {
     play.x = 1
@@ -174,7 +174,7 @@ function initNodesAndLinks() {
   });
 
   const sortByLinks = (a, b) => a.linked - b.linked;
-  const sortByDate = (a, b) => a.dates[0].getTime() - b.dates[0].getTime();
+  const sortByDate = (a, b) => a.dates[0].time.getTime() - b.dates[0].time.getTime();
 
   const relativeToSize = (val, i, list) => {
     val.y = i / list.length;
@@ -184,7 +184,7 @@ function initNodesAndLinks() {
   const relativeToTime = (list) => {
     const range = { min: new Date(currentRange.min, 0, 1), max: new Date(currentRange.max, 0, 1) };
     return (val, i, list) => {
-      val.y = (val.dates[0].getTime() - range.min) / (range.max - range.min);
+      val.y = (val.dates[0].time.getTime() - range.min) / (range.max - range.min);
       return val;
     }
   }
@@ -272,7 +272,7 @@ function getPlayModalFunction(play) {
 function getPlayPopupFunction(play) {
   return function () {
     const title = $(`<div class="ui orange label">Play: ${play.title}</div>`);
-    const date = $(`<div class="ui black label">${play.dates[0].toLocaleDateString()}</div>`);
+    const date = $(`<div class="ui black label">${play.dates[0].time.toLocaleDateString()}</div>`);
     $('#infoPopup').append(title, date);
   }
 }
@@ -280,6 +280,46 @@ function getPlayPopupFunction(play) {
 function getGenreModalFunction(genre) {
   return function () {
     $('#genreName').text(genre);
+
+    // Top 5 plays based on tickets sold
+    const top5elems = plays
+      .sort( (a, b) => b.total_sold - a.total_sold )
+      .slice(0, 5)
+      .map( play => {
+        const header = $('<div></div>').addClass('header').text(play.title)
+        const meta = $('<div></div>').addClass('meta').append(
+          $('<span></span>').addClass(['right', 'floated']).text(`${play.total_sold} sold`),
+          $('<span></span>').addClass('category').text(play.author)
+        )
+        return $('<li></li>').addClass('item').append(header, meta);
+      })
+    
+    $('#top5plays').empty().append(top5elems);
+
+    // Top 5 authors based on number of plays in the genre
+    const playsGenre = plays.filter( p => p.genre === genre);
+    const top5auths = unique.authors
+      .map( author => {
+        const authorsPlays = playsGenre.filter( p => p.author === author )
+        return {
+          name: author,
+          count: authorsPlays.length,
+          sold: authorsPlays.reduce( (prev, curr) => prev + curr.total_sold, 0)
+        }
+      })
+      .sort( (a, b) => b.sold - a.sold)
+      .slice(0, 5)
+      .map( x => {
+        const header = $('<div></div>').addClass('header').text(x.name)
+        const meta = $('<div></div>').addClass('meta').append(
+          $('<span></span>').addClass(['right', 'floated']).text(`${x.count} plays`),
+          $('<span></span>').addClass('category').text(`${x.sold} sold`)
+        )
+        return $('<li></li>').addClass('item').append(header, meta);
+      })
+    
+    $('#top5authors').empty().append(top5auths);
+
     $('#genremodal').modal('show');
   }
 }

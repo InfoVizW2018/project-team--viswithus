@@ -196,8 +196,6 @@ function initNodesAndLinks() {
 }
 
 function renderHivePlot() {
-  if (svg) $('svg').remove();
-
   initNodesAndLinks();
 
   var innerRadius = 40;
@@ -209,7 +207,9 @@ function renderHivePlot() {
   var radius = d3.scaleLinear().range([innerRadius, outerRadius]);
   var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(20));
 
-  svg = d3.select("#graph").append("svg")
+  d3.select("#hive-plot").selectAll("*").remove();
+  
+  svg = d3.select("#hive-plot")
       .attr("width", width)
       .attr("height", height)
     .append("g")
@@ -359,6 +359,8 @@ function renderAuthorGenreDistDonutChart(author){
       var pie = d3.pie()
         .value(function (d) { return d["value"]; })
         .sort(null);
+
+      d3.select("#author-donut-chart").selectAll("*").remove();
 
       // Append SVG attributes and append g to the SVG
       var svg = d3.select("#author-donut-chart")

@@ -280,9 +280,10 @@ function getPlayPopupFunction(play) {
 function getGenreModalFunction(genre) {
   return function () {
     $('#genreName').text(genre);
+    const playsGenre = plays.filter( p => p.genre === genre);
 
     // Top 5 plays based on tickets sold
-    const top5elems = plays
+    const top5elems = playsGenre
       .sort( (a, b) => b.total_sold - a.total_sold )
       .slice(0, 5)
       .map( play => {
@@ -297,7 +298,6 @@ function getGenreModalFunction(genre) {
     $('#top5plays').empty().append(top5elems);
 
     // Top 5 authors based on number of plays in the genre
-    const playsGenre = plays.filter( p => p.genre === genre);
     const top5auths = unique.authors
       .map( author => {
         const authorsPlays = playsGenre.filter( p => p.author === author )
@@ -307,8 +307,9 @@ function getGenreModalFunction(genre) {
           sold: authorsPlays.reduce( (prev, curr) => prev + curr.total_sold, 0)
         }
       })
-      .sort( (a, b) => b.sold - a.sold)
+      .sort( (a, b) => b.sold === a.sold ? b.count - a.count : b.sold - a.sold)
       .slice(0, 5)
+      .filter( x => x.count > 0)
       .map( x => {
         const header = $('<div></div>').addClass('header').text(x.name)
         const meta = $('<div></div>').addClass('meta').append(

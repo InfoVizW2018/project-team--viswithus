@@ -104,7 +104,7 @@
     <div class="header modal">
       Genre: <span id="genreName">{genre}</span>
     </div>
-    <div class="content">
+    <div class="scrolling content">
       <div class="ui two doubling cards">
           <div class="card">
             <div class="content">
@@ -124,12 +124,12 @@
           </div>
       </div>
       <div class="ui two doubling cards">
-        <div class="card">
+        <div class="fluid card">
           <div class="content">
             <div class="header">Distribution</div>
-            <div class="meta">Extra info here</div>
+            <div class="meta">Proportion of plays of this genre (red)</div>
             <!-- Put the svg stuff in here -->
-            <div id="pieChart"></div>
+            <svg id="pieChart"></svg>
           </div>
         </div>
         <div class="card">
@@ -179,7 +179,6 @@
             <div class="header">Genre Distribution</div>
             <!-- <div class="meta">Extra info here</div> -->
             <svg id="author-donut-chart"></svg>
-            <div id="pieChart"></div>
           </div>
         </div>
       </div>

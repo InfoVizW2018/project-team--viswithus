@@ -322,6 +322,7 @@ function renderAuthorGenreDistDonutChart(author){
       var numPlays = playsByCurrAuthor.length;
 
       var genresList = [];
+
       playsByCurrAuthor.forEach(function(play){
         genresList.push(play.genre);
       });
@@ -331,31 +332,11 @@ function renderAuthorGenreDistDonutChart(author){
         return tally;
       } , {});
 
-      var seedData = [{
-                        "label": "React",
-                        "value": 25,
-                        "link": "https://facebook.github.io/react/"
-                      }, {
-                        "label": "Redux",
-                        "value": 25,
-                        "link": "https://redux.js.org/"
-                      }, {
-                        "label": "Vue.js",
-                        "value": 25,
-                        "link": "https://vuejs.org/"
-                      }, {
-                        "label": "AngularJS",
-                        "value": 25,
-                        "link": "https://angularjs.org/"
-                      }, {
-                        "label": "Meteor",
-                        "value": 25,
-                        "link": "https://meteorhacks.com/meteor-js-web-framework-for-everyone"
-                      }, {
-                        "label": "Node.js",
-                        "value": 25,
-                        "link": "https://nodejs.org/"
-                      }];
+      var seedData = [];
+      var len = counts.length;
+
+      for (var genre in counts)
+          seedData.push({ "genre": genre, "value": counts[genre]});
 
       // Define size & radius of donut pie chart
       var width = 450,
@@ -363,7 +344,7 @@ function renderAuthorGenreDistDonutChart(author){
           radius = Math.min(width, height) / 2;
 
       // Define arc colours
-      var colour = d3.scaleOrdinal(d3.schemeCategory20);
+      var colour = d3.scaleOrdinal(d3.schemeCategory10);
 
       // Define arc ranges
       var arcText = d3.scaleOrdinal()
@@ -400,9 +381,9 @@ function renderAuthorGenreDistDonutChart(author){
         .attr("class", "arc")
 
         // Make each arc clickable
-        .on("click", function(d, i) {
-          window.location = seedData[i].link;
-        });
+        // .on("click", function(d, i) {
+        //   window.location = seedData[i].link;
+        // });
 
     	// Append the path to each g
     	g.append("path")
@@ -419,7 +400,8 @@ function renderAuthorGenreDistDonutChart(author){
       	.attr("dy", ".35em")
       	.style("text-anchor", "middle")
       	.attr("fill", "#fff")
-    		.text(function(d,i) { return seedData[i].label; })
+        .attr("background-color", "#000")
+    		.text(function(d,i) { return seedData[i].genre; })
 
       g.selectAll(".arc text").call(wrap, arcText.range([0, width]));
 
@@ -429,14 +411,15 @@ function renderAuthorGenreDistDonutChart(author){
         .style("text-anchor", "middle")
         .attr("class", "inner-circle")
         .attr("fill", "#36454f")
-        .text(function(d) { return 'JavaScript'; });
+        .text(function(d) { return 'Plays Written'; });
 
       svg.append("text")
         .attr("dy", "1.0em")
+        .attr("size", "12")
         .style("text-anchor", "middle")
-        .attr("class", "inner-circle")
+        .attr("class", "inner-circle donut-label")
         .attr("fill", "#36454f")
-        .text(function(d) { return 'is lots of fun!'; });
+        .text(function(d) { return numPlays; });
 
 }
 
@@ -452,7 +435,6 @@ function wrap(text, width) {
         y = text.attr("y"),
         dy = parseFloat(text.attr("dy")),
         tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-    console.log("tspan: " + tspan);
     while (word = words.pop()) {
       line.push(word);
       tspan.text(line.join(" "));

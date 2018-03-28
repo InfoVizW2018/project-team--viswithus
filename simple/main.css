@@ -56,3 +56,20 @@ svg {
 .donut-label{
   font-size: 200% !important;
 }
+
+span.green {
+  margin-top:12px;
+  background: #5EA226;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  color: #ffffff;
+  margin-left: 100px;
+  display: block;
+  font-weight: bold;
+  font-size: 24pt;
+  line-height: 2em;
+  margin-right: 15px;
+  text-align: center;
+  width: 2em;
+}

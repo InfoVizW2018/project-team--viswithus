@@ -208,7 +208,7 @@ function renderHivePlot() {
   var color = d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(20));
 
   d3.select("#hive-plot").selectAll("*").remove();
-  
+
   svg = d3.select("#hive-plot")
       .attr("width", width)
       .attr("height", height)
@@ -251,6 +251,8 @@ function getAuthorModalFunction(author) {
     $('#authorName').text(author);
     $('#authormodal').modal('show');
 
+    renderAuthorPopularityRank(author);
+    renderAuthorPlaySuccessBarChart(author);
     renderAuthorGenreDistDonutChart(author);
   }
 }
@@ -294,7 +296,7 @@ function getGenreModalFunction(genre) {
         )
         return $('<li></li>').addClass('item').append(header, meta);
       })
-    
+
     $('#top5plays').empty().append(top5elems);
 
     // Top 5 authors based on box office numbers
@@ -318,7 +320,7 @@ function getGenreModalFunction(genre) {
         )
         return $('<li></li>').addClass('item').append(header, meta);
       })
-    
+
     $('#top5authors').empty().append(top5auths);
 
     renderGenrePieChart(genre);
@@ -468,6 +470,26 @@ function renderAuthorGenreDistDonutChart(author){
 
 }
 
+function renderAuthorPlaySuccessBarChart(author){
+  var playsByCurrAuthor = plays.filter( function (play) {
+    return play.author == author;
+  });
+
+  playsByCurrAuthor.sort(function (a,b){
+    return b.total_sold - a.total_sold;
+  });
+
+  // TODO Render bar chart, only top 5 plays?
+}
+
+function renderAuthorPopularityRank(author){
+  var playsByCurrAuthor = plays.filter( function (play) {
+    return play.author == author;
+  });
+
+  // TODO Render rank based on other authors' ticket sales
+}
+
 // Wrap function to handle labels with longer text
 function wrap(text, width) {
   text.each(function() {
@@ -522,7 +544,7 @@ function renderGenrePieChart(genre) {
   const pie = d3.pie()
     .sort(null)
     .value( function (d) { return d.count; });
-  
+
   const path = d3.arc()
     .outerRadius(radius - 10)
     .innerRadius(0);
@@ -536,7 +558,7 @@ function renderGenrePieChart(genre) {
     .enter()
       .append('g')
       .attr('class', 'arc');
-  
+
   arc.append('path')
     .attr('d', path)
     .attr('fill', function (d) { return color(d.data.x); });

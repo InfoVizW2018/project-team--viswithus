@@ -73,3 +73,7 @@ span.green {
   text-align: center;
   width: 2em;
 }
+
+.node:hover {
+  cursor: pointer;
+}

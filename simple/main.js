@@ -602,5 +602,60 @@ function renderRecitalDistribution(play) {
     obj['sales']= x.total;
     return obj;
   });
-// TODO: group by day, aggregate totals, add svg
+
+  var groups = days.reduce((h, a) => Object.assign(h, { [a.day]:( h[a.day] || [] ).concat(a.sales) }), {});
+  const dayString = function(x){return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][x];}
+  var cons=[]
+  Object.keys(groups).forEach(function(x) {
+    cons.push([dayString(x),(groups[x].reduce((a,b)=> a+b,0))]);
+  });
+  const total = cons.map(x=>x[1]).reduce((a,b)=> a+b,0);
+  var data =[]
+  for(var i=0;i<cons.length;i++) {
+    data.push({x:i, label:cons[i][0], value: (cons[i][1]/total)*100});
+  }
+
+  const width = 500;
+  const height = 500;
+
+  const radius = Math.min(width, height) / 2;
+
+  d3.select("#playPieChart").selectAll("*").remove();
+
+  const svg = d3.select('#playPieChart')
+    .attr('width', width)
+    .attr('height', height)
+
+  const g = svg
+    .append('g')
+    .attr('transform', `translate(${width / 2}, ${height / 2})`);
+
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  const pie = d3.pie()
+    .sort(null)
+    .value( function (d) { return d.value; });
+
+    const path = d3.arc()
+      .outerRadius(radius - 10)
+      .innerRadius(0);
+
+    const label = d3.arc()
+      .outerRadius(radius - width / 2)
+      .innerRadius(radius - 40);
+
+    const arc = g.selectAll('.arc')
+        .data(pie(data))
+      .enter()
+        .append('g')
+        .attr('class', 'arc');
+
+    arc.append('path')
+      .attr('d', path)
+      .attr('fill', function (d) { return color(d.data.x); });
+
+    arc.append('text')
+      .attr('transform', function (d) { return `translate(${label.centroid(d)})`; })
+      .attr('dy', '0.35em')
+      .text(function (d) { return d.data.label; });
 }

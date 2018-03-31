@@ -481,7 +481,55 @@ function renderAuthorPlaySuccessBarChart(author){
     return b.total_sold - a.total_sold;
   });
 
-  // TODO Render bar chart, only top 5 plays?
+  var topFivePlays = playsByCurrAuthor.slice(0,5);
+
+  console.log(topFivePlays);
+
+  var margin = {top: 20, right: 30, bottom: 250, left: 40},
+    width = 450 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+    var x = d3.scaleBand()
+      .rangeRound([0, width])
+      .padding(0.6);
+
+    var y = d3.scaleLinear()
+      .range([height, 0]);
+
+    var svg = d3.select("#author-bar-chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    x.domain(topFivePlays.map(function(d) { return d.title; }));
+    y.domain([0, d3.max(topFivePlays, function(d) { return d.total_sold; })]);
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom().scale(x))
+        .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-65)"
+                });
+
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(d3.axisLeft().scale(y));
+
+    svg.selectAll(".bar")
+    .data(topFivePlays)
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.title); })
+        .attr("width", 40)
+        .attr("y", function(d) { return y(d.total_sold); })
+        .attr("height", function(d) { return height - y(d.total_sold); });
 }
 
 function renderAuthorPopularityRank(author){

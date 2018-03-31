@@ -492,7 +492,7 @@ function renderAuthorPlaySuccessBarChart(author){
   });
 
   console.log(topFivePlays);
-  var margin = {top: 20, right: 30, bottom: 250, left:50},
+  var margin = {top: 20, right: 30, bottom: 200, left:50},
     width = 450 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
 

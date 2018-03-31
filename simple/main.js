@@ -491,7 +491,6 @@ function renderAuthorPlaySuccessBarChart(author){
     play.title = truncate(play.title);
   });
 
-  console.log(topFivePlays);
   var margin = {top: 20, right: 30, bottom: 200, left:50},
     width = 450 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
@@ -548,11 +547,32 @@ function truncate(string){
 };
 
 function renderAuthorPopularityRank(author){
-  var playsByCurrAuthor = plays.filter( function (play) {
-    return play.author == author;
+  var authorPlays = [];
+
+  for (var aut in unique.authors)
+      authorPlays.push({ "name": unique.authors[aut], "total_sold": 0});
+  // console.log(authorPlays[0].fullname);
+  authorPlays.forEach(function(a){
+    var currIndex = authorPlays.indexOf(a);
+    var currAuthorPlayCount = 0;
+      plays.forEach(function(p){
+        if (p.author != null){
+          if (p.author.includes(a.name)){
+            currAuthorPlayCount = currAuthorPlayCount + p.total_sold;
+          }
+        }
+      });
+
+      authorPlays[currIndex] = {"name": a.name, "total_sold": currAuthorPlayCount};
   });
 
-  // TODO Render rank based on other authors' ticket sales
+  authorPlays.sort(function (a,b){
+    return b.total_sold - a.total_sold;
+  });
+
+  var rank = authorPlays.findIndex(auth => auth.name == author) + 1;
+
+  $("#author-rank").text(rank);
 }
 
 // Wrap function to handle labels with longer text

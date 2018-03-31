@@ -81,21 +81,27 @@
     </div>
   </div>
 
-  <div id="infomodal" class="ui basic large modal">
+  <div id="playmodal" class="ui basic large modal">
     <i class="close icon"></i>
     <div class="header modal-title">
       {title}
     </div>
-    <div class="image content">
-      <div class="description">
-        <!-- <div class="ui header">We've auto-chosen a profile image for you.</div> -->
-        <p class="modal-content">Whatever information here</p>
+    <div class="scrolling content">
+      <div class="ui two doubling cards">
+        <div class="card">
+          <div class="content">
+            <div class="header">Play Popularity Rank</div>
+            <div id="playRankGenre" ></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="actions">
-      <div class="ui green ok button">
-        <i class="checkmark icon"></i>
-        Okay
+      <div class="ui two doubling cards">
+        <div class="card">
+          <div class="content">
+            <div class="header">Play Popularity Rank</div>
+            <div id="playRankAuthor" ></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -124,7 +130,7 @@
           </div>
       </div>
       <div class="ui two doubling cards">
-        <div class="fluid card">
+        <div class="ui fluid card">
           <div class="content">
             <div class="header">Distribution</div>
             <div class="meta">Proportion of plays of this genre (red)</div>

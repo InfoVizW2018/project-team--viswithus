@@ -267,7 +267,11 @@ function getAuthorPopupFunction(author) {
 function getPlayModalFunction(play) {
   return function () {
     $('.modal-title').text("Play: " + play.title);
-    $('#infomodal').modal('show');
+    $('#playmodal').modal('show');
+
+    renderPlayRankInGenre(play);
+    renderPlayRankByAuthor(play);
+    renderRecitalDistribution(play);
   }
 }
 
@@ -569,4 +573,34 @@ function renderGenrePieChart(genre) {
   //   .attr('transform', function (d) { return `translate(${label.centroid(d)})`; })
   //   .attr('dy', '0.35em')
   //   .text(function (d) { return d.data.label; });
+}
+
+function renderPlayRankInGenre(play) {
+  const sortBySales = (a,b) => b.total - a.total
+  const playsOfSameGenre = plays.filter(x=> x.genre == play.genre).map(y=> y.title);
+  const rank = playTotals.filter(x => playsOfSameGenre.indexOf(x.title) >= 0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;
+  const meta = $('<div></div>').addClass('meta').append(
+    $('<span></span>').text(`Among works of the same genre (${play.genre})`));
+  const toAdd= $('<span></span>').addClass('green').text(rank);
+  $('#playRankGenre').empty().append(meta, toAdd);
+}
+
+function renderPlayRankByAuthor(play) {
+  const sortBySales = (a,b) => b.total - a.total
+  const playsBySameAuthor = plays.filter(x=>x.author==play.author).map(y=> y.title);
+  const rank = playTotals.filter(x => playsBySameAuthor.indexOf(x.title) >=0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;;
+  const meta = $('<div></div>').addClass('meta').append(
+    $('<span></span>').text(`Among works also by ${play.author}`));
+  const toAdd= $('<span></span>').addClass('green').text(rank);
+  $('#playRankAuthor').empty().append(meta, toAdd);
+}
+
+function renderRecitalDistribution(play) {
+  const days= play.dates.map(function(x) {
+    var obj={};
+    obj['day'] = x.time.getDay();
+    obj['sales']= x.total;
+    return obj;
+  });
+// TODO: group by day, aggregate totals, add svg
 }

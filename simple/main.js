@@ -284,47 +284,45 @@ function getPlayPopupFunction(play) {
 }
 
 function getGenreModalFunction(genre) {
+  const playsGenre = plays.filter( p => p.genre === genre);
+
+  const top5elems = playsGenre
+    .sort( (a, b) => b.total_sold - a.total_sold )
+    .slice(0, 5)
+    .map( play => {
+      const header = $('<div></div>').addClass('header').text(play.title)
+      const meta = $('<div></div>').addClass('meta').append(
+        $('<span></span>').addClass(['right', 'floated']).text(`${play.total_sold} sold`),
+        $('<span></span>').addClass('category').text(play.author)
+      )
+      return $('<li></li>').addClass('item').append(header, meta);
+    });
+
+  const top5auths =  unique.authors
+    .map( author => {
+      const authorsPlays = playsGenre.filter( p => p.author === author )
+      return {
+        name: author,
+        count: authorsPlays.length,
+        sold: authorsPlays.reduce( (prev, curr) => prev + curr.total_sold, 0)
+      }
+    })
+    .sort( (a, b) => b.sold === a.sold ? b.count - a.count : b.sold - a.sold)
+    .slice(0, 5)
+    .filter( x => x.count > 0)
+    .map( x => {
+      const header = $('<div></div>').addClass('header').text(x.name)
+      const meta = $('<div></div>').addClass('meta').append(
+        $('<span></span>').addClass(['right', 'floated']).text(`${x.count} plays`),
+        $('<span></span>').addClass('category').text(`${x.sold} sold`)
+      )
+      return $('<li></li>').addClass('item').append(header, meta);
+    });
+
   return function () {
     $('#genreName').text(genre);
-    const playsGenre = plays.filter( p => p.genre === genre);
-
-    // Top 5 plays based on tickets sold
-    const top5elems = playsGenre
-      .sort( (a, b) => b.total_sold - a.total_sold )
-      .slice(0, 5)
-      .map( play => {
-        const header = $('<div></div>').addClass('header').text(play.title)
-        const meta = $('<div></div>').addClass('meta').append(
-          $('<span></span>').addClass(['right', 'floated']).text(`${play.total_sold} sold`),
-          $('<span></span>').addClass('category').text(play.author)
-        )
-        return $('<li></li>').addClass('item').append(header, meta);
-      })
 
     $('#top5plays').empty().append(top5elems);
-
-    // Top 5 authors based on box office numbers
-    const top5auths = unique.authors
-      .map( author => {
-        const authorsPlays = playsGenre.filter( p => p.author === author )
-        return {
-          name: author,
-          count: authorsPlays.length,
-          sold: authorsPlays.reduce( (prev, curr) => prev + curr.total_sold, 0)
-        }
-      })
-      .sort( (a, b) => b.sold === a.sold ? b.count - a.count : b.sold - a.sold)
-      .slice(0, 5)
-      .filter( x => x.count > 0)
-      .map( x => {
-        const header = $('<div></div>').addClass('header').text(x.name)
-        const meta = $('<div></div>').addClass('meta').append(
-          $('<span></span>').addClass(['right', 'floated']).text(`${x.count} plays`),
-          $('<span></span>').addClass('category').text(`${x.sold} sold`)
-        )
-        return $('<li></li>').addClass('item').append(header, meta);
-      })
-
     $('#top5authors').empty().append(top5auths);
 
     renderGenrePieChart(genre);
@@ -576,7 +574,7 @@ function renderGenrePieChart(genre) {
 }
 
 function renderPlayRankInGenre(play) {
-  const sortBySales = (a,b) => b.total - a.total
+  const sortBySales = (a,b) => b.total_sold - a.total_sold;
   const playsOfSameGenre = plays.filter(x=> x.genre == play.genre).map(y=> y.title);
   const rank = playTotals.filter(x => playsOfSameGenre.indexOf(x.title) >= 0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;
   const meta = $('<div></div>').addClass('meta').append(
@@ -586,7 +584,7 @@ function renderPlayRankInGenre(play) {
 }
 
 function renderPlayRankByAuthor(play) {
-  const sortBySales = (a,b) => b.total - a.total
+  const sortBySales = (a,b) => b.total_sold - a.total_sold;
   const playsBySameAuthor = plays.filter(x=>x.author==play.author).map(y=> y.title);
   const rank = playTotals.filter(x => playsBySameAuthor.indexOf(x.title) >=0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;;
   const meta = $('<div></div>').addClass('meta').append(

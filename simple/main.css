@@ -64,7 +64,41 @@ span.green {
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
   color: #ffffff;
-  margin-left: 100px;
+  margin-left: 120px;
+  display: block;
+  font-weight: bold;
+  font-size: 24pt;
+  line-height: 2em;
+  margin-right: 15px;
+  text-align: center;
+  width: 2em;
+}
+
+span.purple {
+  margin-top:12px;
+  background: #a239cd;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  color: #ffffff;
+  margin-left: 120px;
+  display: block;
+  font-weight: bold;
+  font-size: 24pt;
+  line-height: 2em;
+  margin-right: 15px;
+  text-align: center;
+  width: 2em;
+}
+
+span.red {
+  margin-top:12px;
+  background: #b43825;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  color: #ffffff;
+  margin-left: 120px;
   display: block;
   font-weight: bold;
   font-size: 24pt;
@@ -76,4 +110,8 @@ span.green {
 
 .node:hover {
   cursor: pointer;
+}
+
+.bar {
+  fill: Tomato;
 }

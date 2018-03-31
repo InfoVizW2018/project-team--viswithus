@@ -94,12 +94,17 @@
             <div id="playRankGenre" ></div>
           </div>
         </div>
-      </div>
-      <div class="ui two doubling cards">
         <div class="card">
           <div class="content">
             <div class="header">Play Popularity Rank</div>
             <div id="playRankAuthor" ></div>
+          </div>
+        </div>
+        <div class="card fluid card">
+          <div class="content">
+            <div class="header">Popularity across Days of the Week</div>
+            <div class="meta">Based on ticket sale revenue</div>
+            <svg id="playPieChart"></svg>
           </div>
         </div>
       </div>
@@ -161,22 +166,29 @@
       Author: <span id="authorName">{author}</span>
     </div>
     <div class="content">
-      <div class="ui link cards">
-        <div class="card">
+      <div class="ui link cards three column grid">
+        <div class="ui card">
           <div class="content">
             <div class="header">Popularity Rank</div>
-            <div class="meta">Based on all time total ticket sales in comparison to other authors</div>
-            <span class="green" id="author-rank">4</span>
+            <div class="meta">Based on total ticket sales among other authors</div>
+            <span class="green" id="author-rank">21</span>
           </div>
         </div>
-        <div class="card">
+        <div class="ui card">
           <div class="content">
-            <div class="header">Play Success</div>
+            <div class="header">More Data</div>
             <div class="meta">Extra info here</div>
-            <!-- Put top 5 in here -->
-            <div id="top5"></div>
+            <span class="red" id="">#</span>
           </div>
         </div>
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="header">More Data</div>
+            <div class="meta">Extra info here</div>
+            <span class="purple" id="">#</span>
+          </div>
+        </div>
+
       </div>
       <div class="ui link cards two column grid">
         <div class="ui fluid centered card">
@@ -184,6 +196,13 @@
             <div class="header">Genre Distribution</div>
             <div class="meta">Distribution of genres in author's written plays</div>
             <svg id="author-donut-chart"></svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <div class="header">Play Success</div>
+            <div class="meta">Top 5 plays based on total tickets sold (y axis)</div>
+            <div id="author-bar-chart"></div>
           </div>
         </div>
       </div>

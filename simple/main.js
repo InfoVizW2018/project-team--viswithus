@@ -483,15 +483,94 @@ function renderAuthorPlaySuccessBarChart(author){
     return b.total_sold - a.total_sold;
   });
 
-  // TODO Render bar chart, only top 5 plays?
-}
+  var topFivePlays = playsByCurrAuthor.slice(0,5);
 
-function renderAuthorPopularityRank(author){
-  var playsByCurrAuthor = plays.filter( function (play) {
-    return play.author == author;
+  topFivePlays.forEach(function(play){
+    play.title = truncate(play.title);
   });
 
-  // TODO Render rank based on other authors' ticket sales
+  var margin = {top: 20, right: 30, bottom: 200, left:50},
+    width = 450 - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
+
+    var x = d3.scaleBand()
+      .rangeRound([0, width])
+      .padding(0.6);
+
+    var y = d3.scaleLinear()
+      .range([height, 0]);
+
+    $("#author-bar-chart").empty();
+    var svg = d3.select("#author-bar-chart").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    x.domain(topFivePlays.map(function(d) { return d.title; }));
+    y.domain([0, d3.max(topFivePlays, function(d) { return d.total_sold; })]);
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom().scale(x))
+        .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-65)"
+                });
+
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(d3.axisLeft().scale(y));
+
+    svg.selectAll(".bar")
+    .data(topFivePlays)
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.title); })
+        .attr("width", 40)
+        .attr("y", function(d) { return y(d.total_sold); })
+        .attr("height", function(d) { return height - y(d.total_sold); });
+}
+
+function truncate(string){
+   if (string.length > 40)
+      return string.substring(0,40)+'...';
+   else
+      return string;
+};
+
+function renderAuthorPopularityRank(author){
+  var authorPlays = [];
+
+  for (var aut in unique.authors)
+      authorPlays.push({ "name": unique.authors[aut], "total_sold": 0});
+  // console.log(authorPlays[0].fullname);
+  authorPlays.forEach(function(a){
+    var currIndex = authorPlays.indexOf(a);
+    var currAuthorPlayCount = 0;
+      plays.forEach(function(p){
+        if (p.author != null){
+          if (p.author.includes(a.name)){
+            currAuthorPlayCount = currAuthorPlayCount + p.total_sold;
+          }
+        }
+      });
+
+      authorPlays[currIndex] = {"name": a.name, "total_sold": currAuthorPlayCount};
+  });
+
+  authorPlays.sort(function (a,b){
+    return b.total_sold - a.total_sold;
+  });
+
+  var rank = authorPlays.findIndex(auth => auth.name == author) + 1;
+
+  $("#author-rank").text(rank);
 }
 
 // Wrap function to handle labels with longer text
@@ -600,5 +679,60 @@ function renderRecitalDistribution(play) {
     obj['sales']= x.total;
     return obj;
   });
-// TODO: group by day, aggregate totals, add svg
+
+  var groups = days.reduce((h, a) => Object.assign(h, { [a.day]:( h[a.day] || [] ).concat(a.sales) }), {});
+  const dayString = function(x){return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][x];}
+  var cons=[]
+  Object.keys(groups).forEach(function(x) {
+    cons.push([dayString(x),(groups[x].reduce((a,b)=> a+b,0))]);
+  });
+  const total = cons.map(x=>x[1]).reduce((a,b)=> a+b,0);
+  var data =[]
+  for(var i=0;i<cons.length;i++) {
+    data.push({x:i, label:cons[i][0], value: (cons[i][1]/total)*100});
+  }
+
+  const width = 500;
+  const height = 500;
+
+  const radius = Math.min(width, height) / 2;
+
+  d3.select("#playPieChart").selectAll("*").remove();
+
+  const svg = d3.select('#playPieChart')
+    .attr('width', width)
+    .attr('height', height)
+
+  const g = svg
+    .append('g')
+    .attr('transform', `translate(${width / 2}, ${height / 2})`);
+
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  const pie = d3.pie()
+    .sort(null)
+    .value( function (d) { return d.value; });
+
+    const path = d3.arc()
+      .outerRadius(radius - 10)
+      .innerRadius(0);
+
+    const label = d3.arc()
+      .outerRadius(radius - width / 2)
+      .innerRadius(radius - 40);
+
+    const arc = g.selectAll('.arc')
+        .data(pie(data))
+      .enter()
+        .append('g')
+        .attr('class', 'arc');
+
+    arc.append('path')
+      .attr('d', path)
+      .attr('fill', function (d) { return color(d.data.x); });
+
+    arc.append('text')
+      .attr('transform', function (d) { return `translate(${label.centroid(d)})`; })
+      .attr('dy', '0.35em')
+      .text(function (d) { return d.data.label; });
 }

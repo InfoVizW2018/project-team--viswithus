@@ -487,9 +487,14 @@ function renderAuthorPlaySuccessBarChart(author){
 
   var topFivePlays = playsByCurrAuthor.slice(0,5);
 
-  var margin = {top: 20, right: 30, bottom: 250, left: 40},
+  topFivePlays.forEach(function(play){
+    play.title = truncate(play.title);
+  });
+
+  console.log(topFivePlays);
+  var margin = {top: 20, right: 30, bottom: 250, left:50},
     width = 450 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+    height = 550 - margin.top - margin.bottom;
 
     var x = d3.scaleBand()
       .rangeRound([0, width])
@@ -534,6 +539,13 @@ function renderAuthorPlaySuccessBarChart(author){
         .attr("y", function(d) { return y(d.total_sold); })
         .attr("height", function(d) { return height - y(d.total_sold); });
 }
+
+function truncate(string){
+   if (string.length > 40)
+      return string.substring(0,40)+'...';
+   else
+      return string;
+};
 
 function renderAuthorPopularityRank(author){
   var playsByCurrAuthor = plays.filter( function (play) {

@@ -487,8 +487,6 @@ function renderAuthorPlaySuccessBarChart(author){
 
   var topFivePlays = playsByCurrAuthor.slice(0,5);
 
-  console.log(topFivePlays);
-
   var margin = {top: 20, right: 30, bottom: 250, left: 40},
     width = 450 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom;
@@ -500,6 +498,7 @@ function renderAuthorPlaySuccessBarChart(author){
     var y = d3.scaleLinear()
       .range([height, 0]);
 
+    $("#author-bar-chart").empty();
     var svg = d3.select("#author-bar-chart").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)

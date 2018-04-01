@@ -10,7 +10,7 @@ var svg;
 d3.queue()
   // .defer(d3.json, 'data/people.json')
   .defer(d3.json, 'data/performance_with_totals.json')
-  // .defer(d3.json, 'data/play_ticket_sales.json')
+  .defer(d3.json, 'data/play_ticket_sales.json')
   .defer(d3.json, 'data/plays_with_totals.json')
   .defer(d3.json, 'data/plays.json')
   .defer(d3.json, 'data/unique_data.json')
@@ -28,8 +28,8 @@ function loadHandler(err, ...data) {
   performanceTotals = data[i++];
   performanceTotals.forEach( x => x.date = new Date(x.date));
 
-  // playSales = data[i++];
-  // playSales.forEach( x => x.date = new Date(x.date));
+  playSales = data[i++];
+  playSales.forEach( x => x.date = new Date(x.date));
 
   playTotals = data[i++];
 
@@ -272,6 +272,7 @@ function getPlayModalFunction(play) {
     renderPlayRankInGenre(play);
     renderPlayRankByAuthor(play);
     renderRecitalDistribution(play);
+    renderTicketSalesOverTime(play)
   }
 }
 
@@ -735,4 +736,92 @@ function renderRecitalDistribution(play) {
       .attr('transform', function (d) { return `translate(${label.centroid(d)})`; })
       .attr('dy', '0.35em')
       .text(function (d) { return d.data.label; });
+}
+
+function renderTicketSalesOverTime(play){
+  var performances = performanceTotals.filter(x=> play.title==x.title);
+  var sales = playSales.filter(x=> play.title==x.title).reduce((h, a) => Object.assign(h, { [a.name]:( h[a.name] || [] ).concat({'year':a.date.getFullYear(), 'sales':a.total_sold}) }), {});
+  const years = [... new Set(playSales.map(x=>x.date.getFullYear()))];
+  stats ={};
+    Object.keys(sales).forEach(function(x){
+      dict = sales[x].reduce((h, a) => Object.assign(h, { [a.year]:( h[a.year] || [] ).concat({'year':a.year, 'sales':a.sales}) }), {});
+      Object.keys(dict).forEach(function(y){
+        var sum =0;
+        dict[y].forEach(function(item){
+          sum += item.sales;
+        });
+        dict[y] = sum;
+      });
+      if(Object.keys(dict).length){
+        stats[x] = dict;
+      }
+    });
+
+
+  const width = 500;
+  const height = 500;
+
+
+  d3.select("#ticket").selectAll("*").remove();
+
+  const svg = d3.select('#ticketSales')
+    .attr('width', width)
+    .attr('height', height)
+
+  var x = d3.scaleLinear().range([0, width]);
+  var y = d3.scaleLinear().range([height, 0]);
+
+  var getMaxMinYear = function(elem){
+    var max = 0;
+    var min = 10000;
+    Object.values(elem).forEach(function(item){
+      var min1 = Math.min.apply(null, Object.keys(item)),
+      max1 = Math.max.apply(null,Object.keys(item));
+      if(max1> max){max=max1};
+      if(min1<min){min=min1};
+    });
+    return [min,max];
+  };
+
+  var getMaxSales = function(elem){
+    max=0;
+    Object.values(elem).forEach(function(item){
+      var max1 = Math.min.apply(null, Object.values(item));
+      if(max1 > max){max=max1};
+    });
+    return max;
+  };
+
+  var makeData = function(key,stats){
+    var data=[]
+    var yrs = getMaxMinYear(stats);
+    var years = Array.from(new Array(yrs[1]-yrs[0]+1) , (x,i) => i + yrs[0]);
+    years.forEach(function(year){
+      data.push(stats[key][year]);
+    });
+    return data.map(function(y){
+      if(y==undefined){return 0};
+      return y;
+    });
+  };
+  //set domain and range
+  x.domain(getMaxMinYear(stats));
+  y.domain([0,getMaxSales(stats)]);
+
+  Object.keys(stats).forEach(function(x){
+    data = makeData(x,stats);
+    if(data.reduce((a,b)=>a+b,0)> 50){ // this is pretty arbitary
+      //append the line
+    }
+  });
+
+  // Add the X Axis
+  //this doesn't work
+  svg.append("g")
+      .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  //neither does this
+  svg.append("g")
+      .call(d3.axisLeft(y));
 }

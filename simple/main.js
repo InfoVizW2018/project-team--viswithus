@@ -464,18 +464,22 @@ function renderAuthorGenreDistDonutChart(author){
   svg.append("text")
     .attr("dy", "-0.5em")
     .style("text-anchor", "middle")
-    .attr("class", "inner-circle")
-    .attr("fill", "#36454f")
-    .text(function(d) { return 'Plays Written'; });
+    .attr("class", "inner-circle genre-name")
+    .attr("fill", "#36454f"); 
 
   svg.append("text")
     .attr("dy", "1.0em")
     .attr("size", "12")
     .style("text-anchor", "middle")
-    .attr("class", "inner-circle donut-label")
-    .attr("fill", "#36454f")
-    .text(function(d) { return numPlays; });
+    .attr("class", "inner-circle donut-label genre-plays-count")
+    .attr("fill", "#36454f");
 
+    g.on("mouseover", function(d, i){
+      $(".genre-name").text('Plays written in ' + seedData[i].genre);
+      $(".genre-plays-count").text(seedData[i].value);
+    });
+
+    $("#num-plays").text(numPlays);
 }
 
 function renderAuthorPlaySuccessBarChart(author){

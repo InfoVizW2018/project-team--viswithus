@@ -803,14 +803,15 @@ function renderTicketSalesOverTime(play){
 
   xScale = d3.scaleLinear()
           .range([MARGINS.left, WIDTH - MARGINS.right])
-          .domain(getMaxMinYear(stats));
+          .domain(getMaxMinYear(stats))
+
   yScale = d3.scaleLinear()
           .range([HEIGHT - MARGINS.top, MARGINS.bottom])
           .domain([0,getMaxSales(stats)]);
 
   xAxis = d3.axisBottom()
-          .scale(xScale);
-
+          .scale(xScale)
+          .tickFormat(d3.format("d"));
   yAxis = d3.axisLeft()
           .scale(yScale);
 

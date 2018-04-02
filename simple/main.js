@@ -757,10 +757,10 @@ function renderTicketSalesOverTime(play){
       }
     });
 
-  d3.select("#ticket").selectAll("*").remove();
+  d3.select("#ticketSales").selectAll("*").remove();
 
-  var vis = d3.select("#ticketSales"),
-    WIDTH = 500,
+  var vis = d3.select("#ticketSales").attr('width',1000).attr('height',500),
+    WIDTH = 1000,
     HEIGHT = 500,
     MARGINS = {
         top: 20,
@@ -836,7 +836,7 @@ function renderTicketSalesOverTime(play){
   var counter =0;
   Object.keys(stats).forEach(function(x){
     data = makeData(x,stats);
-    if(data.map(x=>x.sales).reduce((a,b)=>a+b,0)>50){
+    if(data.map(x=>x.sales).reduce((a,b)=>a+b,0)>1000){
       vis.append('path')
         .attr('d', lineGen(data))
         .attr('stroke', color(counter))

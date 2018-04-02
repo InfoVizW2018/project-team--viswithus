@@ -253,7 +253,7 @@ function getAuthorModalFunction(author) {
     renderAuthorPopularityRank(author);
     renderAuthorPlaySuccessBarChart(author);
     renderAuthorGenreDistDonutChart(author);
-    
+
     $('#authormodal').modal('show');
   }
 }
@@ -329,6 +329,7 @@ function getGenreModalFunction(genre) {
     $('#top5authors').empty().append(top5auths);
 
     renderGenrePieChart(genre);
+    renderGenreLineChart(playsGenre);
 
     $('#genremodal').modal('show');
   }
@@ -877,4 +878,76 @@ function renderTicketSalesOverTime(play){
        .attr('y', 10)
        .text(function(d) { return d.key; });
 
+}
+
+function renderGenreLineChart(playsGenre) {
+  var dates = plays
+    .reduce( (prev, curr) => prev.concat(curr.dates), [])
+    .map( x => x.time.getFullYear())
+
+  var domain = d3.extent(dates);
+
+  var data = [];
+  for (let i = domain[0]; i <= domain[1]; i++) {
+    var count = playsGenre
+      .filter( x => x.dates.some( y => y.time.getFullYear() === i)).length
+    data.push({
+      year: i,
+      count: count
+    });
+  }
+  
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+  var width = 500 - margin.left - margin.right;
+  var height = 500 - margin.top - margin.bottom;
+
+  d3.select("#genreLineChart").selectAll("*").remove();
+
+  var svg = d3.select('#genreLineChart')
+    .attr('width', 500)
+    .attr('height', 500);
+  
+  var g = svg.append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  
+  var xScale = d3.scaleLinear()
+    .rangeRound([0, width])
+    .domain(domain);
+
+  var yScale = d3.scaleLinear()
+    .rangeRound([height, 0])
+    .domain([0, d3.extent(data, d => d.count)[1]]);
+
+  var line = d3.line()
+    .x( function (d) { return xScale(d.year); })
+    .y( function (d) { return yScale(d.count); });
+
+  g.append('g')
+    .attr('transform', 'translate(0, ' + height + ')')
+    .call(d3.axisBottom(xScale).tickFormat(d3.format('d')))
+    .append('text')
+    .attr('fill', '#000')
+    .attr('dx', '2.5em')
+    .attr('dy', '-.8em')
+    .attr('text-anchor', 'end')
+    .text('Year');
+
+  g.append('g')
+    .call(d3.axisLeft(yScale))
+    .append('text')
+    .attr('fill', '#000')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 6)
+    .attr('dy', '0.71em')
+    .attr('text-anchor', 'end')
+    .text('# of Performances');
+
+  g.append('path')
+    .datum(data)
+    .attr('fill', 'none')
+    .attr('stroke', 'steelblue')
+    .attr('stroke-linejoin', 'round')
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-width', 1.5)
+    .attr('d', line);
 }

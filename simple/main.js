@@ -757,19 +757,17 @@ function renderTicketSalesOverTime(play){
       }
     });
 
-
-  const width = 500;
-  const height = 500;
-
-
   d3.select("#ticket").selectAll("*").remove();
 
-  const svg = d3.select('#ticketSales')
-    .attr('width', width)
-    .attr('height', height)
-
-  var x = d3.scaleLinear().range([0, width]);
-  var y = d3.scaleLinear().range([height, 0]);
+  var vis = d3.select("#ticketSales"),
+    WIDTH = 500,
+    HEIGHT = 500,
+    MARGINS = {
+        top: 20,
+        right: 20,
+        bottom: 20,
+        left: 50
+    };
 
   var getMaxMinYear = function(elem){
     var max = 0;
@@ -792,36 +790,61 @@ function renderTicketSalesOverTime(play){
     return max;
   };
 
+
   var makeData = function(key,stats){
     var data=[]
     var yrs = getMaxMinYear(stats);
     var years = Array.from(new Array(yrs[1]-yrs[0]+1) , (x,i) => i + yrs[0]);
     years.forEach(function(year){
-      data.push(stats[key][year]);
+      value = stats[key][year]==undefined? 0 :stats[key][year]
+      data.push({'year':year, 'sales': value});
     });
-    return data.map(function(y){
-      if(y==undefined){return 0};
-      return y;
-    });
+    return data;
   };
-  //set domain and range
-  x.domain(getMaxMinYear(stats));
-  y.domain([0,getMaxSales(stats)]);
 
+  xScale = d3.scaleLinear()
+          .range([MARGINS.left, WIDTH - MARGINS.right])
+          .domain(getMaxMinYear(stats));
+  yScale = d3.scaleLinear()
+          .range([HEIGHT - MARGINS.top, MARGINS.bottom])
+          .domain([0,getMaxSales(stats)]);
+
+  xAxis = d3.axisBottom()
+          .scale(xScale);
+
+  yAxis = d3.axisLeft()
+          .scale(yScale);
+
+  const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+  vis.append("g")
+      .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+      .call(xAxis);
+
+  vis.append("g")
+     .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+     .call(yAxis);
+
+  var lineGen = d3.line()
+     .x(function(d) {
+       return xScale(d.year);
+     })
+     .y(function(d) {
+       return yScale(d.sales);
+     });
+
+  var counter =0;
   Object.keys(stats).forEach(function(x){
     data = makeData(x,stats);
-    if(data.reduce((a,b)=>a+b,0)> 50){ // this is pretty arbitary
-      //append the line
+    if(data.map(x=>x.sales).reduce((a,b)=>a+b,0)>50){
+      vis.append('path')
+        .attr('d', lineGen(data))
+        .attr('stroke', color(counter))
+        .attr('stroke-width', 2)
+        .attr('fill', 'none');
+      counter ++;
     }
   });
 
-  // Add the X Axis
-  //this doesn't work
-  svg.append("g")
-      .call(d3.axisBottom(x));
 
-  // Add the Y Axis
-  //neither does this
-  svg.append("g")
-      .call(d3.axisLeft(y));
 }

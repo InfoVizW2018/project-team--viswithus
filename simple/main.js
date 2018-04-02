@@ -273,7 +273,8 @@ function getPlayModalFunction(play) {
     renderPlayRankByAuthor(play);
     renderRecitalDistribution(play);
     renderTicketSalesOverTime(play);
-    
+    topPlaysInSameSession(play);
+
     $('#playmodal').modal('show');
   }
 }
@@ -850,9 +851,9 @@ function renderTicketSalesOverTime(play){
       counter ++;
     }
   });
-  console.log(inclKeys.length)
   d3.select("#levelLegend").selectAll("*").remove();
   var legend = d3.select('#levelLegend')
+        .attr('height', function(){return inclKeys.length * 15})
       .append("g")
       .selectAll("g")
       .data(inclKeys)
@@ -950,4 +951,115 @@ function renderGenreLineChart(playsGenre) {
     .attr('stroke-linecap', 'round')
     .attr('stroke-width', 1.5)
     .attr('d', line);
+}
+
+function topPlaysInSameSession(play){
+  var playEvenings = performanceTotals.reduce((h, a) => Object.assign(h, { [a.date]:( h[a.date] || [] ).concat(a) }), {});
+  relevant=[]
+  Object.values(playEvenings).forEach(function(x){
+    if(x[1]!=undefined && x[0].title!=x[1].title && (x[0].title==play.title || x[1].title==play.title)){
+      if(x[0].title==play.title){
+        relevant.push(x[1].title);
+      }
+      else {
+        relevant.push(x[0].title);
+      }
+    }
+  });
+  var colours = d3.scaleOrdinal(d3.schemeCategory10);
+  relCounts={}
+  relevant.forEach(function(x){
+    relCounts[x] = relCounts[x]==undefined?  1 : relCounts[x]+1
+  });
+  countArr=[]
+  Object.keys(relCounts).forEach(function(x){
+    if(x!=""){
+      countArr.push([x,relCounts[x]]);
+    }
+  })
+  var sortVals = function(a,b) {return b[1]-a[1]};
+  var data = countArr.sort(sortVals).filter((x,i)=> i<5);
+  var genreList = data.map(function(x){
+    return plays.filter(y=> y.title ==x[0])[0].genre
+  })
+
+  var colourMap = {}
+  genreList.filter((v, i, a) => a.indexOf(v) === i).forEach(function(x,i){
+    colourMap[x]= colours(i)
+  });
+
+  var margin = {top: 20, right: 30, bottom: 200, left:50},
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+
+  var x = d3.scaleBand()
+    .rangeRound([0, width])
+    .padding(0.6);
+
+  var y = d3.scaleLinear()
+    .range([height, 0]);
+
+  $("#play-bar-chart").empty();
+  var svg = d3.select("#play-bar-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(data.map(function(d) { return d[0]; }));
+  y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+  svg.append("g")
+      .attr("class", "x-axis", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom().scale(x))
+      .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", function(d) {
+              return "rotate(-65)"
+              });
+
+
+  svg.append("g")
+      .attr("class", "y-axis", "axis")
+      .call(d3.axisLeft().scale(y));
+
+  svg.selectAll(".bar")
+  .data(data)
+    .enter().append("rect")
+      .attr("fill", function(d,i) {return colourMap[genreList[i]]})
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", 40)
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return height - y(d[1]); });
+
+  d3.select("#genreLegend").selectAll("*").remove();
+  var legend = d3.select('#genreLegend')
+      .append("g")
+      .selectAll("g")
+      .data(genreList.filter((v, i, a) => a.indexOf(v) === i))
+      .enter()
+      .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
+          var height = 15;
+          var x = 0;
+          var y = i * height;
+          return 'translate(' + x + ',' + y + ')';
+      });
+
+  legend.append('rect')
+    .attr('width', 10)
+    .attr('height', 10)
+    .style('fill', function(d){return colourMap[d]})
+    .style('stroke', function(d){return colourMap[d]});
+
+  legend.append('text')
+    .attr('class', 'legend-key')
+    .attr('x', 10)
+    .attr('y', 10)
+    .text(function(d) { return d; });
 }

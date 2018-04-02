@@ -249,11 +249,12 @@ function renderHivePlot() {
 function getAuthorModalFunction(author) {
   return function () {
     $('#authorName').text(author);
-    $('#authormodal').modal('show');
 
     renderAuthorPopularityRank(author);
     renderAuthorPlaySuccessBarChart(author);
     renderAuthorGenreDistDonutChart(author);
+
+    $('#authormodal').modal('show');
   }
 }
 
@@ -267,13 +268,14 @@ function getAuthorPopupFunction(author) {
 function getPlayModalFunction(play) {
   return function () {
     $('.modal-title').text("Play: " + play.title);
-    $('#playmodal').modal('show');
 
     renderPlayRankInGenre(play);
     renderPlayRankByAuthor(play);
     renderRecitalDistribution(play);
     renderTicketSalesOverTime(play);
     topPlaysInSameSession(play);
+
+    $('#playmodal').modal('show');
   }
 }
 
@@ -850,6 +852,7 @@ function renderTicketSalesOverTime(play){
   });
   d3.select("#levelLegend").selectAll("*").remove();
   var legend = d3.select('#levelLegend')
+        .attr('height', function(){return inclKeys.length * 15})
       .append("g")
       .selectAll("g")
       .data(inclKeys)

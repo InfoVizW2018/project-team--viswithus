@@ -86,7 +86,7 @@
     <div class="header modal-title">
       {title}
     </div>
-    <div class="scrolling content">
+    <div class="content">
       <div class="ui two doubling cards">
         <div class="card">
           <div class="content">
@@ -128,10 +128,11 @@
   </div>
 
   <div id="genremodal" class="ui basic large modal">
+    <i class="close icon"></i>
     <div class="header modal">
       Genre: <span id="genreName">{genre}</span>
     </div>
-    <div class="scrolling content">
+    <div class="content">
       <div class="ui two doubling cards">
           <div class="card">
             <div class="content">
@@ -169,20 +170,15 @@
         </div>
       </div>
     </div>
-    <div class="actions">
-      <div class="ui green ok button">
-        <i class="checkmark icon"></i>
-        Okay
-      </div>
-    </div>
   </div>
 
   <div id="authormodal" class="ui basic large modal">
+    <i class="close icon"></i>
     <div class="header modal">
       Author: <span id="authorName">{author}</span>
     </div>
     <div class="content">
-      <div class="ui link cards three column grid">
+      <div class="ui cards three column grid">
         <div class="ui card">
           <div class="content">
             <div class="header">Popularity Rank</div>
@@ -206,7 +202,7 @@
         </div>
 
       </div>
-      <div class="ui link cards two column grid">
+      <div class="ui cards two column grid">
         <div class="ui fluid centered card">
           <div class="content">
             <div class="header">Genre Distribution</div>
@@ -223,12 +219,7 @@
         </div>
       </div>
     </div>
-    <div class="actions">
-      <div class="ui green ok button">
-        <i class="checkmark icon"></i>
-        Okay
-      </div>
-    </div>
+
   </div>
 
 </body>

@@ -661,7 +661,7 @@ function renderPlayRankInGenre(play) {
   const playsOfSameGenre = plays.filter(x=> x.genre == play.genre).map(y=> y.title);
   const rank = playTotals.filter(x => playsOfSameGenre.indexOf(x.title) >= 0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;
   const meta = $('<div></div>').addClass('meta').append(
-    $('<span></span>').text(`Among works of the same genre (${play.genre})`));
+    $('<span></span>').text(`Among works of the same genre (${play.genre}) - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
   $('#playRankGenre').empty().append(meta, toAdd);
 }
@@ -671,7 +671,7 @@ function renderPlayRankByAuthor(play) {
   const playsBySameAuthor = plays.filter(x=>x.author==play.author).map(y=> y.title);
   const rank = playTotals.filter(x => playsBySameAuthor.indexOf(x.title) >=0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;;
   const meta = $('<div></div>').addClass('meta').append(
-    $('<span></span>').text(`Among works also by ${play.author}`));
+    $('<span></span>').text(`Among works also by ${play.author} - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
   $('#playRankAuthor').empty().append(meta, toAdd);
 }
@@ -919,7 +919,7 @@ function topPlaysInSameSession(play){
 
     var margin = {top: 20, right: 30, bottom: 200, left:50},
       width = 500 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+      height = 700 - margin.top - margin.bottom;
 
 
       var x = d3.scaleBand()

@@ -784,12 +784,11 @@ function renderTicketSalesOverTime(play){
   var getMaxSales = function(elem){
     max=0;
     Object.values(elem).forEach(function(item){
-      var max1 = Math.min.apply(null, Object.values(item));
+      var max1 = Math.max.apply(null, Object.values(item));
       if(max1 > max){max=max1};
     });
     return max;
   };
-
 
   var makeData = function(key,stats){
     var data=[]
@@ -834,17 +833,45 @@ function renderTicketSalesOverTime(play){
      });
 
   var counter =0;
+  var inclKeys =[]
   Object.keys(stats).forEach(function(x){
     data = makeData(x,stats);
-    if(data.map(x=>x.sales).reduce((a,b)=>a+b,0)>1000){
+    if(data.map(x=>x.sales).reduce((a,b)=>a+b,0)>getMaxSales(stats)/5){
       vis.append('path')
         .attr('d', lineGen(data))
         .attr('stroke', color(counter))
         .attr('stroke-width', 2)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+      inclKeys.push({'key':x, 'colour': color(counter)});
       counter ++;
     }
   });
+  console.log(inclKeys.length)
+  d3.select("#levelLegend").selectAll("*").remove();
+  var legend = d3.select('#levelLegend')
+      .append("g")
+      .selectAll("g")
+      .data(inclKeys)
+      .enter()
+      .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
+          var height = 15;
+          var x = 0;
+          var y = i * height;
+          return 'translate(' + x + ',' + y + ')';
+      });
 
+      legend.append('rect')
+       .attr('width', 10)
+       .attr('height', 10)
+       .style('fill', function(d){return d.colour})
+       .style('stroke', function(d){return d.colour});
+
+      legend.append('text')
+       .attr('class', 'legend-key')
+       .attr('x', 10)
+       .attr('y', 10)
+       .text(function(d) { return d.key; });
 
 }

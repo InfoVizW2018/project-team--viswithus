@@ -115,3 +115,7 @@ span.red {
 .bar {
   fill: Tomato;
 }
+
+.legend-key{
+  padding-left: 15px;
+}

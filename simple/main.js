@@ -249,11 +249,12 @@ function renderHivePlot() {
 function getAuthorModalFunction(author) {
   return function () {
     $('#authorName').text(author);
-    $('#authormodal').modal('show');
 
     renderAuthorPopularityRank(author);
     renderAuthorPlaySuccessBarChart(author);
     renderAuthorGenreDistDonutChart(author);
+    
+    $('#authormodal').modal('show');
   }
 }
 
@@ -267,12 +268,13 @@ function getAuthorPopupFunction(author) {
 function getPlayModalFunction(play) {
   return function () {
     $('.modal-title').text("Play: " + play.title);
-    $('#playmodal').modal('show');
 
     renderPlayRankInGenre(play);
     renderPlayRankByAuthor(play);
     renderRecitalDistribution(play);
-    renderTicketSalesOverTime(play)
+    renderTicketSalesOverTime(play);
+    
+    $('#playmodal').modal('show');
   }
 }
 

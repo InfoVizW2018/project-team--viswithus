@@ -253,7 +253,7 @@ function getAuthorModalFunction(author) {
     renderAuthorPopularityRank(author);
     renderAuthorPlaySuccessBarChart(author);
     renderAuthorGenreDistDonutChart(author);
-    
+
     $('#authormodal').modal('show');
   }
 }
@@ -273,7 +273,7 @@ function getPlayModalFunction(play) {
     renderPlayRankByAuthor(play);
     renderRecitalDistribution(play);
     renderTicketSalesOverTime(play);
-    
+
     $('#playmodal').modal('show');
   }
 }
@@ -852,6 +852,7 @@ function renderTicketSalesOverTime(play){
   console.log(inclKeys.length)
   d3.select("#levelLegend").selectAll("*").remove();
   var legend = d3.select('#levelLegend')
+        .attr('height', function(){return inclKeys.length * 15})
       .append("g")
       .selectAll("g")
       .data(inclKeys)

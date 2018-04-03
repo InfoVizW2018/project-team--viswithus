@@ -65,7 +65,7 @@ span.green {
   -webkit-border-radius: 1em;
   color: #ffffff;
   margin-left: 120px;
-  display: block;
+  display: inline-block;
   font-weight: bold;
   font-size: 24pt;
   line-height: 2em;

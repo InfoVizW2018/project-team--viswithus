@@ -580,6 +580,7 @@ function renderAuthorPopularityRank(author){
   var rank = authorPlays.findIndex(auth => auth.name == author) + 1;
 
   $("#author-rank").text(rank);
+  $("#author-popularity-outof-label").text("out of " + authorPlays.length + " authors");
 }
 
 // Wrap function to handle labels with longer text

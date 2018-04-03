@@ -466,7 +466,7 @@ function renderAuthorGenreDistDonutChart(author){
     .attr("dy", "-0.5em")
     .style("text-anchor", "middle")
     .attr("class", "inner-circle genre-name")
-    .attr("fill", "#36454f"); 
+    .attr("fill", "#36454f");
 
   svg.append("text")
     .attr("dy", "1.0em")
@@ -662,7 +662,7 @@ function renderGenrePieChart(genre) {
 }
 
 function renderPlayRankInGenre(play) {
-  const sortBySales = (a,b) => b.total_sold - a.total_sold;
+  const sortBySales = (a,b) => b.total - a.total;
   const playsOfSameGenre = plays.filter(x=> x.genre == play.genre).map(y=> y.title);
   const rank = playTotals.filter(x => playsOfSameGenre.indexOf(x.title) >= 0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;
   const meta = $('<div></div>').addClass('meta').append(
@@ -672,9 +672,9 @@ function renderPlayRankInGenre(play) {
 }
 
 function renderPlayRankByAuthor(play) {
-  const sortBySales = (a,b) => b.total_sold - a.total_sold;
+  const sortBySales = (a,b) => b.total - a.total;
   const playsBySameAuthor = plays.filter(x=>x.author==play.author).map(y=> y.title);
-  const rank = playTotals.filter(x => playsBySameAuthor.indexOf(x.title) >=0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;;
+  const rank = playTotals.filter(x => playsBySameAuthor.indexOf(x.title) >=0).sort(sortBySales).map(x=>x.title).indexOf(play.title) +1;
   const meta = $('<div></div>').addClass('meta').append(
     $('<span></span>').text(`Among works also by ${play.author} - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
@@ -688,9 +688,9 @@ function renderRecitalDistribution(play) {
     obj['sales']= x.total;
     return obj;
   });
-
+  var dotw= ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
   var groups = days.reduce((h, a) => Object.assign(h, { [a.day]:( h[a.day] || [] ).concat(a.sales) }), {});
-  const dayString = function(x){return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][x];}
+  const dayString = function(x){return dotw[x];}
   var cons=[]
   Object.keys(groups).forEach(function(x) {
     cons.push([dayString(x),(groups[x].reduce((a,b)=> a+b,0))]);
@@ -701,10 +701,10 @@ function renderRecitalDistribution(play) {
     data.push({x:i, label:cons[i][0], value: (cons[i][1]/total)*100});
   }
 
-  const width = 500;
-  const height = 500;
+  const width = 550;
+  const height = 550;
 
-  const radius = Math.min(width, height) / 2;
+  const radius = Math.min(width, height) / 2.25;
 
   d3.select("#playPieChart").selectAll("*").remove();
 
@@ -726,10 +726,6 @@ function renderRecitalDistribution(play) {
       .outerRadius(radius - 10)
       .innerRadius(0);
 
-    const label = d3.arc()
-      .outerRadius(radius - width / 2)
-      .innerRadius(radius - 40);
-
     const arc = g.selectAll('.arc')
         .data(pie(data))
       .enter()
@@ -740,10 +736,35 @@ function renderRecitalDistribution(play) {
       .attr('d', path)
       .attr('fill', function (d) { return color(d.data.x); });
 
-    arc.append('text')
-      .attr('transform', function (d) { return `translate(${label.centroid(d)})`; })
-      .attr('dy', '0.35em')
-      .text(function (d) { return d.data.label; });
+      d3.select("#pieLegend").selectAll("*").remove();
+      var legend = d3.select('#pieLegend')
+          .append("g")
+          .selectAll("g")
+          .data(dotw)
+          .enter()
+          .append('g')
+            .attr('class', 'legend')
+            .attr('transform', function(d, i) {
+              var height = 15;
+              var x = 0;
+              var y = i * height;
+              return 'translate(' + x + ',' + y + ')';
+          });
+
+          legend.append('rect')
+           .attr('width', 10)
+           .attr('height', 10)
+           .style('fill', function(d,i){return color(i)})
+           .style('stroke', function(d,i){color(i)});
+
+          legend.append('text')
+           .attr('class', 'legend-key')
+           .attr('x', 10)
+           .attr('y', 10)
+           .text(function(d) { return d; });
+
+
+
 }
 
 function renderTicketSalesOverTime(play){
@@ -857,7 +878,7 @@ function renderTicketSalesOverTime(play){
   });
   d3.select("#levelLegend").selectAll("*").remove();
   var legend = d3.select('#levelLegend')
-        .attr('height', function(){return inclKeys.length * 15})
+      .attr('height', function(){return inclKeys.length * 15})
       .append("g")
       .selectAll("g")
       .data(inclKeys)
@@ -901,7 +922,7 @@ function renderGenreLineChart(playsGenre) {
       count: count
     });
   }
-  
+
   var margin = { top: 20, right: 20, bottom: 30, left: 50 };
   var width = 500 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
@@ -911,10 +932,10 @@ function renderGenreLineChart(playsGenre) {
   var svg = d3.select('#genreLineChart')
     .attr('width', 500)
     .attr('height', 500);
-  
+
   var g = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
-  
+
   var xScale = d3.scaleLinear()
     .rangeRound([0, width])
     .domain(domain);
@@ -1055,11 +1076,9 @@ function topPlaysInSameSession(play){
           return 'translate(' + x + ',' + y + ')';
       });
 
-<<<<<<< HEAD
-
     var margin = {top: 20, right: 30, bottom: 200, left:50},
       width = 500 - margin.left - margin.right,
-      height = 700 - margin.top - margin.bottom;
+      height = 650 - margin.top - margin.bottom;
 
 
       var x = d3.scaleBand()
@@ -1134,17 +1153,4 @@ function topPlaysInSameSession(play){
 
 
 
-=======
-  legend.append('rect')
-    .attr('width', 10)
-    .attr('height', 10)
-    .style('fill', function(d){return colourMap[d]})
-    .style('stroke', function(d){return colourMap[d]});
-
-  legend.append('text')
-    .attr('class', 'legend-key')
-    .attr('x', 10)
-    .attr('y', 10)
-    .text(function(d) { return d; });
->>>>>>> 632e24d384dafa01b8d87d1c48318a9323b1349a
 }

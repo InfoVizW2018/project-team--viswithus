@@ -330,6 +330,7 @@ function getGenreModalFunction(genre) {
     $('#top5authors').empty().append(top5auths);
 
     renderGenrePieChart(genre);
+    renderGenreLineChart(playsGenre);
 
     $('#genremodal').modal('show');
   }
@@ -464,18 +465,22 @@ function renderAuthorGenreDistDonutChart(author){
   svg.append("text")
     .attr("dy", "-0.5em")
     .style("text-anchor", "middle")
-    .attr("class", "inner-circle")
-    .attr("fill", "#36454f")
-    .text(function(d) { return 'Plays Written'; });
+    .attr("class", "inner-circle genre-name")
+    .attr("fill", "#36454f"); 
 
   svg.append("text")
     .attr("dy", "1.0em")
     .attr("size", "12")
     .style("text-anchor", "middle")
-    .attr("class", "inner-circle donut-label")
-    .attr("fill", "#36454f")
-    .text(function(d) { return numPlays; });
+    .attr("class", "inner-circle donut-label genre-plays-count")
+    .attr("fill", "#36454f");
 
+    g.on("mouseover", function(d, i){
+      $(".genre-name").text('Plays written in ' + seedData[i].genre);
+      $(".genre-plays-count").text(seedData[i].value);
+    });
+
+    $("#num-plays").text(numPlays);
 }
 
 function renderAuthorPlaySuccessBarChart(author){
@@ -880,6 +885,78 @@ function renderTicketSalesOverTime(play){
 
 }
 
+function renderGenreLineChart(playsGenre) {
+  var dates = plays
+    .reduce( (prev, curr) => prev.concat(curr.dates), [])
+    .map( x => x.time.getFullYear())
+
+  var domain = d3.extent(dates);
+
+  var data = [];
+  for (let i = domain[0]; i <= domain[1]; i++) {
+    var count = playsGenre
+      .filter( x => x.dates.some( y => y.time.getFullYear() === i)).length
+    data.push({
+      year: i,
+      count: count
+    });
+  }
+  
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+  var width = 500 - margin.left - margin.right;
+  var height = 500 - margin.top - margin.bottom;
+
+  d3.select("#genreLineChart").selectAll("*").remove();
+
+  var svg = d3.select('#genreLineChart')
+    .attr('width', 500)
+    .attr('height', 500);
+  
+  var g = svg.append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  
+  var xScale = d3.scaleLinear()
+    .rangeRound([0, width])
+    .domain(domain);
+
+  var yScale = d3.scaleLinear()
+    .rangeRound([height, 0])
+    .domain([0, d3.extent(data, d => d.count)[1]]);
+
+  var line = d3.line()
+    .x( function (d) { return xScale(d.year); })
+    .y( function (d) { return yScale(d.count); });
+
+  g.append('g')
+    .attr('transform', 'translate(0, ' + height + ')')
+    .call(d3.axisBottom(xScale).tickFormat(d3.format('d')))
+    .append('text')
+    .attr('fill', '#000')
+    .attr('dx', '2.5em')
+    .attr('dy', '-.8em')
+    .attr('text-anchor', 'end')
+    .text('Year');
+
+  g.append('g')
+    .call(d3.axisLeft(yScale))
+    .append('text')
+    .attr('fill', '#000')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 6)
+    .attr('dy', '0.71em')
+    .attr('text-anchor', 'end')
+    .text('# of Performances');
+
+  g.append('path')
+    .datum(data)
+    .attr('fill', 'none')
+    .attr('stroke', 'steelblue')
+    .attr('stroke-linejoin', 'round')
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-width', 1.5)
+    .attr('d', line);
+}
+
 function topPlaysInSameSession(play){
   var playEvenings = performanceTotals.reduce((h, a) => Object.assign(h, { [a.date]:( h[a.date] || [] ).concat(a) }), {});
   relevant=[]
@@ -915,7 +992,70 @@ function topPlaysInSameSession(play){
     colourMap[x]= colours(i)
   });
 
+  var margin = {top: 20, right: 30, bottom: 200, left:50},
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
+
+  var x = d3.scaleBand()
+    .rangeRound([0, width])
+    .padding(0.6);
+
+  var y = d3.scaleLinear()
+    .range([height, 0]);
+
+  $("#play-bar-chart").empty();
+  var svg = d3.select("#play-bar-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(data.map(function(d) { return d[0]; }));
+  y.domain([0, d3.max(data, function(d) { return d[1]; })]);
+
+  svg.append("g")
+      .attr("class", "x-axis", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom().scale(x))
+      .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", function(d) {
+              return "rotate(-65)"
+              });
+
+
+  svg.append("g")
+      .attr("class", "y-axis", "axis")
+      .call(d3.axisLeft().scale(y));
+
+  svg.selectAll(".bar")
+  .data(data)
+    .enter().append("rect")
+      .attr("fill", function(d,i) {return colourMap[genreList[i]]})
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", 40)
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return height - y(d[1]); });
+
+  d3.select("#genreLegend").selectAll("*").remove();
+  var legend = d3.select('#genreLegend')
+      .append("g")
+      .selectAll("g")
+      .data(genreList.filter((v, i, a) => a.indexOf(v) === i))
+      .enter()
+      .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
+          var height = 15;
+          var x = 0;
+          var y = i * height;
+          return 'translate(' + x + ',' + y + ')';
+      });
+
+<<<<<<< HEAD
 
     var margin = {top: 20, right: 30, bottom: 200, left:50},
       width = 500 - margin.left - margin.right,
@@ -994,4 +1134,17 @@ function topPlaysInSameSession(play){
 
 
 
+=======
+  legend.append('rect')
+    .attr('width', 10)
+    .attr('height', 10)
+    .style('fill', function(d){return colourMap[d]})
+    .style('stroke', function(d){return colourMap[d]});
+
+  legend.append('text')
+    .attr('class', 'legend-key')
+    .attr('x', 10)
+    .attr('y', 10)
+    .text(function(d) { return d; });
+>>>>>>> 632e24d384dafa01b8d87d1c48318a9323b1349a
 }

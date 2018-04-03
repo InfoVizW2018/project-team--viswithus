@@ -436,11 +436,6 @@ function renderAuthorGenreDistDonutChart(author){
     .enter().append("g")
     .attr("class", "arc")
 
-    // Make each arc clickable
-    // .on("click", function(d, i) {
-    //   window.location = seedData[i].link;
-    // });
-
   // Append the path to each g
   g.append("path")
     .attr("d", arc)
@@ -448,18 +443,32 @@ function renderAuthorGenreDistDonutChart(author){
       return colour(i);
     });
 
-  // Append text labels to each arc
-  g.append("text")
-    .attr("transform", function(d) {
-      return "translate(" + arc.centroid(d) + ")";
-    })
-    .attr("dy", ".35em")
-    .style("text-anchor", "middle")
-    .attr("fill", "#fff")
-    .attr("background-color", "#000")
-    .text(function(d,i) { return seedData[i].genre; })
+  d3.select("#author-donut-chart-legend").selectAll("*").remove();
+  var legend = d3.select('#author-donut-chart-legend')
+      .append("g")
+      .selectAll("g")
+      .data(seedData)
+      .enter()
+      .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
+          var height = 15;
+          var x = 0;
+          var y = i * height;
+          return 'translate(' + x + ',' + y + ')';
+      });
 
-  g.selectAll(".arc text").call(wrap, arcText.range([0, width]));
+      legend.append('rect')
+       .attr('width', 10)
+       .attr('height', 10)
+       .style('fill', function(d,i){return colour(i)})
+       .style('stroke', function(d,i){colour(i)});
+
+      legend.append('text')
+       .attr('class', 'legend-key')
+       .attr('x', 10)
+       .attr('y', 10)
+       .text(function(d, i) { return seedData[i].genre; });
 
   // Append text to the inner circle
   svg.append("text")
@@ -581,31 +590,6 @@ function renderAuthorPopularityRank(author){
 
   $("#author-rank").text(rank);
   $("#author-popularity-outof-label").text("out of " + authorPlays.length + " authors");
-}
-
-// Wrap function to handle labels with longer text
-function wrap(text, width) {
-  text.each(function() {
-    var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1, // ems
-        y = text.attr("y"),
-        dy = parseFloat(text.attr("dy")),
-        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > 90) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-      }
-    }
-  });
 }
 
 function renderGenrePieChart(genre) {

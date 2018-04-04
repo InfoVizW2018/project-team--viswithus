@@ -653,7 +653,8 @@ function renderPlayRankInGenre(play) {
   const meta = $('<div></div>').addClass('meta').append(
     $('<span></span>').text(`Among works of the same genre (${play.genre}) - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
-  $('#playRankGenre').empty().append(meta, toAdd);
+  const outOf = $('<div></div>').addClass('meta').text(`of ${playsOfSameGenre.length} plays`);
+  $('#playRankGenre').empty().append(meta, toAdd, outOf);
 }
 
 function renderPlayRankByAuthor(play) {
@@ -663,7 +664,8 @@ function renderPlayRankByAuthor(play) {
   const meta = $('<div></div>').addClass('meta').append(
     $('<span></span>').text(`Among works also by ${play.author} - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
-  $('#playRankAuthor').empty().append(meta, toAdd);
+  const outOf = $('<div></div>').addClass('meta').text(`of ${playsBySameAuthor.length} plays`);
+  $('#playRankAuthor').empty().append(meta, toAdd, outOf);
 }
 
 function renderRecitalDistribution(play) {

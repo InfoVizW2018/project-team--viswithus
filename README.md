@@ -1,5 +1,7 @@
 # Information Visualization Project
 
+### DEMO VIDEO: [https://youtu.be/bDx0PieTWUM](https://youtu.be/bDx0PieTWUM)
+
 ## Important Project Dates
 - Project pitches and project proposals: January 29th
 - Project interim report deliverable: March 5th

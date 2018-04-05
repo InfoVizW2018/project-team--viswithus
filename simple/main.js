@@ -635,8 +635,8 @@ function renderGenrePieChart(genre) {
       .data(pie(data))
     .enter()
       .append('g')
-      .attr('class', 'arc')
-      .on("mouseover", function (d) {
+      .attr('class', 'arc');
+    /*  .on("mouseover", function (d) {
       d3.select("#genreTooltip")
       .style("left", d3.event.pageX - 75 + "px")
       .style("top", d3.event.pageY - 175 + "px")
@@ -647,7 +647,7 @@ function renderGenrePieChart(genre) {
   // Hide the tooltip
         d3.select("#tooltip")
         .style("opacity", 0);;
-      });
+      });*/
 
   arc.append('path')
     .attr('d', path)
@@ -730,8 +730,8 @@ function renderRecitalDistribution(play) {
         .data(pie(data))
         .enter()
         .append('g')
-        .attr('class', 'arc')
-        .on("mouseover", function (d) {
+        .attr('class', 'arc');
+        /*.on("mouseover", function (d) {
         d3.select("#tooltip")
         .style("left", d3.event.pageX - 75 + "px")
         .style("top", d3.event.pageY - 175 + "px")
@@ -742,7 +742,7 @@ function renderRecitalDistribution(play) {
     // Hide the tooltip
           d3.select("#tooltip")
           .style("opacity", 0);;
-        });
+        });*/
 
     arc.append('path')
       .attr('d', path)

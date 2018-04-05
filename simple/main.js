@@ -589,7 +589,8 @@ function renderAuthorPopularityRank(author){
   var rank = authorPlays.findIndex(auth => auth.name == author) + 1;
 
   $("#author-rank").text(rank);
-  $("#author-popularity-outof-label").text("out of " + authorPlays.length + " authors");
+  const outOf = $('<span></span>').addClass('meta').text(`out of ${authorPlays.length} authors`);
+  $('#author-popularity-outof-label').empty().append(outOf);
 }
 
 function renderGenrePieChart(genre) {
@@ -634,7 +635,19 @@ function renderGenrePieChart(genre) {
       .data(pie(data))
     .enter()
       .append('g')
-      .attr('class', 'arc');
+      .attr('class', 'arc')
+      .on("mouseover", function (d) {
+      d3.select("#genreTooltip")
+      .style("left", d3.event.pageX - 75 + "px")
+      .style("top", d3.event.pageY - 175 + "px")
+      .style("opacity", 0.75)
+      .select("#value")
+      .text(`${Math.round((d.value/genrePlays.length * 100)*100)/100} %`)})
+      .on("mouseout", function () {
+  // Hide the tooltip
+        d3.select("#tooltip")
+        .style("opacity", 0);;
+      });
 
   arc.append('path')
     .attr('d', path)
@@ -653,7 +666,7 @@ function renderPlayRankInGenre(play) {
   const meta = $('<div></div>').addClass('meta').append(
     $('<span></span>').text(`Among works of the same genre (${play.genre}) - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
-  const outOf = $('<div></div>').addClass('meta').text(`of ${playsOfSameGenre.length} plays`);
+  const outOf = $('<span></span>').addClass('meta').text(`out of ${playsOfSameGenre.length} plays`);
   $('#playRankGenre').empty().append(meta, toAdd, outOf);
 }
 
@@ -664,7 +677,7 @@ function renderPlayRankByAuthor(play) {
   const meta = $('<div></div>').addClass('meta').append(
     $('<span></span>').text(`Among works also by ${play.author} - based on revenue`));
   const toAdd= $('<span></span>').addClass('green').text(rank);
-  const outOf = $('<div></div>').addClass('meta').text(`of ${playsBySameAuthor.length} plays`);
+  const outOf = $('<span></span>').addClass('meta').text(`out of ${playsBySameAuthor.length} plays`);
   $('#playRankAuthor').empty().append(meta, toAdd, outOf);
 }
 
@@ -715,9 +728,21 @@ function renderRecitalDistribution(play) {
 
     const arc = g.selectAll('.arc')
         .data(pie(data))
-      .enter()
+        .enter()
         .append('g')
-        .attr('class', 'arc');
+        .attr('class', 'arc')
+        .on("mouseover", function (d) {
+        d3.select("#tooltip")
+        .style("left", d3.event.pageX - 75 + "px")
+        .style("top", d3.event.pageY - 175 + "px")
+        .style("opacity", 0.75)
+        .select("#value")
+        .text(`${Math.round(d.value*100) / 100} %`)})
+        .on("mouseout", function () {
+    // Hide the tooltip
+          d3.select("#tooltip")
+          .style("opacity", 0);;
+        });
 
     arc.append('path')
       .attr('d', path)

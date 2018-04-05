@@ -105,6 +105,9 @@
             <div class="header">Popularity across Days of the Week</div>
             <div class="meta">Based on ticket sale revenue</div>
             <svg id="playPieChart" style="margin-left: -2.5em"></svg>
+            <div id="tooltip" class="hidden">
+               <p><span id="value"></span></p>
+            </div>
             <svg id="pieLegend"></svg>
           </div>
         </div>
@@ -159,6 +162,9 @@
             <div class="meta">Proportion of plays of this genre (red)</div>
             <!-- Put the svg stuff in here -->
             <svg id="pieChart"></svg>
+            <div id="genreTooltip" class="hidden">
+               <p><span id="value"></span></p>
+            </div>
           </div>
         </div>
         <div class="ui fluid card">

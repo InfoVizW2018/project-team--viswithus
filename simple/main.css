@@ -93,7 +93,7 @@ span.purple {
 
 span.red {
   margin-top:12px;
-  background: #b43825;
+  background: #d62728;
   border-radius: 1em;
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
@@ -113,9 +113,43 @@ span.red {
 }
 
 .bar {
-  fill: Tomato;
+  fill: #9467bd;
 }
 
 .legend-key{
   padding-left: 15px;
+}
+
+#tooltip {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: #999;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 100 !important;
+
+
+}
+#genreTooltip {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: #999;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 100 !important;
+
+
+}
+#tooltip.hidden {
+    opacity: 0;
+}
+
+#value {
+  color: #000 !important;
 }

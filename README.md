@@ -1,6 +1,6 @@
 # Information Visualization Project
 
-### DEMO VIDEO: [https://youtu.be/bDx0PieTWUM](https://youtu.be/bDx0PieTWUM)
+### [DEMO VIDEO](https://drive.google.com/file/d/1yhouVW1MtJnriU4Zj86ZvJurHt6cgTs5/view?usp=sharing)
 
 ## Important Project Dates
 - Project pitches and project proposals: January 29th

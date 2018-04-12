@@ -17,3 +17,4 @@ A visualization tool based on data provided by the [Comédie-Française Register
 * [Interim report](interim_report.pdf)
 * [Final presentation slides](final_presentation_slides.pdf)
 * [Demo video](https://drive.google.com/file/d/1yhouVW1MtJnriU4Zj86ZvJurHt6cgTs5/view?usp=sharing)
+* [Final report](final_report.pdf)

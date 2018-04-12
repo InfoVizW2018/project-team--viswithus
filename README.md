@@ -1,5 +1,6 @@
 # Information Visualization Project
 
+Live Vis Tool: [https://ryansama.github.io/comedie-francaise-vis/](https://ryansama.github.io/comedie-francaise-vis/) 
 ## Important Project Dates
 - Project pitches and project proposals: January 29th
 - Project interim report deliverable: March 5th
